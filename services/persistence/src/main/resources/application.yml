@@ -1,0 +1,17 @@
+server:
+  port: ${SERVER_PORT:61000}
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://soccervs-reciever:soccervs-reciever@soccervs-reciever:55100/soccervs-reciever
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.0.200:55000/soccervs-persistence
+    username: soccervs
+    password: soccervs
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
