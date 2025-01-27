@@ -344,6 +344,22 @@
             <ownedAttribute xmi:type="uml:Property" xmi:id="uK0k6UzVNuy9g" name="jogadorId" visibility="private" type="urdHpf5ziFiQY"/>
             <ownedAttribute xmi:type="uml:Property" xmi:id="uU6W54IjTVpiO" name="personalidadeId" visibility="private" type="uKnpr4LTrXmYx"/>
           </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="ud5vqg4XX7lnk" name="Passes"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uaMhBm7GFYjdK" name="Dribles"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uSh0ZDAZ5EJkn" name="Defensivas"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uK3IRP1Zg8cOp" name="Ofensivas"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="u3hbvxygr8hS1" name="Cartoes"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uMicyroxMLdAr" name="Faltas"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uz1Od6kAvV7rB" name="EstiloJogador"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="ulVF1i5M1HZv7" name="EstiloTecnico"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uo3dHm4sVBBFO" name="Temporadas"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uuiD7tAF86lJI" name="Filosofia"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uqZkBomdPx2py" name="Adaptacao"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uIpsXX6xtdrDm" name="Tecnicos"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uF8OMaNDWxdSx" name="Titulos"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uy6C3QUkVoxDB" name="Resultados"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="uwzg9Aq0TuBxq" name="Competicao"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="umKik84rPYDZz" name="EventoEspecifico"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="uL2HRvGjmFeLe" name="enums">
           <packagedElement xmi:type="uml:Enumeration" xmi:id="uPaNHdykUvXQi" name="EExercicio" stereotype="enum">
@@ -634,7 +650,7 @@
       <packagedElement xmi:type="uml:Actor" xmi:id="u9pjkXjWETyWb" name="Banco de Dados NoSQL"/>
       <xmi:Extension extender="umbrello">
         <diagrams>
-          <diagram xmi.id="u2zZh7XubMK9V" name="Diagrama do Caso de Uso" type="2" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="100" canvasheight="800" canvaswidth="1100" isopen="1">
+          <diagram xmi.id="u2zZh7XubMK9V" name="Diagrama do Caso de Uso" type="2" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="100" canvasheight="800" canvaswidth="1100" isopen="0">
             <widgets>
               <usecasewidget xmi.id="ujiJziYmkeHzl" localid="uHOLL9CfCdnVp" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" autoresize="1" x="222" y="617" width="252" height="49" isinstance="0" showstereotype="2"/>
               <usecasewidget xmi.id="uKiUqS8UsHFbQ" localid="uefU5HrWoJ2sA" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" autoresize="1" x="245" y="523" width="196" height="49" isinstance="0" showstereotype="2"/>
@@ -17369,7 +17385,7 @@
     </packagedElement>
   </uml:Model>
   <xmi:Extension extender="umbrello">
-    <docsettings viewid="u2zZh7XubMK9V" documentation="" uniqueid="uhwB6BtNgkt9h"/>
+    <docsettings viewid="u2zZh7XubMK9V" documentation="" uniqueid="umKik84rPYDZz"/>
     <listview>
       <listitem id="Views" type="800" open="1">
         <listitem id="Entity_Relationship_Model" type="836" open="0">
@@ -17381,7 +17397,7 @@
         <listitem id="Deployment_View" type="827" open="0">
           <listitem id="uIo16GErMCHsZ" type="825" label="Diagrama de Distribuição" open="0"/>
         </listitem>
-        <listitem id="Use_Case_View" type="802" open="1">
+        <listitem id="Use_Case_View" type="802" open="0">
           <listitem id="ueX02mQJmEzgx" type="811" open="1"/>
           <listitem id="uKiUqS8UsHFbQ" type="812" open="1"/>
           <listitem id="u9pjkXjWETyWb" type="811" open="1"/>
@@ -17402,14 +17418,14 @@
         <listitem id="Component_View" type="821" open="0">
           <listitem id="uitayHTNqcLlY" type="819" label="Diagrama do Componente" open="0"/>
         </listitem>
-        <listitem id="Logical_View" type="801" open="0">
-          <listitem id="u62lLAy0ImMr8" type="803" open="0">
+        <listitem id="Logical_View" type="801" open="1">
+          <listitem id="u62lLAy0ImMr8" type="803" open="1">
             <listitem id="urJCBe8ogtzZa" type="809" label="Diagrama de Atividade" open="0"/>
           </listitem>
           <listitem id="uFy3C7PRACwd4" type="803" open="1">
             <listitem id="uHmPZpJwRK1Eo" type="803" open="1"/>
             <listitem id="uk5npM359RB8z" type="803" open="1">
-              <listitem id="uh48PiTDPz7Bq" type="803" open="1">
+              <listitem id="uh48PiTDPz7Bq" type="803" open="0">
                 <listitem id="ubD5PWi3u70tH" type="807" label="Diagrama de Classe - Elenco" open="0"/>
                 <listitem id="uN6HJKSP3QFgP" type="807" label="Diagrama de Classe - Estatistica" open="0"/>
                 <listitem id="uMaoS6veP5cdn" type="807" label="Diagrama de Classe - Estilos" open="0"/>
@@ -17432,10 +17448,10 @@
           <listitem id="ud43VW4zcn94E" type="803" open="0">
             <listitem id="us5TbcJuFVySr" type="810" label="Diagrama de Sequência" open="0"/>
           </listitem>
-          <listitem id="u5sM6SCwNyGD6" type="803" open="0">
+          <listitem id="u5sM6SCwNyGD6" type="803" open="1">
             <listitem id="u6KfGHj1lxsE9" type="818" open="1"/>
-            <listitem id="uB9Jy2PPsAT20" type="818" open="1">
-              <listitem id="u913Llx4TE0xK" type="813" open="1">
+            <listitem id="uB9Jy2PPsAT20" type="818" open="0">
+              <listitem id="u913Llx4TE0xK" type="813" open="0">
                 <listitem id="u9qvttrPyvl4O" type="814" open="0"/>
                 <listitem id="uTtm91fYO9JrN" type="814" open="0"/>
               </listitem>
@@ -17453,6 +17469,11 @@
             </listitem>
             <listitem id="uMH2DbgQTCxbX" type="818" open="0"/>
             <listitem id="uJQj5qN0TepxY" type="818" open="1">
+              <listitem id="uqZkBomdPx2py" type="813" open="1"/>
+              <listitem id="u3hbvxygr8hS1" type="813" open="1"/>
+              <listitem id="uwzg9Aq0TuBxq" type="813" open="1"/>
+              <listitem id="uSh0ZDAZ5EJkn" type="813" open="1"/>
+              <listitem id="uaMhBm7GFYjdK" type="813" open="1"/>
               <listitem id="ut1PWinjG9kCD" type="813" open="0">
                 <listitem id="uCXYBlMqKmfdA" type="814" open="0"/>
                 <listitem id="us0CciCADj2HG" type="814" open="0"/>
@@ -17475,6 +17496,7 @@
                 <listitem id="u4lGIn4X5G9nG" type="814" open="0"/>
                 <listitem id="u7GTn5mb5l7ie" type="814" open="0"/>
               </listitem>
+              <listitem id="uz1Od6kAvV7rB" type="813" open="1"/>
               <listitem id="uYyFOWwaI59LG" type="813" open="0">
                 <listitem id="ulLj8pze2BWzR" type="814" open="0"/>
                 <listitem id="uLPFNG8FkwdWP" type="814" open="0"/>
@@ -17495,6 +17517,8 @@
                 <listitem id="uLeoksodnhjtq" type="814" open="0"/>
                 <listitem id="utNTOWM9a7CuZ" type="814" open="0"/>
               </listitem>
+              <listitem id="ulVF1i5M1HZv7" type="813" open="1"/>
+              <listitem id="umKik84rPYDZz" type="813" open="1"/>
               <listitem id="uPcXbARAom7Fo" type="813" open="0">
                 <listitem id="uvWdeISZJcGm3" type="814" open="0"/>
                 <listitem id="ug2nxCR0GPOiI" type="814" open="0"/>
@@ -17505,6 +17529,8 @@
                 <listitem id="urXrmpwr7gLEf" type="814" open="0"/>
                 <listitem id="uGMejFWS9uvTT" type="814" open="0"/>
               </listitem>
+              <listitem id="uMicyroxMLdAr" type="813" open="1"/>
+              <listitem id="uuiD7tAF86lJI" type="813" open="1"/>
               <listitem id="urdHpf5ziFiQY" type="813" open="0">
                 <listitem id="uyUf3TO79Cqgk" type="814" open="0"/>
                 <listitem id="uHgW9PIdIwrVh" type="814" open="0"/>
@@ -17523,6 +17549,7 @@
                 <listitem id="uC6KU7sPz21Pr" type="814" open="0"/>
                 <listitem id="uaZQZzOLzvraP" type="814" open="0"/>
               </listitem>
+              <listitem id="uK3IRP1Zg8cOp" type="813" open="1"/>
               <listitem id="uoFCi5zfEgtZY" type="813" open="0">
                 <listitem id="u938XB3dX7mhj" type="814" open="0"/>
                 <listitem id="uKTuSEhcqH1Zf" type="814" open="0"/>
@@ -17536,6 +17563,7 @@
                 <listitem id="uKsYm1QNcOENj" type="814" open="0"/>
                 <listitem id="u9zIjvNnhz8E0" type="814" open="0"/>
               </listitem>
+              <listitem id="ud5vqg4XX7lnk" type="813" open="1"/>
               <listitem id="uKnpr4LTrXmYx" type="813" open="0">
                 <listitem id="ujl8yNXwpcpqn" type="814" open="0"/>
                 <listitem id="uhmE9lnxGQ4Mv" type="814" open="0"/>
@@ -17555,6 +17583,9 @@
                 <listitem id="uU6W54IjTVpiO" type="814" open="0"/>
                 <listitem id="uoui2upsi9ZwB" type="814" open="0"/>
               </listitem>
+              <listitem id="uy6C3QUkVoxDB" type="813" open="1"/>
+              <listitem id="uIpsXX6xtdrDm" type="813" open="1"/>
+              <listitem id="uo3dHm4sVBBFO" type="813" open="1"/>
               <listitem id="u8ug2ARVAPEkX" type="813" open="0">
                 <listitem id="ujP75m1TYUJIQ" type="814" open="0"/>
                 <listitem id="uGRCD02sowSej" type="814" open="0"/>
@@ -17563,6 +17594,7 @@
                 <listitem id="uzpo9TdiZ9YTj" type="814" open="0"/>
                 <listitem id="uL2cxprN4nNxY" type="814" open="0"/>
               </listitem>
+              <listitem id="uF8OMaNDWxdSx" type="813" open="1"/>
               <listitem id="uE2TeqSRkoo96" type="813" open="0">
                 <listitem id="ueSinwzH9ruzw" type="814" open="0"/>
                 <listitem id="u9fRodelzflF0" type="814" open="0"/>
@@ -17690,7 +17722,7 @@
                 <listitem id="urt55Mr7wkQEZ" type="839" open="0"/>
               </listitem>
             </listitem>
-            <listitem id="utlp9pTrObq4G" type="818" open="1">
+            <listitem id="utlp9pTrObq4G" type="818" open="0">
               <listitem id="uiddnSoK1M7mL" type="813" open="0"/>
               <listitem id="uNvSIh7wqxbge" type="813" open="0"/>
               <listitem id="u4IzLp3AvQVEj" type="813" open="0"/>
@@ -17720,7 +17752,7 @@
               <listitem id="uYqjpCsiEW78k" type="817" open="0"/>
               <listitem id="u1vCFJqhV2O6a" type="817" open="0"/>
             </listitem>
-            <listitem id="utdlLgFmqq0IK" type="818" open="1">
+            <listitem id="utdlLgFmqq0IK" type="818" open="0">
               <listitem id="uWpIkM2smFHxC" type="818" open="0">
                 <listitem id="uOgNRJqh3g9MO" type="813" open="0">
                   <listitem id="uLKycungfAyom" type="814" open="0"/>
