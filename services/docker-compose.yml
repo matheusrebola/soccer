@@ -1,0 +1,36 @@
+services:
+  mariadb-persistence:
+    image: mariadb:latest
+    container_name: soccervs-persistence
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: persistence
+      MARIADB_DATABASE: soccervs-persistence
+      MARIADB_USER: soccervs
+      MARIADB_PASSWORD: soccervs
+    ports:
+      - "55000:3306"
+    volumes:
+      - soccervs_persistence:/var/lib/mysql
+
+  mongodb-reciever:
+    image: mongo:latest
+    container_name: soccervs-reciever
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: soccervs-reciever
+      MONGO_INITDB_ROOT_PASSWORD: soccervs-reciver
+      MONGO_INITDB_DATABASE: soccervs-reciver
+    ports:
+      - "55100:27017"
+    volumes:
+      - soccervs_reciever:/data/db
+    networks:
+      - soccervs
+
+volumes:
+  soccervs_persistence:
+  soccervs_reciever:
+
+networks:
+  soccervs:
