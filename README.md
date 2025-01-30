@@ -74,9 +74,7 @@ A solução funciona em tempo real ou para partidas gravadas, permitindo insight
 ## 🚀 **Contribua para o Projeto!**  
 Estamos sempre buscando melhorias! Se você tem ideias, sugestões ou deseja contribuir para o desenvolvimento, sinta-se à vontade para abrir um pull request no nosso **[GitHub](#)** ou entrar em contato!  
 
-🔗 **GitHub:** [github.com/seu-repo](#)  
-📧 **Contato:** seuemail@dominio.com  
-
+📧 **Contato:** matheus.rebola@outlook.com
 ---
 
 Esse formato está pronto para ser postado no **LinkedIn, Reddit e GitHub**. Se quiser ajustes ou um tom mais técnico ou informal para cada plataforma, me avise! 🚀⚽
