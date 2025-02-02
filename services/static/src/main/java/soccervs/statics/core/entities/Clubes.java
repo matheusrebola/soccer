@@ -28,7 +28,7 @@ public class Clubes {
 	@Column(length = 10)
 	private String dataFundacao;
 	
-	@ManyToOne @JoinColumn(name = "tecnico", nullable = false)
+	@ManyToOne @JoinColumn(name = "tecnico_id", nullable = false)
 	private Tecnicos tecnico;
 	
 }
