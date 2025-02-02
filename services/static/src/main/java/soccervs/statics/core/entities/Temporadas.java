@@ -37,9 +37,9 @@ public class Temporadas {
 	@ManyToOne @JoinColumn(name = "competicao_id", nullable = false)
 	private Competicoes competicao;
 	
-	@OneToMany(mappedBy = "temporada")
+	@OneToMany(mappedBy = "temporadas")
 	private Set<Elencos> elenco;
 	
-	@OneToMany(mappedBy = "temporada")
+	@OneToMany(mappedBy = "temporadas")
 	private Set<Partidas> partida;
 }
