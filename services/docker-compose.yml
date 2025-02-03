@@ -28,9 +28,41 @@ services:
     networks:
       - soccervs
 
+  mongodb-pitches:
+    image: mongo:latest
+    container_name: soccervs-pitches 
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: soccervs-pitches 
+      MONGO_INITDB_ROOT_PASSWORD: soccervs-pitches
+      MONGO_INITDB_DATABASE: soccervs-pitches
+    ports:
+      - "55110:27017"
+    volumes:
+      - soccervs_pitches:/data/db
+    networks:
+      - soccervs
+
+  mongodb-analitics:
+    image: mongo:latest
+    container_name: soccervs-analitics
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: soccervs-analitics
+      MONGO_INITDB_ROOT_PASSWORD: soccervs-analitics
+      MONGO_INITDB_DATABASE: soccervs-analitics
+    ports:
+      - "55120:27017"
+    volumes:
+      - soccervs_analitics:/data/db
+    networks:
+      - soccervs
+
 volumes:
   soccervs_persistence:
   soccervs_reciever:
+  soccervs_pitches:
+  soccervs_analitics:
 
 networks:
   soccervs:
