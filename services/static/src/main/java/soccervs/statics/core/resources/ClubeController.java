@@ -2,6 +2,7 @@ package soccervs.statics.core.resources;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import soccervs.statics.core.dtos.ClubeByCityDTO;
 import soccervs.statics.core.dtos.ClubeCreateDTO;
 import soccervs.statics.core.dtos.ClubeDTO;
 import soccervs.statics.core.entities.Clubes;
@@ -55,8 +57,19 @@ public class ClubeController {
 	    return ResponseEntity.ok(dto);
 	}
 	
-	public void encontrarPorCidade() {
+	@GetMapping("/nome")
+	public ResponseEntity<Set<ClubeDTO>> encontrarPorNome(@RequestBody String cidade) {
 		
+		return null;
+	}
+	
+	@GetMapping("/cidade")
+	public ResponseEntity<Set<ClubeByCityDTO>> encontrarPorCidade(@RequestBody String cidade) {
+		Set<ClubeByCityDTO> dto = service.findByCity(cidade);
+		if(dto.isEmpty()) {
+			throw new NotFoundedException("Clube não encontrado por cidade");
+		}
+		return ResponseEntity.ok(dto);
 	}
 	
 	public void encontrarPorPais() {
