@@ -26,12 +26,28 @@ public class ClubeController {
 	private ClubeService service;
 	
 	@PostMapping
-	public ResponseEntity<ClubeDTO> cadastrarClube(@RequestBody ClubeCreateDTO createDTO){
+	public ResponseEntity<ClubeDTO> cadastrarClube(@RequestBody ClubeCreateDTO createDTO) {
 		Clubes clube = mapper.map(createDTO);
 		Clubes clubeSaved = service.save(clube);
 		Short id = service.getId(clubeSaved);
 		ClubeDTO dto = mapper.map(clubeSaved);
 		URI location = URI.create("/clubes/" + id);
 		return ResponseEntity.created(location).body(dto);
+	}
+	
+	public void encontrarTodos() {
+		
+	}
+	
+	public void encontrarPorCidade() {
+		
+	}
+	
+	public void encontrarPorPais() {
+		
+	}
+	
+	public void encontrarPorTecnico() {
+		
 	}
 }
