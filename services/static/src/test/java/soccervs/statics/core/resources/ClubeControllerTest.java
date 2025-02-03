@@ -22,9 +22,13 @@ class ClubeControllerTest {
 	@Autowired
 	private ClubeMapper mapper;
 	
+	@Autowired
+	private ClubeService service;
+	
 	@Test
 	void testcadastrarClube(ClubeCreateDTO createDTO) throws Exception {
 		Clubes clube = mapper.map(createDTO);
+		
 		
 		mockMvc.perform(post("/clubes"))
         .andExpect(status().isCreated());
