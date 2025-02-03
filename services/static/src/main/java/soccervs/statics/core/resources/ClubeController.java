@@ -1,6 +1,7 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,9 @@ public class ClubeController {
 		return ResponseEntity.created(location).body(dto);
 	}
 	
-	public void encontrarTodos() {
+	public ResponseEntity<List<ClubeDTO>> encontrarTodos() {
+		List<Clubes> clubes = service.findAll();
+		
 		
 	}
 	
