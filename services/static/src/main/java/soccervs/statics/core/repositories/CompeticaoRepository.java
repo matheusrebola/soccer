@@ -7,5 +7,7 @@ import soccervs.statics.core.entities.Competicoes;
 
 @Repository
 public interface CompeticaoRepository extends JpaRepository<Competicoes, Short> {
+	
+	Short findId(Competicoes c);
 
 }
