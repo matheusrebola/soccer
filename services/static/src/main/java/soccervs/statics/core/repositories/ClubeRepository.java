@@ -7,5 +7,5 @@ import soccervs.statics.core.entities.Clubes;
 
 @Repository
 public interface ClubeRepository extends JpaRepository<Clubes, Short> {
-
+	Short getId(Clubes clube);
 }
