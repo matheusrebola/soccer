@@ -57,12 +57,6 @@ public class ClubeController {
 	    return ResponseEntity.ok(dto);
 	}
 	
-	@GetMapping("/nome")
-	public ResponseEntity<Set<ClubeDTO>> encontrarPorNome(@RequestBody String cidade) {
-		
-		return null;
-	}
-	
 	@GetMapping("/cidade")
 	public ResponseEntity<Set<ClubeByCityDTO>> encontrarPorCidade(@RequestBody String cidade) {
 		Set<ClubeByCityDTO> dto = service.findByCity(cidade);
@@ -71,12 +65,5 @@ public class ClubeController {
 		}
 		return ResponseEntity.ok(dto);
 	}
-	
-	public void encontrarPorPais() {
-		
-	}
-	
-	public void encontrarPorTecnico() {
-		
-	}
+
 }
