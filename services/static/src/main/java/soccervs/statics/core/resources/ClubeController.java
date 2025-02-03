@@ -4,7 +4,6 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +15,7 @@ import soccervs.statics.core.dtos.ClubeCreateDTO;
 import soccervs.statics.core.dtos.ClubeDTO;
 import soccervs.statics.core.entities.Clubes;
 import soccervs.statics.core.mappers.ClubeMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.services.ClubeService;
 
 @RestController
@@ -40,9 +40,12 @@ public class ClubeController {
 	
 	@GetMapping
 	public ResponseEntity<List<ClubeDTO>> encontrarTodos() {
-		List<Clubes> clubes = service.findAll();
-		List<ClubeDTO> dto = mapper.map(clubes);
-		return ResponseEntity.status(HttpStatus.FOUND).body(dto);
+	    List<Clubes> clubes = service.findAll();
+	    if (clubes.isEmpty()) {
+	        throw new NotFoundedException("Clube não encontrado");
+	    }
+	    List<ClubeDTO> dto = mapper.map(clubes);
+	    return ResponseEntity.ok(dto);
 	}
 	
 	public void encontrarPorCidade() {
