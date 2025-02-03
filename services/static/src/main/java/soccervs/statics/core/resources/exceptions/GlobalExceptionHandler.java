@@ -12,4 +12,10 @@ public class GlobalExceptionHandler {
     public String handleNotFoundException(NotFoundedException ex) {
         return ex.getMessage();
     }
+	
+	@ExceptionHandler(NotPersistedException.class)
+    @ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
+    public String handleNotPersistedException(NotPersistedException ex) {
+        return ex.getMessage();
+    }
 }
