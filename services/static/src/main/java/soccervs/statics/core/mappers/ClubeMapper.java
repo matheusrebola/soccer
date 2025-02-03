@@ -18,8 +18,14 @@ public class ClubeMapper {
 		return c;
 	}
 	
+	public Clubes map(ClubeDTO dto) {
+		Clubes c = mapper.map(dto, Clubes.class);
+		return c;
+	}
+	
 	public ClubeDTO map(Clubes c) {
 		ClubeDTO dto = mapper.map(c, ClubeDTO.class);
 		return dto;
 	}
+	
 }
