@@ -16,6 +16,7 @@ import soccervs.statics.core.dtos.ClubeDTO;
 import soccervs.statics.core.entities.Clubes;
 import soccervs.statics.core.mappers.ClubeMapper;
 import soccervs.statics.core.resources.exceptions.NotFoundedException;
+import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.ClubeService;
 
 @RestController
@@ -30,12 +31,18 @@ public class ClubeController {
 	
 	@PostMapping
 	public ResponseEntity<ClubeDTO> cadastrarClube(@RequestBody ClubeCreateDTO createDTO) {
-		Clubes clube = mapper.map(createDTO);
-		Clubes clubeSaved = service.save(clube);
-		Short id = service.getId(clubeSaved);
-		ClubeDTO dto = mapper.map(clubeSaved);
-		URI location = URI.create("/clubes/" + id);
-		return ResponseEntity.created(location).body(dto);
+	    Clubes clube = mapper.map(createDTO);
+	    Clubes clubeSaved = service.save(clube);
+
+	    if (clubeSaved == null) {
+	        throw new NotPersistedException("Clube não persistido");
+	    }
+
+	    Short id = service.getId(clubeSaved);
+	    ClubeDTO dto = mapper.map(clubeSaved);
+	    URI location = URI.create("/clubes/" + id);
+
+	    return ResponseEntity.created(location).body(dto);
 	}
 	
 	@GetMapping
