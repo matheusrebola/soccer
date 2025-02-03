@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import soccervs.statics.core.dtos.ClubeCreateDTO;
+import soccervs.statics.core.dtos.ClubeDTO;
 import soccervs.statics.core.entities.Clubes;
 
 @Component
@@ -15,5 +16,10 @@ public class ClubeMapper {
 	public Clubes map(ClubeCreateDTO dto) {
 		Clubes c = mapper.map(dto, Clubes.class);
 		return c;
+	}
+	
+	public ClubeDTO map(Clubes c) {
+		ClubeDTO dto = mapper.map(c, ClubeDTO.class);
+		return dto;
 	}
 }
