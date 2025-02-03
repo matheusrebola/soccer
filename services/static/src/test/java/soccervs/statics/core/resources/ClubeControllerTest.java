@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import soccervs.statics.core.dtos.ClubeCreateDTO;
 import soccervs.statics.core.entities.Clubes;
 import soccervs.statics.core.mappers.ClubeMapper;
+import soccervs.statics.core.services.ClubeService;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -28,7 +29,8 @@ class ClubeControllerTest {
 	@Test
 	void testcadastrarClube(ClubeCreateDTO createDTO) throws Exception {
 		Clubes clube = mapper.map(createDTO);
-		
+		Clubes clubeSaved = service.save(clube);
+		ClubeDTO dto = mapper.map(clubeSaved);
 		
 		mockMvc.perform(post("/clubes"))
         .andExpect(status().isCreated());
