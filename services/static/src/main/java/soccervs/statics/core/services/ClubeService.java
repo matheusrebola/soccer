@@ -15,4 +15,7 @@ public class ClubeService {
 		return repository.save(clube);
 	}
 
+	public Short getId(Clubes clube) {
+		return repository.getId(clube);
+	}
 }
