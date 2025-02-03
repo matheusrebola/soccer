@@ -1,5 +1,7 @@
 package soccervs.statics.core.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,9 @@ public class ClubeService {
 
 	public Short getId(Clubes clube) {
 		return repository.getId(clube);
+	}
+
+	public List<Clubes> findAll() {
+		return repository.findAll();
 	}
 }
