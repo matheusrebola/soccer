@@ -15,19 +15,19 @@ public class ClubeService {
 	@Autowired
 	private ClubeRepository repository;
 	
-	public Clubes save(Clubes clube) {
+	public Clubes salvar(Clubes clube) {
 		return repository.save(clube);
 	}
 
-	public Short getId(Clubes clube) {
-		return repository.getId(clube);
+	public Short pegarId(Clubes clube) {
+		return repository.findIdByClube(clube);
 	}
 
-	public List<Clubes> findAll() {
+	public List<Clubes> encontrarTodos() {
 		return repository.findAll();
 	}
 	
-	public Set<ClubeByCityDTO> findByCity(String cidade) {
+	public Set<ClubeByCityDTO> encontrarPelaCidade(String cidade) {
 		return repository.findByCity(cidade);
 	}
 }

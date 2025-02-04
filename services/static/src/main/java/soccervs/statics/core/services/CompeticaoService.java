@@ -17,8 +17,8 @@ public class CompeticaoService {
 		return repository.save(c);
 	}
 	
-	public Short encotrarId(Competicoes c) {
-		return repository.findId(c);
+	public Short pegarId(Competicoes c) {
+		return repository.findIdByCompeticao(c);
 	}
 	
 	public List<Competicoes> encontrarTodos() {
