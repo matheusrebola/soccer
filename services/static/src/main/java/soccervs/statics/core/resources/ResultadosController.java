@@ -1,10 +1,14 @@
 package soccervs.statics.core.resources;
 
+import java.net.URI;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import soccervs.statics.core.dtos.ResultadoCreateDTO;
+import soccervs.statics.core.dtos.ResultadoDTO;
 import soccervs.statics.core.entities.Resultados;
 import soccervs.statics.core.mappers.ResultadosMapper;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
@@ -23,7 +27,7 @@ public class ResultadosController {
 	private ResultadosService service;
 	
 	@PostMapping
-	public void cadastrarResultado(@RequestBody ResultadoCreateDTO createDTO) {
+	public ResponseEntity<ResultadoDTO> cadastrarResultado(@RequestBody ResultadoCreateDTO createDTO) {
 		Resultados resultado = mapper.map(createDTO);
 		Resultados saved = service.salvar(resultado);
 		
@@ -32,6 +36,10 @@ public class ResultadosController {
 		}
 		
 		Long id = service.pegarId(saved);
+		URI location = URI.create("/resultados/"+id);
+		ResultadoDTO dto = mapper.map(saved);
+		
+		return ResponseEntity.created(location).body(dto);
 	}
 	
 }
