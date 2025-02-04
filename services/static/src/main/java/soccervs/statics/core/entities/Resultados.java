@@ -37,7 +37,7 @@ public class Resultados {
 	private Byte sofridos;
 	
 	@Column
-	private Byte desempenho;
+	private Float desempenho;
 	
 	@ManyToOne @JoinColumn(name = "competicao_id", nullable = false)
 	private Competicoes competicao;
