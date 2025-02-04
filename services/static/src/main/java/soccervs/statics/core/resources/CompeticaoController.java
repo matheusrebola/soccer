@@ -30,7 +30,7 @@ public class CompeticaoController {
 	private CompeticaoService service;
 	
 	@PostMapping
-	public ResponseEntity<CompeticaoDTO> criarCompeticao(@RequestBody CompeticaoCreateDTO createDTO) {
+	public ResponseEntity<CompeticaoDTO> cadastrarCompeticao(@RequestBody CompeticaoCreateDTO createDTO) {
 		Competicoes competicao = mapper.map(createDTO);
 		Competicoes saved = service.salvar(competicao);
 		
