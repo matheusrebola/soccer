@@ -3,6 +3,8 @@ package soccervs.statics.core.resources;
 import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +29,7 @@ public class PartidasController {
 	private PartidasService service;
 	
 	@PostMapping
-	public void cadastrarPartida(@RequestBody PartidaCreateDTO createDTO) {
+	public ResponseEntity<PartidaDTO> cadastrarPartida(@RequestBody PartidaCreateDTO createDTO) {
 		Partidas partida = mapper.map(createDTO);
 		Partidas saved = service.salvar(partida);
 		
@@ -38,6 +40,13 @@ public class PartidasController {
 		Long id = service.pegarId(partida);
 		URI location = URI.create("/partidas/"+id);
 		PartidaDTO dto = mapper.map(saved);
+		
+		return ResponseEntity.created(location).body(dto);
+	}
+	
+	@GetMapping
+	public void encontrarTodos() {
+		
 	}
 	
 }
