@@ -1,5 +1,7 @@
 package soccervs.statics.core.entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,8 +25,8 @@ public class Clubes {
 	@Column(length = 50)
 	private String pais;
 	
-	@Column(length = 10)
-	private String dataFundacao;
+	@Column(name = "data_fundacao")
+	private LocalDate dataFundacao;
 	
 	@ManyToOne @JoinColumn(name = "tecnico_id", nullable = false)
 	private Tecnicos tecnico;
