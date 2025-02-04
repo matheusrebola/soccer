@@ -15,4 +15,8 @@ public class JogadorService {
 	public Jogadores salvar(Jogadores j) {
 		return repository.save(j);
 	}
+
+	public Long pegarId(Jogadores j) {
+		return repository.findIdByJogador(j);
+	}
 }
