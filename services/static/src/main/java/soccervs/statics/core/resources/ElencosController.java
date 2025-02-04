@@ -1,6 +1,7 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import soccervs.statics.core.dtos.ElencoCreateDTO;
 import soccervs.statics.core.dtos.ElencoDTO;
 import soccervs.statics.core.entities.Elencos;
 import soccervs.statics.core.mappers.ElencoMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.ElencoService;
 
@@ -32,7 +34,7 @@ public class ElencosController {
 		Elencos saved = service.salvar(elenco);
 		
 		if (saved == null) {
-			throw new NotPersistedException("Competicao não persistida");
+			throw new NotPersistedException("Elenco não persistido");
 		}
 		Integer id = service.pegarId(elenco);
 		URI location = URI.create("/elencos/"+id);
@@ -41,7 +43,13 @@ public class ElencosController {
 	}
 	
 	@GetMapping
-	public void encontrarTodos() {
+	public ResponseEntity<List<ElencoDTO>> encontrarTodos() {
+		List<Elencos> elenco = service.encontrarTodos();
 		
+		if (elenco.isEmpty()) {
+			throw new NotFoundedException("Competicoes não encontradas");
+		}
+		List<ElencoDTO> dto = mapper.map(elenco);
+		return ResponseEntity.ok(dto);
 	}
 }
