@@ -38,7 +38,7 @@ public class CompeticaoController {
 			throw new NotPersistedException("Competicao não persistida");
 		}
 		
-		Short id = service.encotrarId(competicao);
+		Short id = service.pegarId(competicao);
 		URI location = URI.create("/competicoes/" + id);
 		CompeticaoDTO dto = mapper.map(saved);
 		return ResponseEntity.created(location).body(dto);
