@@ -48,7 +48,7 @@ public class ResultadosController {
 	}
 	
 	@GetMapping
-	public void encontrarTodos() {
+	public ResponseEntity<List<ResultadoDTO>> encontrarTodos() {
 		List<Resultados> resultados = service.encontrarTodos();
 		
 		if (resultados.isEmpty()) {
@@ -56,6 +56,7 @@ public class ResultadosController {
 		}
 		
 		List<ResultadoDTO> dto = mapper.map(resultados);
+		return ResponseEntity.ok(dto);
 	}
 	
 }
