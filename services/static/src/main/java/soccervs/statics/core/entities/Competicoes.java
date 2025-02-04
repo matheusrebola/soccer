@@ -34,15 +34,15 @@ public class Competicoes {
 	@Column(name = "pais_ou_regiao", length = 50)
 	private String paisRegiao;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Titulos> titulo;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Temporadas> temporada;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Resultados> resultado;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Partidas> partida;
 }
