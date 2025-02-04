@@ -15,4 +15,8 @@ public class PartidasService {
 	public Partidas salvar(Partidas p) {
 		return repository.save(p);
 	}
+
+	public Long pegarId(Partidas p) {
+		return repository.findIdByPartida(p);
+	}
 }
