@@ -15,6 +15,7 @@ import soccervs.statics.core.dtos.ResultadoCreateDTO;
 import soccervs.statics.core.dtos.ResultadoDTO;
 import soccervs.statics.core.entities.Resultados;
 import soccervs.statics.core.mappers.ResultadosMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.ResultadosService;
 
@@ -49,6 +50,12 @@ public class ResultadosController {
 	@GetMapping
 	public void encontrarTodos() {
 		List<Resultados> resultados = service.encontrarTodos();
+		
+		if (resultados.isEmpty()) {
+			throw new NotFoundedException("Posicoes não encontradas");
+		}
+		
+		List<ResultadoDTO> dto = mapper.map(resultados);
 	}
 	
 }

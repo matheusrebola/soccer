@@ -1,5 +1,8 @@
 package soccervs.statics.core.mappers;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,5 +25,11 @@ public class ResultadosMapper {
 	public ResultadoDTO map(Resultados saved) {
 		ResultadoDTO dto = mapper.map(saved, ResultadoDTO.class);
 		return dto;
+	}
+
+	public List<ResultadoDTO> map(List<Resultados> r) {
+		return r.stream()
+				.map(resultados -> mapper.map(r, ResultadoDTO.class))
+				.collect(Collectors.toList());
 	}
 }
