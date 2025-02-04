@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import soccervs.statics.core.dtos.PartidaCreateDTO;
+import soccervs.statics.core.dtos.PartidaDTO;
 import soccervs.statics.core.entities.Partidas;
 import soccervs.statics.core.mappers.PartidasMapper;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
@@ -36,7 +37,7 @@ public class PartidasController {
 		
 		Long id = service.pegarId(partida);
 		URI location = URI.create("/partidas/"+id);
-		
+		PartidaDTO dto = mapper.map(saved);
 	}
 	
 }
