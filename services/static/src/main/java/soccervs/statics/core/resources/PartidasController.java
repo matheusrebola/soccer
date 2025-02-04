@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import soccervs.statics.core.dtos.PartidaCreateDTO;
 import soccervs.statics.core.mappers.PartidasMapper;
 import soccervs.statics.core.services.PartidasService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +22,7 @@ public class PartidasController {
 	private PartidasService service;
 	
 	@PostMapping
-	public void cadastrarPartida(@RequestBody String entity) {
+	public void cadastrarPartida(@RequestBody PartidaCreateDTO createDTO) {
 		
 	}
 	
