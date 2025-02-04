@@ -15,6 +15,7 @@ import soccervs.statics.core.dtos.PartidaCreateDTO;
 import soccervs.statics.core.dtos.PartidaDTO;
 import soccervs.statics.core.entities.Partidas;
 import soccervs.statics.core.mappers.PartidasMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.PartidasService;
 
@@ -48,6 +49,12 @@ public class PartidasController {
 	@GetMapping
 	public void encontrarTodos() {
 		List<Partidas> partidas = service.encontrarTodos();
+		
+		if (partidas.isEmpty()) {
+			throw new NotFoundedException("Partidas não encontradas");
+		}
+		
+		List<PartidaDTO> dto = mapper.map(partidas);
 	}
 	
 }
