@@ -33,10 +33,10 @@ public class Jogadores {
 	private EPePreferido pePreferido;
 	
 	@Column
-	private Byte altura;
+	private Float altura;
 	
 	@Column
-	private Byte peso;
+	private Float peso;
 	
 	@OneToMany(mappedBy = "jogadores")
 	private Set<Posicoes> posicao;
