@@ -38,9 +38,6 @@ public class Partidas {
 	@ManyToOne @JoinColumn(name = "tecnico_id", nullable = false)
 	private Tecnicos tecnico;
 	
-	@ManyToOne @JoinColumn(name = "jogador_id", nullable = false)
-	private Jogadores jogador;
-	
 	@ManyToOne @JoinColumn(name = "temporada_id", nullable = false)
 	private Temporadas temporada;
 	
