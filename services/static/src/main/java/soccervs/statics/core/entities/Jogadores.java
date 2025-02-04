@@ -38,7 +38,7 @@ public class Jogadores {
 	@Column
 	private Float peso;
 	
-	@OneToMany(mappedBy = "jogador")
+	@OneToMany(mappedBy = "posicao")
 	private Set<Posicoes> posicao;
 	
 	@OneToMany(mappedBy = "jogador")
