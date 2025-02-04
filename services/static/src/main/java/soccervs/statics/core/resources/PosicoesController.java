@@ -24,6 +24,7 @@ public class PosicoesController {
 	@PostMapping
 	public void cadastrarPosicao(@RequestBody PosicaoCreateDTO createDTO) {
 		Posicoes posicao = mapper.map(createDTO);
+		Posicoes saved = service.save(posicao);
 	}
 	
 }
