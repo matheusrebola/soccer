@@ -27,6 +27,7 @@ public class JogadoresElencoController {
 	@PostMapping
 	public void postMethodName(@RequestBody JElencoCreateDTO createDTO) {
 		JogadoresElenco jElenco = mapper.map(createDTO);
+		JogadoresElenco saved = service.salvar(jElenco);
 	}
 	
 	@GetMapping
