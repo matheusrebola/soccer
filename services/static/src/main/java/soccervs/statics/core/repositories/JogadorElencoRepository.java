@@ -10,6 +10,6 @@ import soccervs.statics.core.entities.JogadoresElenco;
 @Repository
 public interface JogadorElencoRepository extends JpaRepository<JogadoresElenco, Integer> {
 	@Query("SELECT j.id FROM JogadoresElenco j WHERE j = :jogador")
-	Integer findIdByJogadorElenco(@Param("jogador") JogadoresElenco j);
+	Integer findIdByJogadorElenco(@Param("jogador") JogadoresElenco jogador);
 
 }
