@@ -12,15 +12,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
-@Entity(name="temporadas")
+@Entity
 @Table(name="tb_temporadas")
-@Getter
-@Setter
-@RequiredArgsConstructor
 public class Temporadas {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Short id;

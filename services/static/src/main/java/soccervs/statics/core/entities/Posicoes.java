@@ -10,13 +10,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 import soccervs.statics.core.entities.enums.EFuncaoPosicao;
 import soccervs.statics.core.entities.enums.EPosicoes;
 
-@Entity(name="posicoes")
+@Entity
 @Table(name="tb_posicoes")
-@RequiredArgsConstructor
 public class Posicoes {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Byte id;

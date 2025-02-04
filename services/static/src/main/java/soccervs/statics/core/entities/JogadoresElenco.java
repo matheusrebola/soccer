@@ -10,14 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 import soccervs.statics.core.entities.enums.EContribuicao;
 import soccervs.statics.core.entities.enums.EFuncaoJogador;
 import soccervs.statics.core.entities.enums.EPersonalidade;
 
-@Entity(name="jogadores_elenco")
+@Entity
 @Table(name="tb_jogadores_no_elenco")
-@RequiredArgsConstructor
 public class JogadoresElenco {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;

@@ -12,12 +12,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 import soccervs.statics.core.entities.enums.EPePreferido;
 
-@Entity(name="jogadores")
+@Entity
 @Table(name="tb_jogadores")
-@RequiredArgsConstructor
 public class Jogadores {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

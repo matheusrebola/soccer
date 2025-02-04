@@ -12,13 +12,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 import soccervs.statics.core.entities.enums.ECompeticao;
 import soccervs.statics.core.entities.enums.EDisputa;
 
-@Entity(name="competicoes")
+@Entity
 @Table(name="tb_competicoes")
-@RequiredArgsConstructor
 public class Competicoes {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Short id;

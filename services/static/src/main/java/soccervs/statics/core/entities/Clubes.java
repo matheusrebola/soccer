@@ -8,11 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 
-@Entity(name="clubes")
+@Entity
 @Table(name="tb_clubes")
-@RequiredArgsConstructor
 public class Clubes {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Short id;
