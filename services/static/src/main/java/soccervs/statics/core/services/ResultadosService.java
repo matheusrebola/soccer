@@ -15,4 +15,8 @@ public class ResultadosService {
 	public Resultados salvar(Resultados r) {
 		return repository.save(r);
 	}
+
+	public Long pegarId(Resultados r) {
+		return repository.findIdByResultado(r);
+	}
 }
