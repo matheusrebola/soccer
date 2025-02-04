@@ -15,4 +15,8 @@ public class PosicoesService {
 	public Posicoes save(Posicoes posicao) {
 		return repository.save(posicao);
 	}
+
+	public Byte pegarId(Posicoes posicao) {
+		return repository.findIdByPosicao(posicao);
+	}
 }
