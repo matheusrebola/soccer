@@ -1,5 +1,7 @@
 package soccervs.statics.core.resources;
 
+import java.net.URI;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import soccervs.statics.core.dtos.PosicaoCreateDTO;
+import soccervs.statics.core.dtos.PosicaoDTO;
 import soccervs.statics.core.entities.Posicoes;
 import soccervs.statics.core.mappers.PosicoesMapper;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
@@ -31,7 +34,10 @@ public class PosicoesController {
 			throw new NotPersistedException("Posicao não persistida");
 		}
 		
-		Byte id = service.pegarId(posicao);
+		Byte id = service.pegarId(saved);
+		URI location = URI.create("/posicoes/"+id);
+		PosicaoDTO dto = mapper.map(saved);
+		
 	}
 	
 }
