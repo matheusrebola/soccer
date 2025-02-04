@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import soccervs.statics.core.dtos.PosicaoCreateDTO;
 import soccervs.statics.core.mappers.PosicoesMapper;
 import soccervs.statics.core.services.PosicoesService;
 
@@ -20,7 +21,7 @@ public class PosicoesController {
 	private PosicoesService service;
 	
 	@PostMapping
-	public void cadastrarPosicao() {
+	public void cadastrarPosicao(@RequestBody PosicaoCreateDTO createDTO) {
 	}
 	
 }
