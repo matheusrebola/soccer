@@ -9,6 +9,6 @@ import soccervs.statics.core.entities.Elencos;
 
 @Repository
 public interface ElencoRepository extends JpaRepository<Elencos, Integer> {
-	@Query("SELECT c.id FROM Elencos c WHERE c = :elenco")
+	@Query("SELECT e.id FROM Elencos e WHERE e = :elenco")
     Integer findIdByElenco(@Param("elenco") Elencos elenco);
 }
