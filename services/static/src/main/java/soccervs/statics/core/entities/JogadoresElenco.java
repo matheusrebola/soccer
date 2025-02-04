@@ -1,5 +1,6 @@
 package soccervs.statics.core.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -29,9 +30,9 @@ public class JogadoresElenco {
 	@Column @Enumerated(EnumType.STRING)
 	private EPersonalidade personalidade;
 	
-	@ManyToOne @JoinColumn(name = "elenco_id", nullable = false)
+	@ManyToOne(cascade = CascadeType.ALL) @JoinColumn(name = "elenco_id", nullable = false)
 	private Elencos elenco;
 	
-	@ManyToOne @JoinColumn(name = "jogador_id", nullable = false)
+	@ManyToOne(cascade = CascadeType.ALL) @JoinColumn(name = "jogador_id", nullable = false)
 	private Jogadores jogador;
 }
