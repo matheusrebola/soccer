@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import soccervs.statics.core.dtos.ElencoCreateDTO;
+import soccervs.statics.core.dtos.ElencoDTO;
 import soccervs.statics.core.entities.Elencos;
 
 @Component
@@ -15,5 +16,10 @@ public class ElencoMapper {
 	public Elencos map(ElencoCreateDTO dto) {
 		Elencos e = mapper.map(dto, Elencos.class);
 		return e;
+	}
+	
+	public ElencoDTO map(Elencos e) {
+		ElencoDTO dto = mapper.map(e, ElencoDTO.class);
+		return dto;
 	}
 }
