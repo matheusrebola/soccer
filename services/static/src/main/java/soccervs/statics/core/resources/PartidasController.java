@@ -1,6 +1,7 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +47,7 @@ public class PartidasController {
 	
 	@GetMapping
 	public void encontrarTodos() {
-		
+		List<Partidas> partidas = service.encontrarTodos();
 	}
 	
 }
