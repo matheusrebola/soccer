@@ -1,6 +1,6 @@
 package soccervs.statics.core.entities;
 
-import java.time.Year;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,11 +11,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 
-@Entity(name="elencos")
+@Entity
 @Table(name="tb_elencos")
-@RequiredArgsConstructor
 public class Elencos {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -24,7 +22,7 @@ public class Elencos {
 	private String nome;
 	
 	@Column(name = "ano_formacao")
-	private Year anoFormacao;
+	private Short anoFormacao;
 	
 	@Column(name = "tecnico_responsavel")
 	private String tecnicoResponsavel;
@@ -38,6 +36,6 @@ public class Elencos {
 	@ManyToOne @JoinColumn(name = "temporada_id", nullable = false)
 	private Temporadas temporada;
 	
-	@OneToMany(mappedBy = "elencos")
-	private JogadoresElenco jogadoresElenco;
+	@OneToMany(mappedBy = "elenco")
+	private Set<JogadoresElenco> jogadoresElenco;
 }

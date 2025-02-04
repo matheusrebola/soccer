@@ -8,11 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 
-@Entity(name="resultados")
+@Entity
 @Table(name="tb_resultados")
-@RequiredArgsConstructor
 public class Resultados {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -39,7 +37,7 @@ public class Resultados {
 	private Byte sofridos;
 	
 	@Column
-	private Byte desempenho;
+	private Float desempenho;
 	
 	@ManyToOne @JoinColumn(name = "competicao_id", nullable = false)
 	private Competicoes competicao;

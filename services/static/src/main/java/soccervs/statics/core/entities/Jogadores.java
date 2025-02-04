@@ -12,12 +12,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 import soccervs.statics.core.entities.enums.EPePreferido;
 
-@Entity(name="jogadores")
+@Entity
 @Table(name="tb_jogadores")
-@RequiredArgsConstructor
 public class Jogadores {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -35,17 +33,14 @@ public class Jogadores {
 	private EPePreferido pePreferido;
 	
 	@Column
-	private Byte altura;
+	private Float altura;
 	
 	@Column
-	private Byte peso;
+	private Float peso;
 	
-	@OneToMany(mappedBy = "jogadores")
+	@OneToMany(mappedBy = "posicao")
 	private Set<Posicoes> posicao;
 	
-	@OneToMany(mappedBy = "jogadores")
-	private Set<Partidas> partida;
-	
-	@OneToMany(mappedBy = "jogadores")
+	@OneToMany(mappedBy = "jogador")
 	private Set<JogadoresElenco> jogadoresElenco;
 }

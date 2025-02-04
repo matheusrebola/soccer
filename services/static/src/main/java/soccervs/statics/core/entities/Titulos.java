@@ -12,13 +12,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 import soccervs.statics.core.entities.enums.ECompeticao;
 import soccervs.statics.core.entities.enums.EParticipante;
 
-@Entity(name="titulos")
+@Entity
 @Table(name="tb_titulos")
-@RequiredArgsConstructor
 public class Titulos {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -39,7 +37,7 @@ public class Titulos {
 	private Year conquista;
 	
 	@Column(name = "tipo_titulo") @Enumerated(EnumType.STRING)
-	private ECompeticao titulo;
+	private ECompeticao tipoTitulo;
 	
 	@Column(name = "participante_id")
 	private Long participante;

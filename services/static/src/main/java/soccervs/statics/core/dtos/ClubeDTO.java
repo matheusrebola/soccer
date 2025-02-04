@@ -1,5 +1,7 @@
 package soccervs.statics.core.dtos;
 
+import java.time.LocalDate;
+
 import lombok.Data;
 
 @Data
@@ -8,6 +10,6 @@ public class ClubeDTO {
 	private String nome;
 	private String cidade;
 	private String pais;
-	private String dataFundacao;
+	private LocalDate dataFundacao;
 	private Integer tecnico;
 }

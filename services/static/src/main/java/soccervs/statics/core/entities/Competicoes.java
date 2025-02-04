@@ -1,6 +1,4 @@
 package soccervs.statics.core.entities;
-
-import java.time.Year;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -12,13 +10,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 import soccervs.statics.core.entities.enums.ECompeticao;
 import soccervs.statics.core.entities.enums.EDisputa;
 
-@Entity(name="competicoes")
+@Entity
 @Table(name="tb_competicoes")
-@RequiredArgsConstructor
 public class Competicoes {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Short id;
@@ -27,7 +23,7 @@ public class Competicoes {
 	private String nome;
 	
 	@Column
-	private Year ano;
+	private Short ano;
 	
 	@Column(name = "tipo_competicao") @Enumerated(EnumType.STRING)
 	private ECompeticao tipoCompeticao;
@@ -38,15 +34,15 @@ public class Competicoes {
 	@Column(name = "pais_ou_regiao", length = 50)
 	private String paisRegiao;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Titulos> titulo;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Temporadas> temporada;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Resultados> resultado;
 	
-	@OneToMany(mappedBy = "competicoes")
+	@OneToMany(mappedBy = "competicao")
 	private Set<Partidas> partida;
 }

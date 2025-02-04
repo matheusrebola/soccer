@@ -34,13 +34,13 @@ public class ClubeController {
 	@PostMapping
 	public ResponseEntity<ClubeDTO> cadastrarClube(@RequestBody ClubeCreateDTO createDTO) {
 	    Clubes clube = mapper.map(createDTO);
-	    Clubes clubeSaved = service.save(clube);
+	    Clubes clubeSaved = service.salvar(clube);
 
 	    if (clubeSaved == null) {
 	        throw new NotPersistedException("Clube não persistido");
 	    }
 
-	    Short id = service.getId(clubeSaved);
+	    Short id = service.pegarId(clubeSaved);
 	    ClubeDTO dto = mapper.map(clubeSaved);
 	    URI location = URI.create("/clubes/" + id);
 
@@ -49,7 +49,7 @@ public class ClubeController {
 	
 	@GetMapping
 	public ResponseEntity<List<ClubeDTO>> encontrarTodos() {
-	    List<Clubes> clubes = service.findAll();
+	    List<Clubes> clubes = service.encontrarTodos();
 	    if (clubes.isEmpty()) {
 	        throw new NotFoundedException("Clube não encontrado");
 	    }
@@ -59,7 +59,7 @@ public class ClubeController {
 	
 	@GetMapping("/cidade")
 	public ResponseEntity<Set<ClubeByCityDTO>> encontrarPorCidade(@RequestBody String cidade) {
-		Set<ClubeByCityDTO> dto = service.findByCity(cidade);
+		Set<ClubeByCityDTO> dto = service.encontrarPelaCidade(cidade);
 		if(dto.isEmpty()) {
 			throw new NotFoundedException("Clube não encontrado por cidade");
 		}

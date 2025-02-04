@@ -10,11 +10,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 
-@Entity(name="partidas")
+@Entity
 @Table(name="tb_partidas")
-@RequiredArgsConstructor
 public class Partidas {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -39,9 +37,6 @@ public class Partidas {
 	
 	@ManyToOne @JoinColumn(name = "tecnico_id", nullable = false)
 	private Tecnicos tecnico;
-	
-	@ManyToOne @JoinColumn(name = "jogador_id", nullable = false)
-	private Jogadores jogador;
 	
 	@ManyToOne @JoinColumn(name = "temporada_id", nullable = false)
 	private Temporadas temporada;

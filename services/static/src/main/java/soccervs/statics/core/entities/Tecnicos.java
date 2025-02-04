@@ -8,11 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.RequiredArgsConstructor;
 
-@Entity(name="tecnicos")
+@Entity
 @Table(name="tb_tecnicos")
-@RequiredArgsConstructor
 public class Tecnicos{
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
