@@ -16,5 +16,5 @@ public interface ClubeRepository extends JpaRepository<Clubes, Short> {
 	@Query("SELECT c.id FROM Clubes c WHERE c = :clube")
     Short findIdByClube(@Param("clube") Clubes clube);
 
-	Set<ClubeByCityDTO> findByCity(String cidade);
+	Set<ClubeByCityDTO> findByCidade(String cidade);
 }

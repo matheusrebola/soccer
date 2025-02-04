@@ -28,6 +28,6 @@ public class ClubeService {
 	}
 	
 	public Set<ClubeByCityDTO> encontrarPelaCidade(String cidade) {
-		return repository.findByCity(cidade);
+		return repository.findByCidade(cidade);
 	}
 }
