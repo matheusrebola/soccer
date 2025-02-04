@@ -1,9 +1,13 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +17,7 @@ import soccervs.statics.core.entities.Resultados;
 import soccervs.statics.core.mappers.ResultadosMapper;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.ResultadosService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -24,6 +27,7 @@ public class ResultadosController {
 	@Autowired
 	private ResultadosMapper mapper;
 	
+	@Autowired
 	private ResultadosService service;
 	
 	@PostMapping
@@ -40,6 +44,11 @@ public class ResultadosController {
 		ResultadoDTO dto = mapper.map(saved);
 		
 		return ResponseEntity.created(location).body(dto);
+	}
+	
+	@GetMapping
+	public void encontrarTodos() {
+		List<Resultados> resultados = service.encontrarTodos();
 	}
 	
 }
