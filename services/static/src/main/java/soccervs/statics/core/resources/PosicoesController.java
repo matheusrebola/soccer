@@ -17,7 +17,7 @@ import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.PosicoesService;
 
 @RestController
-@RequestMapping("/partidas")
+@RequestMapping("/posicoes")
 public class PosicoesController {
 
 	@Autowired
