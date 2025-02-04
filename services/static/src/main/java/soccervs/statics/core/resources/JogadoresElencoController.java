@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import soccervs.statics.core.dtos.JElencoCreateDTO;
+import soccervs.statics.core.entities.JogadoresElenco;
 import soccervs.statics.core.mappers.JElencoMapper;
 import soccervs.statics.core.services.JElencoService;
 
@@ -25,7 +26,7 @@ public class JogadoresElencoController {
 	
 	@PostMapping
 	public void postMethodName(@RequestBody JElencoCreateDTO createDTO) {
-		
+		JogadoresElenco jElenco = mapper.map(createDTO);
 	}
 	
 	@GetMapping
