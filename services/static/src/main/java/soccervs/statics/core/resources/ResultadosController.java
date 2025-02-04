@@ -24,6 +24,7 @@ public class ResultadosController {
 	@PostMapping
 	public void cadastrarResultado(@RequestBody ResultadoCreateDTO createDTO) {
 		Resultados resultado = mapper.map(createDTO);
+		Resultados saved = service.salvar(resultado);
 	}
 	
 }
