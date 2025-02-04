@@ -1,6 +1,4 @@
 package soccervs.statics.core.entities;
-
-import java.time.Year;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -23,17 +21,17 @@ public class Temporadas {
 	private String temporada;
 	
 	@Column(name = "data_inicio")
-	private Year dataInicio;
+	private Short dataInicio;
 	
 	@Column(name = "data_fim")
-	private Year dataFim;
+	private Short dataFim;
 	
 	@ManyToOne @JoinColumn(name = "competicao_id", nullable = false)
 	private Competicoes competicao;
 	
-	@OneToMany(mappedBy = "temporadas")
+	@OneToMany(mappedBy = "temporada")
 	private Set<Elencos> elenco;
 	
-	@OneToMany(mappedBy = "temporadas")
+	@OneToMany(mappedBy = "temporada")
 	private Set<Partidas> partida;
 }
