@@ -25,6 +25,7 @@ public class PartidasController {
 	@PostMapping
 	public void cadastrarPartida(@RequestBody PartidaCreateDTO createDTO) {
 		Partidas partida = mapper.map(createDTO);
+		Partidas saved = service.salvar(partida);
 	}
 	
 }
