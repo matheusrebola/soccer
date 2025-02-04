@@ -1,6 +1,5 @@
 package soccervs.statics.core.entities;
 
-import java.time.Year;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -23,7 +22,7 @@ public class Elencos {
 	private String nome;
 	
 	@Column(name = "ano_formacao")
-	private Year anoFormacao;
+	private Short anoFormacao;
 	
 	@Column(name = "tecnico_responsavel")
 	private String tecnicoResponsavel;
