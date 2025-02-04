@@ -4,9 +4,17 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import soccervs.statics.core.dtos.PosicaoCreateDTO;
+import soccervs.statics.core.entities.Posicoes;
+
 @Component
 public class PosicoesMapper {
 
 	@Autowired
 	private ModelMapper mapper;
+
+	public Posicoes map(PosicaoCreateDTO createDTO) {
+		Posicoes p = mapper.map(createDTO, Posicoes.class);
+		return p;
+	}
 }
