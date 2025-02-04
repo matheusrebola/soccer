@@ -1,6 +1,4 @@
 package soccervs.statics.core.entities;
-
-import java.time.Year;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -25,7 +23,7 @@ public class Competicoes {
 	private String nome;
 	
 	@Column
-	private Year ano;
+	private Short ano;
 	
 	@Column(name = "tipo_competicao") @Enumerated(EnumType.STRING)
 	private ECompeticao tipoCompeticao;
