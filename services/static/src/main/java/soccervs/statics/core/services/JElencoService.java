@@ -15,4 +15,8 @@ public class JElencoService {
 	public JogadoresElenco salvar(JogadoresElenco j) {
 		return repository.save(j);
 	}
+
+	public Integer pegarId(JogadoresElenco j) {
+		return repository.findIdByJogadorElenco(j);
+	}
 }
