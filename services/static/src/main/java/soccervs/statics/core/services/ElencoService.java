@@ -15,4 +15,8 @@ public class ElencoService {
 	public Elencos salvar(Elencos e) {
 		return repository.save(e);
 	}
+
+	public Integer pegarId(Elencos elenco) {
+		return repository.findIdByElenco(elenco);
+	}
 }
