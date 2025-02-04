@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import soccervs.statics.core.dtos.JElencoCreateDTO;
 import soccervs.statics.core.mappers.JElencoMapper;
 import soccervs.statics.core.services.JElencoService;
 
@@ -23,10 +24,9 @@ public class JogadoresElencoController {
 	private JElencoService service;
 	
 	@PostMapping
-	public void postMethodName(@RequestBody String entity) {
+	public void postMethodName(@RequestBody JElencoCreateDTO createDTO) {
 		
 	}
-	
 	
 	@GetMapping
 	public void encontrarTodos() {
