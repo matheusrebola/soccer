@@ -32,7 +32,7 @@ public class JogadoresElencoController {
 	private JElencoService service;
 	
 	@PostMapping
-	public ResponseEntity<JElencoDTO> postMethodName(@RequestBody JElencoCreateDTO createDTO) {
+	public ResponseEntity<JElencoDTO> cadastrarJogador(@RequestBody JElencoCreateDTO createDTO) {
 		JogadoresElenco jElenco = mapper.map(createDTO);
 		JogadoresElenco saved = service.salvar(jElenco);
 		
