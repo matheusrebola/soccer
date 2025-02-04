@@ -1,6 +1,7 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import soccervs.statics.core.dtos.CompeticaoCreateDTO;
 import soccervs.statics.core.dtos.CompeticaoDTO;
 import soccervs.statics.core.entities.Competicoes;
 import soccervs.statics.core.mappers.CompeticaoMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.CompeticaoService;
 
@@ -43,7 +45,12 @@ public class CompeticaoController {
 	}
 	
 	@GetMapping
-	public void encontrarTodos() {
-		
+	public ResponseEntity<List<CompeticaoDTO>> encontrarTodos() {
+		List<Competicoes> competicao = service.encontrarTodos();
+		if (competicao.isEmpty()) {
+			throw new NotFoundedException("Competicoes não encontradas");
+		}
+		List<CompeticaoDTO> dto = mapper.map(competicao);
+		return ResponseEntity.ok(dto);
 	}
 }
