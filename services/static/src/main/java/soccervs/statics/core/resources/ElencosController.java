@@ -36,7 +36,7 @@ public class ElencosController {
 		if (saved == null) {
 			throw new NotPersistedException("Elenco não persistido");
 		}
-		Integer id = service.pegarId(elenco);
+		Integer id = service.pegarId(saved);
 		URI location = URI.create("/elencos/"+id);
 		ElencoDTO dto = mapper.map(saved);
 		return ResponseEntity.created(location).body(dto);

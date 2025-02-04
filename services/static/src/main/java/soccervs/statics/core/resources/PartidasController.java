@@ -39,7 +39,7 @@ public class PartidasController {
 			throw new NotPersistedException("Partida não persistida");
 		}
 		
-		Long id = service.pegarId(partida);
+		Long id = service.pegarId(saved);
 		URI location = URI.create("/partidas/"+id);
 		PartidaDTO dto = mapper.map(saved);
 		
