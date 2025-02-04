@@ -42,8 +42,5 @@ public class Jogadores {
 	private Set<Posicoes> posicao;
 	
 	@OneToMany(mappedBy = "jogador")
-	private Set<Partidas> partida;
-	
-	@OneToMany(mappedBy = "jogador")
 	private Set<JogadoresElenco> jogadoresElenco;
 }

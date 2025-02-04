@@ -37,7 +37,7 @@ public class Titulos {
 	private Year conquista;
 	
 	@Column(name = "tipo_titulo") @Enumerated(EnumType.STRING)
-	private ECompeticao titulo;
+	private ECompeticao tipoTitulo;
 	
 	@Column(name = "participante_id")
 	private Long participante;

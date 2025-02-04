@@ -36,6 +36,6 @@ public class Elencos {
 	@ManyToOne @JoinColumn(name = "temporada_id", nullable = false)
 	private Temporadas temporada;
 	
-	@OneToMany(mappedBy = "elencos")
+	@OneToMany(mappedBy = "elenco")
 	private Set<JogadoresElenco> jogadoresElenco;
 }
