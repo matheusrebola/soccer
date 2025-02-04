@@ -1,5 +1,7 @@
 package soccervs.statics.core.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,9 @@ public class JElencoService {
 
 	public Integer pegarId(JogadoresElenco j) {
 		return repository.findIdByJogadorElenco(j);
+	}
+
+	public List<JogadoresElenco> encontrarTodos() {
+		return repository.findAll();
 	}
 }

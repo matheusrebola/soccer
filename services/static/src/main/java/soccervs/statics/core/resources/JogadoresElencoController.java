@@ -1,6 +1,7 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import soccervs.statics.core.dtos.JElencoCreateDTO;
 import soccervs.statics.core.dtos.JElencoDTO;
 import soccervs.statics.core.entities.JogadoresElenco;
 import soccervs.statics.core.mappers.JElencoMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.JElencoService;
 
@@ -45,8 +47,15 @@ public class JogadoresElencoController {
 	}
 	
 	@GetMapping
-	public void encontrarTodos() {
+	public ResponseEntity<List<JElencoDTO>> encontrarTodos() {
+		List<JogadoresElenco> jogadores = service.encontrarTodos();
 		
+		if (jogadores.isEmpty()) {
+			throw new NotFoundedException("Competicoes não encontradas");
+		}
+		
+		List<JElencoDTO> dto = mapper.map(jogadores);
+		return ResponseEntity.ok(dto);
 	}
 	
 }
