@@ -47,7 +47,7 @@ public class PartidasController {
 	}
 	
 	@GetMapping
-	public void encontrarTodos() {
+	public ResponseEntity<List<PartidaDTO>> encontrarTodos() {
 		List<Partidas> partidas = service.encontrarTodos();
 		
 		if (partidas.isEmpty()) {
@@ -55,6 +55,7 @@ public class PartidasController {
 		}
 		
 		List<PartidaDTO> dto = mapper.map(partidas);
+		return ResponseEntity.ok(dto);
 	}
 	
 }
