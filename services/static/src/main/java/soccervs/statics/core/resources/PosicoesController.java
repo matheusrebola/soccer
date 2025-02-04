@@ -13,4 +13,7 @@ public class PosicoesController {
 	@Autowired
 	private PosicoesMapper mapper;
 	
+	@Autowired
+	private PosicoesService service;
+	
 }
