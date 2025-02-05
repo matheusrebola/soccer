@@ -24,6 +24,7 @@ public class TecnicosController {
 	@PostMapping
 	public void cadastrarTecnico(@RequestBody TecnicoCreateDTO createDTO) {
 		Tecnicos tecnico = mapper.map(createDTO);
+		Tecnicos saved = service.salvar(tecnico);
 	}
 	
 }
