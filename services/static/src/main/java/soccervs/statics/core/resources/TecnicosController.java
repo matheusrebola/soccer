@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import soccervs.statics.core.dtos.TecnicoCreateDTO;
+import soccervs.statics.core.entities.Tecnicos;
+import soccervs.statics.core.mappers.TecnicoMapper;
 
 @RestController
 @RequestMapping("/tecnicos")
@@ -20,7 +22,7 @@ public class TecnicosController {
 	
 	@PostMapping
 	public void cadastrarTecnico(@RequestBody TecnicoCreateDTO createDTO) {
-		
+		Tecnicos tecnico = mapper.map(createDTO);
 	}
 	
 }
