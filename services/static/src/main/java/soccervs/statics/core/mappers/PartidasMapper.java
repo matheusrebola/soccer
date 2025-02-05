@@ -18,13 +18,11 @@ public class PartidasMapper {
 	private ModelMapper mapper;
 
 	public Partidas map(PartidaCreateDTO createDTO) {
-		Partidas p = mapper.map(createDTO, Partidas.class);
-		return p;
+		return mapper.map(createDTO, Partidas.class);
 	}
 
 	public PartidaDTO map(Partidas saved) {
-		PartidaDTO dto = mapper.map(saved, PartidaDTO.class);
-		return dto;
+		return mapper.map(saved, PartidaDTO.class);
 	}
 
 	public List<PartidaDTO> map(List<Partidas> p) {

@@ -17,13 +17,11 @@ public class ElencoMapper {
 	private ModelMapper mapper;
 	
 	public Elencos map(ElencoCreateDTO dto) {
-		Elencos e = mapper.map(dto, Elencos.class);
-		return e;
+		return mapper.map(dto, Elencos.class);
 	}
 	
 	public ElencoDTO map(Elencos e) {
-		ElencoDTO dto = mapper.map(e, ElencoDTO.class);
-		return dto;
+		return mapper.map(e, ElencoDTO.class);
 	}
 	
 	public List<ElencoDTO> map(List<Elencos> e) {

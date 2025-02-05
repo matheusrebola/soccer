@@ -18,13 +18,11 @@ public class ResultadosMapper {
 	private ModelMapper mapper;
 
 	public Resultados map(ResultadoCreateDTO createDTO) {
-		Resultados r = mapper.map(createDTO, Resultados.class);
-		return r;
+		return mapper.map(createDTO, Resultados.class);
 	}
 
 	public ResultadoDTO map(Resultados saved) {
-		ResultadoDTO dto = mapper.map(saved, ResultadoDTO.class);
-		return dto;
+		return mapper.map(saved, ResultadoDTO.class);
 	}
 
 	public List<ResultadoDTO> map(List<Resultados> r) {

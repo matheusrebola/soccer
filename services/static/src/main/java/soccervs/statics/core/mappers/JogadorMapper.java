@@ -18,13 +18,11 @@ public class JogadorMapper {
 	private ModelMapper mapper;
 
 	public Jogadores map(JogadorCreateDTO dto) {
-		Jogadores j = mapper.map(dto, Jogadores.class);
-		return j;
+		return mapper.map(dto, Jogadores.class);
 	}
 
 	public JogadorDTO map(Jogadores j) {
-		JogadorDTO dto = mapper.map(j, JogadorDTO.class);
-		return dto;
+		return mapper.map(j, JogadorDTO.class);
 	}
 
 	public List<JogadorDTO> map(List<Jogadores> j) {

@@ -18,13 +18,11 @@ public class JElencoMapper {
 	private ModelMapper mapper;
 
 	public JogadoresElenco map(JElencoCreateDTO createDTO) {
-		JogadoresElenco j = mapper.map(createDTO, JogadoresElenco.class);
-		return j;
+		return mapper.map(createDTO, JogadoresElenco.class);
 	}
 
 	public JElencoDTO map(JogadoresElenco saved) {
-		JElencoDTO dto = mapper.map(saved, JElencoDTO.class);
-		return dto;
+		return mapper.map(saved, JElencoDTO.class);
 	}
 
 	public List<JElencoDTO> map(List<JogadoresElenco> j) {

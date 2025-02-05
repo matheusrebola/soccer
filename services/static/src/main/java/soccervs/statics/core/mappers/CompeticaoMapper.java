@@ -18,13 +18,11 @@ public class CompeticaoMapper {
 	private ModelMapper mapper;
 	
 	public Competicoes map(CompeticaoCreateDTO dto) {
-		Competicoes c = mapper.map(dto, Competicoes.class);
-		return c;
+		return mapper.map(dto, Competicoes.class);
 	}
 	
 	public CompeticaoDTO map(Competicoes c) {
-		CompeticaoDTO dto = mapper.map(c, CompeticaoDTO.class);
-		return dto;
+		return mapper.map(c, CompeticaoDTO.class);
 	}
 	
 	public List<CompeticaoDTO> map(List<Competicoes> c) {

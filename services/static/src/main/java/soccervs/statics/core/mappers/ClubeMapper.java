@@ -16,19 +16,16 @@ public class ClubeMapper {
 	@Autowired
 	private ModelMapper mapper;
 	
-	public Clubes map(ClubeCreateDTO dto) {
-		Clubes c = mapper.map(dto, Clubes.class);
-		return c;
+	public Clubes map(ClubeCreateDTO dto) { 
+		return mapper.map(dto, Clubes.class);
 	}
 	
 	public Clubes map(ClubeDTO dto) {
-		Clubes c = mapper.map(dto, Clubes.class);
-		return c;
+		return mapper.map(dto, Clubes.class);
 	}
 	
 	public ClubeDTO map(Clubes c) {
-		ClubeDTO dto = mapper.map(c, ClubeDTO.class);
-		return dto;
+		return mapper.map(c, ClubeDTO.class);
 	}
 	
 	public List<ClubeDTO> map(List<Clubes> c) {

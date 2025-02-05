@@ -18,13 +18,11 @@ public class PosicoesMapper {
 	private ModelMapper mapper;
 
 	public Posicoes map(PosicaoCreateDTO createDTO) {
-		Posicoes p = mapper.map(createDTO, Posicoes.class);
-		return p;
+		return mapper.map(createDTO, Posicoes.class);
 	}
 
 	public PosicaoDTO map(Posicoes saved) {
-		PosicaoDTO dto = mapper.map(saved, PosicaoDTO.class);
-		return dto;
+		return mapper.map(saved, PosicaoDTO.class);
 	}
 
 	public List<PosicaoDTO> map(List<Posicoes> p) {
