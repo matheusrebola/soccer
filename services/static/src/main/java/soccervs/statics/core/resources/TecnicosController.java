@@ -15,6 +15,7 @@ import soccervs.statics.core.dtos.TecnicoCreateDTO;
 import soccervs.statics.core.dtos.TecnicoDTO;
 import soccervs.statics.core.entities.Tecnicos;
 import soccervs.statics.core.mappers.TecnicoMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.TecnicoService;
 
@@ -48,7 +49,12 @@ public class TecnicosController {
 	@GetMapping
 	public void encontrarTodos() {
 		List<Tecnicos> tecnicos = service.encontrarTodos();
+		
+		if (tecnicos.isEmpty()) {
+			throw new NotFoundedException("Posicoes não encontradas");
+		}
+		
+		List<TecnicoDTO> dto = mapper.map(tecnicos);
 	}
-	
 	
 }

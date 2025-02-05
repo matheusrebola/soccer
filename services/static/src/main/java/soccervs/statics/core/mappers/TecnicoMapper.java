@@ -1,5 +1,8 @@
 package soccervs.statics.core.mappers;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,8 +22,13 @@ public class TecnicoMapper {
 	}
 
 	public TecnicoDTO map(Tecnicos saved) {
-		
-		return null;
+		return mapper.map(saved, TecnicoDTO.class);
+	}
+
+	public List<TecnicoDTO> map(List<Tecnicos> t) {
+		return t.stream()
+				.map(tecnicos -> mapper.map(t, TecnicoDTO.class))
+				.collect(Collectors.toList());
 	}
 	
 	
