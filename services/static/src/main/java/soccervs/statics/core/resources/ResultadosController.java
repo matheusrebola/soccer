@@ -19,8 +19,6 @@ import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.ResultadosService;
 
-
-
 @RestController
 @RequestMapping("/resultados")
 public class ResultadosController {
