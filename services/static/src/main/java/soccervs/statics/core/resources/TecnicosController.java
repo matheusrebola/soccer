@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import soccervs.statics.core.dtos.TecnicoCreateDTO;
 import soccervs.statics.core.entities.Tecnicos;
 import soccervs.statics.core.mappers.TecnicoMapper;
+import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.TecnicoService;
 
 @RestController
@@ -25,6 +26,12 @@ public class TecnicosController {
 	public void cadastrarTecnico(@RequestBody TecnicoCreateDTO createDTO) {
 		Tecnicos tecnico = mapper.map(createDTO);
 		Tecnicos saved = service.salvar(tecnico);
+		
+		if (saved == null) {
+			throw new NotPersistedException("Tecnico não persistido");
+		}
+		
+		Integer id = service.pegarId(saved);
 	}
 	
 }

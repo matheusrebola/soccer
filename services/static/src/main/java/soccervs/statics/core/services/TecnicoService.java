@@ -15,4 +15,8 @@ public class TecnicoService {
 	public Tecnicos salvar(Tecnicos t) {
 		return repository.save(t);
 	}
+
+	public Integer pegarId(Tecnicos t) {
+		return repository.findIdByTecnico(t);
+	}
 }
