@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import soccervs.statics.core.dtos.TecnicoCreateDTO;
+import soccervs.statics.core.dtos.TecnicoDTO;
 import soccervs.statics.core.entities.Tecnicos;
 
 @Component
@@ -14,8 +15,12 @@ public class TecnicoMapper {
 	private ModelMapper mapper;
 
 	public Tecnicos map(TecnicoCreateDTO createDTO) {
-		Tecnicos t = mapper.map(createDTO, Tecnicos.class);
-		return t;
+		return mapper.map(createDTO, Tecnicos.class);
+	}
+
+	public TecnicoDTO map(Tecnicos saved) {
+		
+		return null;
 	}
 	
 	
