@@ -38,7 +38,7 @@ public class ResultadosController {
 			throw new NotPersistedException("Resultado não persistido");
 		}
 		
-		Long id = service.pegarId(saved);
+		Long id = saved.getId();
 		URI location = URI.create("/resultados/"+id);
 		ResultadoDTO dto = mapper.map(saved);
 		

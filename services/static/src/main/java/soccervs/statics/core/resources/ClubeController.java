@@ -2,7 +2,6 @@ package soccervs.statics.core.resources;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.statics.core.dtos.ClubeByCityDTO;
 import soccervs.statics.core.dtos.ClubeCreateDTO;
 import soccervs.statics.core.dtos.ClubeDTO;
 import soccervs.statics.core.entities.Clubes;
@@ -40,7 +38,7 @@ public class ClubeController {
 	        throw new NotPersistedException("Clube não persistido");
 	    }
 
-	    Short id = service.pegarId(clubeSaved);
+	    Long id = clubeSaved.getId();
 	    ClubeDTO dto = mapper.map(clubeSaved);
 	    URI location = URI.create("/clubes/" + id);
 
@@ -55,15 +53,6 @@ public class ClubeController {
 	    }
 	    List<ClubeDTO> dto = mapper.map(clubes);
 	    return ResponseEntity.ok(dto);
-	}
-	
-	@GetMapping("/cidade")
-	public ResponseEntity<Set<ClubeByCityDTO>> encontrarPorCidade(@RequestBody String cidade) {
-		Set<ClubeByCityDTO> dto = service.encontrarPelaCidade(cidade);
-		if(dto.isEmpty()) {
-			throw new NotFoundedException("Clube não encontrado por cidade");
-		}
-		return ResponseEntity.ok(dto);
 	}
 
 }

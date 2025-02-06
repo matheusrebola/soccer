@@ -37,7 +37,7 @@ public class JogadoresController {
 		if(saved == null) {
 			throw new NotPersistedException("Jogador não persistido");
 		}
-		Long id = service.pegarId(saved);
+		Long id = saved.getId();
 		URI location = URI.create("/jogadores/"+id);
 		JogadorDTO dto = mapper.map(saved);
 		return ResponseEntity.created(location).body(dto);

@@ -39,7 +39,7 @@ public class TecnicosController {
 			throw new NotPersistedException("Tecnico não persistido");
 		}
 		
-		Integer id = service.pegarId(saved);
+		Long id = saved.getId();
 		URI location = URI.create("/tecnicos/"+id);
 		TecnicoDTO dto = mapper.map(saved);
 		

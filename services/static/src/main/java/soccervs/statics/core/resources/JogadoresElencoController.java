@@ -39,7 +39,7 @@ public class JogadoresElencoController {
 		if (saved == null) {
 			throw new NotPersistedException("Jogador do Elenco não persistido");
 		}
-		Integer id = service.pegarId(saved);
+		Long id = saved.getId();
 		URI location = URI.create("/jogadores-elenco/"+id);
 		JElencoDTO dto = mapper.map(saved);
 		

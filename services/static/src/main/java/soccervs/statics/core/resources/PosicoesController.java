@@ -38,7 +38,7 @@ public class PosicoesController {
 			throw new NotPersistedException("Posicao não persistida");
 		}
 		
-		Byte id = service.pegarId(saved);
+		Long id = saved.getId();
 		URI location = URI.create("/posicoes/"+id);
 		PosicaoDTO dto = mapper.map(saved);
 		
