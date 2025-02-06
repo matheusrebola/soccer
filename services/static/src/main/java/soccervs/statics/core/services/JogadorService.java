@@ -18,10 +18,6 @@ public class JogadorService {
 		return repository.save(j);
 	}
 
-	public Long pegarId(Jogadores j) {
-		return repository.findIdByJogador(j);
-	}
-
 	public List<Jogadores> encontrarTodos() {
 		return repository.findAll();
 	}

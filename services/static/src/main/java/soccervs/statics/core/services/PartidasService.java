@@ -18,10 +18,6 @@ public class PartidasService {
 		return repository.save(p);
 	}
 
-	public Long pegarId(Partidas p) {
-		return repository.findIdByPartida(p);
-	}
-
 	public List<Partidas> encontrarTodos() {
 		return repository.findAll();
 	}

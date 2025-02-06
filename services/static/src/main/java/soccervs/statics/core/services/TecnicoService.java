@@ -18,10 +18,6 @@ public class TecnicoService {
 		return repository.save(t);
 	}
 
-	public Integer pegarId(Tecnicos t) {
-		return repository.findIdByTecnico(t);
-	}
-
 	public List<Tecnicos> encontrarTodos() {
 		return repository.findAll();
 	}

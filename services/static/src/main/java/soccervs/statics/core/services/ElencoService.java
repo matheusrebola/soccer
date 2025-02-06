@@ -18,10 +18,6 @@ public class ElencoService {
 		return repository.save(e);
 	}
 
-	public Integer pegarId(Elencos elenco) {
-		return repository.findIdByElenco(elenco);
-	}
-	
 	public List<Elencos> encontrarTodos() {
 		return repository.findAll();
 	}

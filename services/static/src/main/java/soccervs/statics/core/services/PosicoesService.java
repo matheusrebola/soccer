@@ -18,10 +18,6 @@ public class PosicoesService {
 		return repository.save(posicao);
 	}
 
-	public Byte pegarId(Posicoes posicao) {
-		return repository.findIdByPosicao(posicao);
-	}
-
 	public List<Posicoes> encontrarTodos() {
 		return repository.findAll();
 	}

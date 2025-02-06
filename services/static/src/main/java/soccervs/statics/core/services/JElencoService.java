@@ -18,10 +18,6 @@ public class JElencoService {
 		return repository.save(j);
 	}
 
-	public Integer pegarId(JogadoresElenco j) {
-		return repository.findIdByJogadorElenco(j);
-	}
-
 	public List<JogadoresElenco> encontrarTodos() {
 		return repository.findAll();
 	}

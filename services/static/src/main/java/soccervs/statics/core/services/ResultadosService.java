@@ -18,10 +18,6 @@ public class ResultadosService {
 		return repository.save(r);
 	}
 
-	public Long pegarId(Resultados r) {
-		return repository.findIdByResultado(r);
-	}
-
 	public List<Resultados> encontrarTodos() {
 		return repository.findAll();
 	}
