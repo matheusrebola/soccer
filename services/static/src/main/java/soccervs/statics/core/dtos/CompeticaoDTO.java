@@ -4,10 +4,10 @@ import soccervs.statics.core.entities.enums.ECompeticao;
 import soccervs.statics.core.entities.enums.EDisputa;
 
 public class CompeticaoDTO extends CompeticaoCreateDTO {
-	private String id;
+	private Long id;
 	
 	public CompeticaoDTO(String nome, Short ano, ECompeticao tipoCompeticao, EDisputa tipoDisputa, String paisRegiao,
-			String id) {
+			Long id) {
 		super(nome, ano, tipoCompeticao, tipoDisputa, paisRegiao);
 		this.id = id;
 	}
@@ -18,11 +18,11 @@ public class CompeticaoDTO extends CompeticaoCreateDTO {
 		super(nome, ano, tipoCompeticao, tipoDisputa, paisRegiao);
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}	
 }

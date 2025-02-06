@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class PartidaDTO extends PartidaCreateDTO {
-	private String id;
+	private Long id;
 	
 	public PartidaDTO() {
 		super();
@@ -20,16 +20,16 @@ public class PartidaDTO extends PartidaCreateDTO {
 	}
 
 	public PartidaDTO(LocalDateTime dataPartida, String localPartida, Short casa, Short fora, Byte placarCasa,
-			Byte placarVisitante, Long tecnico, Long temporada, Long competicao, String id) {
+			Byte placarVisitante, Long tecnico, Long temporada, Long competicao, Long id) {
 		super(dataPartida, localPartida, casa, fora, placarCasa, placarVisitante, tecnico, temporada, competicao);
 		this.id = id;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

@@ -4,9 +4,9 @@ import soccervs.statics.core.entities.enums.EFuncaoPosicao;
 import soccervs.statics.core.entities.enums.EPosicoes;
 
 public class PosicaoDTO extends PosicaoCreateDTO {
-	private String id;
+	private Long id;
 
-	public PosicaoDTO(EPosicoes posicao, EFuncaoPosicao funcao, String descricao, Long jogador, String id) {
+	public PosicaoDTO(EPosicoes posicao, EFuncaoPosicao funcao, String descricao, Long jogador, Long id) {
 		super(posicao, funcao, descricao, jogador);
 		this.id = id;
 	}
@@ -17,11 +17,11 @@ public class PosicaoDTO extends PosicaoCreateDTO {
 		super(posicao, funcao, descricao, jogador);
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

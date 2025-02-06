@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import soccervs.statics.core.entities.enums.EPePreferido;
 
 public class JogadorDTO extends JogadorCreateDTO {
-	private String id;
+	private Long id;
 
 	public JogadorDTO() {
 		super();
@@ -19,16 +19,16 @@ public class JogadorDTO extends JogadorCreateDTO {
 	}
 
 	public JogadorDTO(String nome, LocalDate dataNascimento, String nacionalidade, EPePreferido pePreferido,
-			Float altura, Float peso, String id) {
+			Float altura, Float peso, Long id) {
 		super(nome, dataNascimento, nacionalidade, pePreferido, altura, peso);
 		this.id = id;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

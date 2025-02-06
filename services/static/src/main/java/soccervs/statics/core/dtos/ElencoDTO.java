@@ -1,7 +1,7 @@
 package soccervs.statics.core.dtos;
 
 public class ElencoDTO extends ElencoCreateDTO {
-	private String id;
+	private Long id;
 	
 	public ElencoDTO() {
 		super();
@@ -15,16 +15,16 @@ public class ElencoDTO extends ElencoCreateDTO {
 	}
 
 	public ElencoDTO(String nome, Short anoFormacao, String tecnicoResponsavel, Integer tecnico, Long clube,
-			Long temporada, String id) {
+			Long temporada, Long id) {
 		super(nome, anoFormacao, tecnicoResponsavel, tecnico, clube, temporada);
 		this.id = id;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

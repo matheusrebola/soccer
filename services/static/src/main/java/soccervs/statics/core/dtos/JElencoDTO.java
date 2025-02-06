@@ -5,7 +5,7 @@ import soccervs.statics.core.entities.enums.EFuncaoJogador;
 import soccervs.statics.core.entities.enums.EPersonalidade;
 
 public class JElencoDTO extends JElencoCreateDTO {
-	private String id;
+	private Long id;
 
 	public JElencoDTO() {
 		super();
@@ -19,16 +19,16 @@ public class JElencoDTO extends JElencoCreateDTO {
 	}
 
 	public JElencoDTO(EFuncaoJogador funcao, EContribuicao contribuicao, EPersonalidade personalidade, Long elenco,
-			Long jogador, String id) {
+			Long jogador, Long id) {
 		super(funcao, contribuicao, personalidade, elenco, jogador);
 		this.id = id;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }
