@@ -1,15 +1,64 @@
 package soccervs.statics.core.dtos;
-
-import lombok.Data;
 import soccervs.statics.core.entities.enums.EContribuicao;
 import soccervs.statics.core.entities.enums.EFuncaoJogador;
 import soccervs.statics.core.entities.enums.EPersonalidade;
 
-@Data
 public class JElencoCreateDTO {
 	private EFuncaoJogador funcao;
 	private EContribuicao contribuicao;
 	private EPersonalidade personalidade;
 	private Integer elenco;
 	private Long jogador;
+	
+	public JElencoCreateDTO(EFuncaoJogador funcao, EContribuicao contribuicao, EPersonalidade personalidade,
+			Integer elenco, Long jogador) {
+		super();
+		this.funcao = funcao;
+		this.contribuicao = contribuicao;
+		this.personalidade = personalidade;
+		this.elenco = elenco;
+		this.jogador = jogador;
+	}
+
+	public JElencoCreateDTO() {super();}
+
+	public EFuncaoJogador getFuncao() {
+		return funcao;
+	}
+
+	public void setFuncao(EFuncaoJogador funcao) {
+		this.funcao = funcao;
+	}
+
+	public EContribuicao getContribuicao() {
+		return contribuicao;
+	}
+
+	public void setContribuicao(EContribuicao contribuicao) {
+		this.contribuicao = contribuicao;
+	}
+
+	public EPersonalidade getPersonalidade() {
+		return personalidade;
+	}
+
+	public void setPersonalidade(EPersonalidade personalidade) {
+		this.personalidade = personalidade;
+	}
+
+	public Integer getElenco() {
+		return elenco;
+	}
+
+	public void setElenco(Integer elenco) {
+		this.elenco = elenco;
+	}
+
+	public Long getJogador() {
+		return jogador;
+	}
+
+	public void setJogador(Long jogador) {
+		this.jogador = jogador;
+	}
 }
