@@ -12,7 +12,9 @@ import soccervs.statics.core.repositories.JogadorElencoRepository;
 public class JElencoService {
 
 	@Autowired
-	private JogadorElencoRepository repository;
+	private final JogadorElencoRepository repository;
+	
+	public JElencoService(JogadorElencoRepository repository) {this.repository = repository;}
 
 	public JogadoresElenco salvar(JogadoresElenco j) {
 		return repository.save(j);

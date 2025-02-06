@@ -12,7 +12,9 @@ import soccervs.statics.core.repositories.JogadorRepository;
 public class JogadorService {
 
 	@Autowired
-	private JogadorRepository repository;
+	private final JogadorRepository repository;
+	
+	public JogadorService(JogadorRepository repository) {this.repository = repository;}
 
 	public Jogadores salvar(Jogadores j) {
 		return repository.save(j);

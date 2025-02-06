@@ -12,8 +12,10 @@ import soccervs.statics.core.repositories.ElencoRepository;
 public class ElencoService {
 	
 	@Autowired
-	private ElencoRepository repository;
-	
+	private final ElencoRepository repository;
+		
+	public ElencoService(ElencoRepository repository) {this.repository = repository;}
+
 	public Elencos salvar(Elencos e) {
 		return repository.save(e);
 	}

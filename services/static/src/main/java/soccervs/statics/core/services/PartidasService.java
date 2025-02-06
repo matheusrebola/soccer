@@ -12,7 +12,9 @@ import soccervs.statics.core.repositories.PartidaRepository;
 public class PartidasService {
 
 	@Autowired
-	private PartidaRepository repository;
+	private final PartidaRepository repository;
+	
+	public PartidasService(PartidaRepository repository) {this.repository = repository;}
 
 	public Partidas salvar(Partidas p) {
 		return repository.save(p);

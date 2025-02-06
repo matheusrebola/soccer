@@ -12,7 +12,9 @@ import soccervs.statics.core.repositories.TecnicoRepository;
 public class TecnicoService {
 
 	@Autowired
-	private TecnicoRepository repository;
+	private final TecnicoRepository repository;
+
+	public TecnicoService(TecnicoRepository repository) {this.repository = repository;}
 
 	public Tecnicos salvar(Tecnicos t) {
 		return repository.save(t);

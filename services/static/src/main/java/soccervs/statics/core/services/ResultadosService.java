@@ -12,7 +12,9 @@ import soccervs.statics.core.repositories.ResultadoRepository;
 public class ResultadosService {
 
 	@Autowired
-	private ResultadoRepository repository;
+	private final ResultadoRepository repository;
+	
+	public ResultadosService(ResultadoRepository repository) {this.repository = repository;}
 
 	public Resultados salvar(Resultados r) {
 		return repository.save(r);

@@ -11,8 +11,10 @@ import soccervs.statics.core.repositories.ClubeRepository;
 @Service
 public class ClubeService {
 	@Autowired
-	private ClubeRepository repository;
+	private final ClubeRepository repository;
 	
+	public ClubeService(ClubeRepository repository) {this.repository = repository;}
+
 	public Clubes salvar(Clubes clube) {
 		return repository.save(clube);
 	}

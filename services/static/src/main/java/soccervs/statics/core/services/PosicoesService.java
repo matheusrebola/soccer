@@ -12,7 +12,9 @@ import soccervs.statics.core.repositories.PosicaoRepository;
 public class PosicoesService {
 
 	@Autowired
-	private PosicaoRepository repository;
+	private final PosicaoRepository repository;
+	
+	public PosicoesService(PosicaoRepository repository) {this.repository = repository;}
 
 	public Posicoes save(Posicoes posicao) {
 		return repository.save(posicao);

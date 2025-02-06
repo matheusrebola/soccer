@@ -11,8 +11,10 @@ import soccervs.statics.core.repositories.CompeticaoRepository;
 @Service
 public class CompeticaoService {
 	@Autowired
-	private CompeticaoRepository repository;
+	private final CompeticaoRepository repository;
 	
+	public CompeticaoService(CompeticaoRepository repository) {this.repository = repository;}
+
 	public Competicoes salvar(Competicoes c) {
 		return repository.save(c);
 	}
