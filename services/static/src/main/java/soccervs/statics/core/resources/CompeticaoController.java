@@ -19,16 +19,19 @@ import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.CompeticaoService;
 
+
 @RestController
 @RequestMapping("/competicoes")
 public class CompeticaoController {
 	
 	@Autowired
-	private CompeticaoMapper mapper;
+	private final CompeticaoMapper mapper;
 	
 	@Autowired
-	private CompeticaoService service;
+	private final CompeticaoService service;
 	
+	public CompeticaoController(CompeticaoMapper mapper, CompeticaoService service) {this.mapper = mapper;this.service = service;}
+
 	@PostMapping
 	public ResponseEntity<CompeticaoDTO> cadastrarCompeticao(@RequestBody CompeticaoCreateDTO createDTO) {
 		Competicoes competicao = mapper.map(createDTO);
@@ -44,7 +47,7 @@ public class CompeticaoController {
 		return ResponseEntity.created(location).body(dto);
 	}
 	
-	@GetMapping
+	@GetMapping("/all")
 	public ResponseEntity<List<CompeticaoDTO>> encontrarTodos() {
 		List<Competicoes> competicao = service.encontrarTodos();
 		if (competicao.isEmpty()) {
@@ -53,4 +56,5 @@ public class CompeticaoController {
 		List<CompeticaoDTO> dto = mapper.map(competicao);
 		return ResponseEntity.ok(dto);
 	}
+	
 }

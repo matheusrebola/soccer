@@ -24,11 +24,17 @@ import soccervs.statics.core.services.PosicoesService;
 public class PosicoesController {
 
 	@Autowired
-	private PosicoesMapper mapper;
+	private final PosicoesMapper mapper;
 	
 	@Autowired
-	private PosicoesService service;
+	private final PosicoesService service;
 	
+	public PosicoesController(PosicoesMapper mapper, PosicoesService service) {
+		super();
+		this.mapper = mapper;
+		this.service = service;
+	}
+
 	@PostMapping
 	public ResponseEntity<PosicaoDTO> cadastrarPosicao(@RequestBody PosicaoCreateDTO createDTO) {
 		Posicoes posicao = mapper.map(createDTO);

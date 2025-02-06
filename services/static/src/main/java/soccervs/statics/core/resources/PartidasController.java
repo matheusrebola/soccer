@@ -25,11 +25,13 @@ import soccervs.statics.core.services.PartidasService;
 public class PartidasController {
 
 	@Autowired
-	private PartidasMapper mapper;
+	private final PartidasMapper mapper;
 
 	@Autowired
-	private PartidasService service;
+	private final PartidasService service;
 	
+	public PartidasController(PartidasMapper mapper, PartidasService service) {this.mapper = mapper;this.service = service;}
+
 	@PostMapping
 	public ResponseEntity<PartidaDTO> cadastrarPartida(@RequestBody PartidaCreateDTO createDTO) {
 		Partidas partida = mapper.map(createDTO);

@@ -26,11 +26,13 @@ import soccervs.statics.core.services.JElencoService;
 public class JogadoresElencoController {
 	
 	@Autowired
-	private JElencoMapper mapper;
+	private final JElencoMapper mapper;
 	
 	@Autowired
-	private JElencoService service;
+	private final JElencoService service;
 	
+	public JogadoresElencoController(JElencoMapper mapper, JElencoService service) {super();this.mapper = mapper;this.service = service;}
+
 	@PostMapping
 	public ResponseEntity<JElencoDTO> cadastrarJogador(@RequestBody JElencoCreateDTO createDTO) {
 		JogadoresElenco jElenco = mapper.map(createDTO);

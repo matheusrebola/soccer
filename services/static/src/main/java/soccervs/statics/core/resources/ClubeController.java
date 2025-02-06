@@ -22,37 +22,39 @@ import soccervs.statics.core.services.ClubeService;
 @RestController
 @RequestMapping("/clubes")
 public class ClubeController {
-	
+
 	@Autowired
-    private ClubeMapper mapper;
-	
+	private final ClubeMapper mapper;
+
 	@Autowired
-	private ClubeService service;
+	private final ClubeService service;
 	
+	public ClubeController(ClubeMapper mapper, ClubeService service) {this.mapper = mapper;this.service = service;}
+
 	@PostMapping
 	public ResponseEntity<ClubeDTO> cadastrarClube(@RequestBody ClubeCreateDTO createDTO) {
-	    Clubes clube = mapper.map(createDTO);
-	    Clubes clubeSaved = service.salvar(clube);
+		Clubes clube = mapper.map(createDTO);
+		Clubes clubeSaved = service.salvar(clube);
 
-	    if (clubeSaved == null) {
-	        throw new NotPersistedException("Clube não persistido");
-	    }
+		if (clubeSaved == null) {
+			throw new NotPersistedException("Clube não persistido");
+		}
 
-	    Long id = clubeSaved.getId();
-	    ClubeDTO dto = mapper.map(clubeSaved);
-	    URI location = URI.create("/clubes/" + id);
+		Long id = clubeSaved.getId();
+		ClubeDTO dto = mapper.map(clubeSaved);
+		URI location = URI.create("/clubes/" + id);
 
-	    return ResponseEntity.created(location).body(dto);
+		return ResponseEntity.created(location).body(dto);
 	}
 	
 	@GetMapping
 	public ResponseEntity<List<ClubeDTO>> encontrarTodos() {
-	    List<Clubes> clubes = service.encontrarTodos();
-	    if (clubes.isEmpty()) {
-	        throw new NotFoundedException("Clube não encontrado");
-	    }
-	    List<ClubeDTO> dto = mapper.map(clubes);
-	    return ResponseEntity.ok(dto);
+		List<Clubes> clubes = service.encontrarTodos();
+		if (clubes.isEmpty()) {
+			throw new NotFoundedException("Clube não encontrado");
+		}
+		List<ClubeDTO> dto = mapper.map(clubes);
+		return ResponseEntity.ok(dto);
 	}
 
 }

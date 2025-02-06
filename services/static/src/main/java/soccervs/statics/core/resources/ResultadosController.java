@@ -24,11 +24,17 @@ import soccervs.statics.core.services.ResultadosService;
 public class ResultadosController {
 
 	@Autowired
-	private ResultadosMapper mapper;
+	private final ResultadosMapper mapper;
 	
 	@Autowired
-	private ResultadosService service;
-	
+	private final ResultadosService service;
+		
+	public ResultadosController(ResultadosMapper mapper, ResultadosService service) {
+		super();
+		this.mapper = mapper;
+		this.service = service;
+	}
+
 	@PostMapping
 	public ResponseEntity<ResultadoDTO> cadastrarResultado(@RequestBody ResultadoCreateDTO createDTO) {
 		Resultados resultado = mapper.map(createDTO);

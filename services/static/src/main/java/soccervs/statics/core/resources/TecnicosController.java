@@ -25,11 +25,17 @@ import soccervs.statics.core.services.TecnicoService;
 public class TecnicosController {
 
 	@Autowired
-	private TecnicoMapper mapper;
+	private final TecnicoMapper mapper;
 	
 	@Autowired
-	private TecnicoService service;
+	private final TecnicoService service;
 	
+	public TecnicosController(TecnicoMapper mapper, TecnicoService service) {
+		super();
+		this.mapper = mapper;
+		this.service = service;
+	}
+
 	@PostMapping
 	public ResponseEntity<TecnicoDTO> cadastrarTecnico(@RequestBody TecnicoCreateDTO createDTO) {
 		Tecnicos tecnico = mapper.map(createDTO);

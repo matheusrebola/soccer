@@ -24,9 +24,11 @@ import soccervs.statics.core.services.ElencoService;
 public class ElencosController {
 	
 	@Autowired
-	private ElencoMapper mapper; 
+	private final ElencoMapper mapper; 
 	
-	private ElencoService service;
+	private final ElencoService service;
+	
+	public ElencosController(ElencoMapper mapper, ElencoService service) {this.mapper = mapper;this.service = service;}
 
 	@PostMapping
 	public ResponseEntity<ElencoDTO> cadastrarElencos(@RequestBody ElencoCreateDTO create) {
