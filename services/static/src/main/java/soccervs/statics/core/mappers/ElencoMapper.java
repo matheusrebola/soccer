@@ -26,7 +26,7 @@ public class ElencoMapper {
 	
 	public List<ElencoDTO> map(List<Elencos> e) {
 		return e.stream()
-				.map(elencos -> mapper.map(e, ElencoDTO.class))
+				.map(elencos -> mapper.map(elencos, ElencoDTO.class))
 				.collect(Collectors.toList());
 	}
 }

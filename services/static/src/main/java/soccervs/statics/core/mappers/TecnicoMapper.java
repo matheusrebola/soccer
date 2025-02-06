@@ -15,7 +15,12 @@ import soccervs.statics.core.entities.Tecnicos;
 public class TecnicoMapper {
 
 	@Autowired
-	private ModelMapper mapper;
+	private final ModelMapper mapper;
+
+	public TecnicoMapper(ModelMapper mapper) {
+		super();
+		this.mapper = mapper;
+	}
 
 	public Tecnicos map(TecnicoCreateDTO createDTO) {
 		return mapper.map(createDTO, Tecnicos.class);
@@ -27,7 +32,7 @@ public class TecnicoMapper {
 
 	public List<TecnicoDTO> map(List<Tecnicos> t) {
 		return t.stream()
-				.map(tecnicos -> mapper.map(t, TecnicoDTO.class))
+				.map(tecnicos -> mapper.map(tecnicos, TecnicoDTO.class))
 				.collect(Collectors.toList());
 	}
 	

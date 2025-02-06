@@ -15,7 +15,12 @@ import soccervs.statics.core.entities.Partidas;
 public class PartidasMapper {
 
 	@Autowired
-	private ModelMapper mapper;
+	private final ModelMapper mapper;
+
+	public PartidasMapper(ModelMapper mapper) {
+		super();
+		this.mapper = mapper;
+	}
 
 	public Partidas map(PartidaCreateDTO createDTO) {
 		return mapper.map(createDTO, Partidas.class);
@@ -27,7 +32,7 @@ public class PartidasMapper {
 
 	public List<PartidaDTO> map(List<Partidas> p) {
 		return p.stream()
-				.map(partidas -> mapper.map(p, PartidaDTO.class))
+				.map(partidas -> mapper.map(partidas, PartidaDTO.class))
 				.collect(Collectors.toList());
 	}
 }

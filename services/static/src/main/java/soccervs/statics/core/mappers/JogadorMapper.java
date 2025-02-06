@@ -15,7 +15,12 @@ import soccervs.statics.core.entities.Jogadores;
 public class JogadorMapper {
 
 	@Autowired
-	private ModelMapper mapper;
+	private final ModelMapper mapper;
+
+	public JogadorMapper(ModelMapper mapper) {
+		super();
+		this.mapper = mapper;
+	}
 
 	public Jogadores map(JogadorCreateDTO dto) {
 		return mapper.map(dto, Jogadores.class);
@@ -27,7 +32,7 @@ public class JogadorMapper {
 
 	public List<JogadorDTO> map(List<Jogadores> j) {
 		return j.stream()
-				.map(jogadores -> mapper.map(j, JogadorDTO.class))
+				.map(jogadores -> mapper.map(jogadores, JogadorDTO.class))
 				.collect(Collectors.toList());
 	}
 	

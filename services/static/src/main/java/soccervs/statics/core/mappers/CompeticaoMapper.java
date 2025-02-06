@@ -15,8 +15,13 @@ import soccervs.statics.core.entities.Competicoes;
 public class CompeticaoMapper {
 
 	@Autowired
-	private ModelMapper mapper;
-	
+	private final ModelMapper mapper;
+		
+	public CompeticaoMapper(ModelMapper mapper) {
+		super();
+		this.mapper = mapper;
+	}
+
 	public Competicoes map(CompeticaoCreateDTO dto) {
 		return mapper.map(dto, Competicoes.class);
 	}
@@ -27,7 +32,7 @@ public class CompeticaoMapper {
 	
 	public List<CompeticaoDTO> map(List<Competicoes> c) {
 		return c.stream()
-				.map(competicoes -> mapper.map(c, CompeticaoDTO.class))
+				.map(competicoes -> mapper.map(competicoes, CompeticaoDTO.class))
 				.collect(Collectors.toList());
 	}
 }

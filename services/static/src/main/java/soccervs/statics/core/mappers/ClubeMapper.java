@@ -14,8 +14,10 @@ import soccervs.statics.core.entities.Clubes;
 @Component
 public class ClubeMapper {
 	@Autowired
-	private ModelMapper mapper;
+	private final ModelMapper mapper;
 	
+	public ClubeMapper(ModelMapper mapper) {this.mapper = mapper;}
+
 	public Clubes map(ClubeCreateDTO dto) { 
 		return mapper.map(dto, Clubes.class);
 	}
