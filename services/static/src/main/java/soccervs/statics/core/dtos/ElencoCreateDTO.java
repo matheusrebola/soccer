@@ -1,18 +1,15 @@
 package soccervs.statics.core.dtos;
 
-import java.util.Set;
-
 public class ElencoCreateDTO {
 	private String nome;
 	private Short anoFormacao;
 	private String tecnicoResponsavel;
 	private Integer tecnico;
-	private Short clube;
-	private Short temporada;
-	private Set<Integer> jogadoresElenco;
+	private Long clube;
+	private Long temporada;
 	
-	public ElencoCreateDTO(String nome, Short anoFormacao, String tecnicoResponsavel, Integer tecnico, Short clube,
-			Short temporada, Set<Integer> jogadoresElenco) {
+	public ElencoCreateDTO(String nome, Short anoFormacao, String tecnicoResponsavel, Integer tecnico, Long clube,
+			Long temporada) {
 		super();
 		this.nome = nome;
 		this.anoFormacao = anoFormacao;
@@ -20,7 +17,6 @@ public class ElencoCreateDTO {
 		this.tecnico = tecnico;
 		this.clube = clube;
 		this.temporada = temporada;
-		this.jogadoresElenco = jogadoresElenco;
 	}
 
 	public ElencoCreateDTO() {super();}
@@ -57,27 +53,19 @@ public class ElencoCreateDTO {
 		this.tecnico = tecnico;
 	}
 
-	public Short getClube() {
+	public Long getClube() {
 		return clube;
 	}
 
-	public void setClube(Short clube) {
+	public void setClube(Long clube) {
 		this.clube = clube;
 	}
 
-	public Short getTemporada() {
+	public Long getTemporada() {
 		return temporada;
 	}
 
-	public void setTemporada(Short temporada) {
+	public void setTemporada(Long temporada) {
 		this.temporada = temporada;
-	}
-
-	public Set<Integer> getJogadoresElenco() {
-		return jogadoresElenco;
-	}
-
-	public void setJogadoresElenco(Set<Integer> jogadoresElenco) {
-		this.jogadoresElenco = jogadoresElenco;
 	}
 }

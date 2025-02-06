@@ -1,31 +1,34 @@
 package soccervs.statics.core.dtos;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 import soccervs.statics.core.entities.enums.EPePreferido;
 
 public class JogadorDTO extends JogadorCreateDTO {
-	private Long id;
+	private String id;
+
+	public JogadorDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public JogadorDTO(String nome, LocalDate dataNascimento, String nacionalidade, EPePreferido pePreferido,
-			Float altura, Float peso, Set<Byte> posicao, Set<Integer> jogadoresElenco, Long id) {
-		super(nome, dataNascimento, nacionalidade, pePreferido, altura, peso, posicao, jogadoresElenco);
+			Float altura, Float peso) {
+		super(nome, dataNascimento, nacionalidade, pePreferido, altura, peso);
+		// TODO Auto-generated constructor stub
+	}
+
+	public JogadorDTO(String nome, LocalDate dataNascimento, String nacionalidade, EPePreferido pePreferido,
+			Float altura, Float peso, String id) {
+		super(nome, dataNascimento, nacionalidade, pePreferido, altura, peso);
 		this.id = id;
 	}
 
-	public JogadorDTO() {super();}
-
-	public JogadorDTO(String nome, LocalDate dataNascimento, String nacionalidade, EPePreferido pePreferido,
-			Float altura, Float peso, Set<Byte> posicao, Set<Integer> jogadoresElenco) {
-		super(nome, dataNascimento, nacionalidade, pePreferido, altura, peso, posicao, jogadoresElenco);
-	}
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 }

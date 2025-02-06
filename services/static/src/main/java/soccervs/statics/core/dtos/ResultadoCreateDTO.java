@@ -9,14 +9,14 @@ public class ResultadoCreateDTO {
 	private Byte marcados;
 	private Byte sofridos;
 	private Float desempenho;
-	private Short competicao;
-	private Short clube;
-	private Short temporada;
-	private Integer titulo;
+	private Long competicao;
+	private Long clube;
+	private Long temporada;
+	private Long titulo;
 	
 	public ResultadoCreateDTO(Byte jogos, Byte vitorias, Byte empates, Byte derrotas, Byte aproveitamento,
-			Byte marcados, Byte sofridos, Float desempenho, Short competicao, Short clube, Short temporada,
-			Integer titulo) {
+			Byte marcados, Byte sofridos, Float desempenho, Long competicao, Long clube, Long temporada,
+			Long titulo) {
 		super();
 		this.jogos = jogos;
 		this.vitorias = vitorias;
@@ -98,35 +98,35 @@ public class ResultadoCreateDTO {
 		this.desempenho = desempenho;
 	}
 
-	public Short getCompeticao() {
+	public Long getCompeticao() {
 		return competicao;
 	}
 
-	public void setCompeticao(Short competicao) {
+	public void setCompeticao(Long competicao) {
 		this.competicao = competicao;
 	}
 
-	public Short getClube() {
+	public Long getClube() {
 		return clube;
 	}
 
-	public void setClube(Short clube) {
+	public void setClube(Long clube) {
 		this.clube = clube;
 	}
 
-	public Short getTemporada() {
+	public Long getTemporada() {
 		return temporada;
 	}
 
-	public void setTemporada(Short temporada) {
+	public void setTemporada(Long temporada) {
 		this.temporada = temporada;
 	}
 
-	public Integer getTitulo() {
+	public Long getTitulo() {
 		return titulo;
 	}
 
-	public void setTitulo(Integer titulo) {
+	public void setTitulo(Long titulo) {
 		this.titulo = titulo;
 	}
 }

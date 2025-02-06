@@ -3,10 +3,10 @@ package soccervs.statics.core.dtos;
 import java.time.LocalDate;
 
 public class TecnicoDTO extends TecnicoCreateDTO {
-	private Integer id;
+	private String id;
 
 	public TecnicoDTO(String nome, String nacionalidade, LocalDate nascimento, Byte experiencia, String filosofia,
-			Integer id) {
+			String id) {
 		super(nome, nacionalidade, nascimento, experiencia, filosofia);
 		this.id = id;
 	}
@@ -17,11 +17,11 @@ public class TecnicoDTO extends TecnicoCreateDTO {
 		super(nome, nacionalidade, nascimento, experiencia, filosofia);
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 }

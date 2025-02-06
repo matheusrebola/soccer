@@ -5,26 +5,30 @@ import soccervs.statics.core.entities.enums.EFuncaoJogador;
 import soccervs.statics.core.entities.enums.EPersonalidade;
 
 public class JElencoDTO extends JElencoCreateDTO {
-	private Integer id;
+	private String id;
 
-	public JElencoDTO(EFuncaoJogador funcao, EContribuicao contribuicao, EPersonalidade personalidade, Integer elenco,
-			Long jogador, Integer id) {
+	public JElencoDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public JElencoDTO(EFuncaoJogador funcao, EContribuicao contribuicao, EPersonalidade personalidade, Long elenco,
+			Long jogador) {
+		super(funcao, contribuicao, personalidade, elenco, jogador);
+		// TODO Auto-generated constructor stub
+	}
+
+	public JElencoDTO(EFuncaoJogador funcao, EContribuicao contribuicao, EPersonalidade personalidade, Long elenco,
+			Long jogador, String id) {
 		super(funcao, contribuicao, personalidade, elenco, jogador);
 		this.id = id;
 	}
 
-	public JElencoDTO() {super();}
-
-	public JElencoDTO(EFuncaoJogador funcao, EContribuicao contribuicao, EPersonalidade personalidade, Integer elenco,
-			Long jogador) {
-		super(funcao, contribuicao, personalidade, elenco, jogador);
-	}
-
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 }

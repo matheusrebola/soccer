@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import soccervs.statics.core.entities.Competicoes;
 
 @Repository
-public interface CompeticaoRepository extends JpaRepository<Competicoes, Short> {
+public interface CompeticaoRepository extends JpaRepository<Competicoes, Long> {
 	@Query("SELECT c.id FROM Competicoes c WHERE c = :competicao")
     Short findIdByCompeticao(@Param("competicao") Competicoes competicao);
 

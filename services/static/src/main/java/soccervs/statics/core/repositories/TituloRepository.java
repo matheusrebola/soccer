@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.statics.core.entities.Titulos;
 
 @Repository
-public interface TituloRepository extends JpaRepository<Titulos, Integer> {
+public interface TituloRepository extends JpaRepository<Titulos, Long> {
 
 }

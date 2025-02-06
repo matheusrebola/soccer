@@ -7,11 +7,11 @@ public class JElencoCreateDTO {
 	private EFuncaoJogador funcao;
 	private EContribuicao contribuicao;
 	private EPersonalidade personalidade;
-	private Integer elenco;
+	private Long elenco;
 	private Long jogador;
 	
 	public JElencoCreateDTO(EFuncaoJogador funcao, EContribuicao contribuicao, EPersonalidade personalidade,
-			Integer elenco, Long jogador) {
+			Long elenco, Long jogador) {
 		super();
 		this.funcao = funcao;
 		this.contribuicao = contribuicao;
@@ -46,11 +46,11 @@ public class JElencoCreateDTO {
 		this.personalidade = personalidade;
 	}
 
-	public Integer getElenco() {
+	public Long getElenco() {
 		return elenco;
 	}
 
-	public void setElenco(Integer elenco) {
+	public void setElenco(Long elenco) {
 		this.elenco = elenco;
 	}
 

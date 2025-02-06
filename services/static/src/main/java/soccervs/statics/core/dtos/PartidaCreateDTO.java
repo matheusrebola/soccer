@@ -9,12 +9,12 @@ public class PartidaCreateDTO {
 	private Short fora;
 	private Byte placarCasa;
 	private Byte placarVisitante;
-	private Integer tecnico;
-	private Short temporada;
-	private Short competicao;
+	private Long tecnico;
+	private Long temporada;
+	private Long competicao;
 	
 	public PartidaCreateDTO(LocalDateTime dataPartida, String localPartida, Short casa, Short fora, Byte placarCasa,
-			Byte placarVisitante, Integer tecnico, Short temporada, Short competicao) {
+			Byte placarVisitante, Long tecnico, Long temporada, Long competicao) {
 		super();
 		this.dataPartida = dataPartida;
 		this.localPartida = localPartida;
@@ -65,22 +65,22 @@ public class PartidaCreateDTO {
 	public void setPlacarVisitante(Byte placarVisitante) {
 		this.placarVisitante = placarVisitante;
 	}
-	public Integer getTecnico() {
+	public Long getTecnico() {
 		return tecnico;
 	}
-	public void setTecnico(Integer tecnico) {
+	public void setTecnico(Long tecnico) {
 		this.tecnico = tecnico;
 	}
-	public Short getTemporada() {
+	public Long getTemporada() {
 		return temporada;
 	}
-	public void setTemporada(Short temporada) {
+	public void setTemporada(Long temporada) {
 		this.temporada = temporada;
 	}
-	public Short getCompeticao() {
+	public Long getCompeticao() {
 		return competicao;
 	}
-	public void setCompeticao(Short competicao) {
+	public void setCompeticao(Long competicao) {
 		this.competicao = competicao;
 	}
 }

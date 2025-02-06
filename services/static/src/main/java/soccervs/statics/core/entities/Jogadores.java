@@ -1,7 +1,6 @@
 package soccervs.statics.core.entities;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +9,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import soccervs.statics.core.entities.enums.EPePreferido;
 
@@ -38,9 +36,73 @@ public class Jogadores {
 	@Column
 	private Float peso;
 	
-	@OneToMany(mappedBy = "posicao")
-	private Set<Posicoes> posicao;
-	
-	@OneToMany(mappedBy = "jogador")
-	private Set<JogadoresElenco> jogadoresElenco;
+	public Jogadores(Long id, String nome, LocalDate dataNascimento, String nacionalidade, EPePreferido pePreferido,
+			Float altura, Float peso) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+		this.nacionalidade = nacionalidade;
+		this.pePreferido = pePreferido;
+		this.altura = altura;
+		this.peso = peso;
+	}
+
+	public Jogadores() {super();}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
+
+	public EPePreferido getPePreferido() {
+		return pePreferido;
+	}
+
+	public void setPePreferido(EPePreferido pePreferido) {
+		this.pePreferido = pePreferido;
+	}
+
+	public Float getAltura() {
+		return altura;
+	}
+
+	public void setAltura(Float altura) {
+		this.altura = altura;
+	}
+
+	public Float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(Float peso) {
+		this.peso = peso;
+	}
 }

@@ -9,25 +9,18 @@ public class CompeticaoCreateDTO {
 	private ECompeticao tipoCompeticao;
 	private EDisputa tipoDisputa;
 	private String paisRegiao;
-	private Integer titulo;
-	private Short temporada;
-	private Long resultado;
-	private Long partida;
 	
 	public CompeticaoCreateDTO(String nome, Short ano, ECompeticao tipoCompeticao, EDisputa tipoDisputa,
-			String paisRegiao, Integer titulo, Short temporada, Long resultado, Long partida) {
+			String paisRegiao) {
+		super();
 		this.nome = nome;
 		this.ano = ano;
 		this.tipoCompeticao = tipoCompeticao;
 		this.tipoDisputa = tipoDisputa;
 		this.paisRegiao = paisRegiao;
-		this.titulo = titulo;
-		this.temporada = temporada;
-		this.resultado = resultado;
-		this.partida = partida;
 	}
 
-	public CompeticaoCreateDTO() {super();}
+	public CompeticaoCreateDTO() {}
 
 	public String getNome() {
 		return nome;
@@ -67,38 +60,5 @@ public class CompeticaoCreateDTO {
 
 	public void setPaisRegiao(String paisRegiao) {
 		this.paisRegiao = paisRegiao;
-	}
-
-	public Integer getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(Integer titulo) {
-		this.titulo = titulo;
-	}
-
-	public Short getTemporada() {
-		return temporada;
-	}
-
-	public void setTemporada(Short temporada) {
-		this.temporada = temporada;
-	}
-
-	public Long getResultado() {
-		return resultado;
-	}
-
-	public void setResultado(Long resultado) {
-		this.resultado = resultado;
-	}
-
-	public Long getPartida() {
-		return partida;
-	}
-
-	public void setPartida(Long partida) {
-		this.partida = partida;
-	}
-	
+	}	
 }

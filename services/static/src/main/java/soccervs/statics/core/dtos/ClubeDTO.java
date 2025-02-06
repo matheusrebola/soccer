@@ -3,9 +3,9 @@ package soccervs.statics.core.dtos;
 import java.time.LocalDate;
 
 public class ClubeDTO extends ClubeCreateDTO {
-	private Short id;
+	private String id;
 
-	public ClubeDTO(String nome, String cidade, String pais, LocalDate dataFundacao, Integer tecnico, Short id) {
+	public ClubeDTO(String nome, String cidade, String pais, LocalDate dataFundacao, Integer tecnico, String id) {
 		super(nome, cidade, pais, dataFundacao, tecnico);
 		this.id = id;
 	}
@@ -16,11 +16,11 @@ public class ClubeDTO extends ClubeCreateDTO {
 		super(nome, cidade, pais, dataFundacao, tecnico);
 	}
 
-	public Short getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Short id) {
+	public void setId(String id) {
 		this.id = id;
 	}	
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import soccervs.statics.core.entities.JogadoresElenco;
 
 @Repository
-public interface JogadorElencoRepository extends JpaRepository<JogadoresElenco, Integer> {
+public interface JogadorElencoRepository extends JpaRepository<JogadoresElenco, Long> {
 	@Query("SELECT j.id FROM JogadoresElenco j WHERE j = :jogador")
 	Integer findIdByJogadorElenco(@Param("jogador") JogadoresElenco jogador);
 

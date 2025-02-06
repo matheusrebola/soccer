@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import soccervs.statics.core.entities.Elencos;
 
 @Repository
-public interface ElencoRepository extends JpaRepository<Elencos, Integer> {
+public interface ElencoRepository extends JpaRepository<Elencos, Long> {
 	@Query("SELECT e.id FROM Elencos e WHERE e = :elenco")
     Integer findIdByElenco(@Param("elenco") Elencos elenco);
 }

@@ -7,8 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -35,12 +33,109 @@ public class Partidas {
 	@Column(name = "placar_visitante")
 	private Byte placarVisitante;
 	
-	@ManyToOne @JoinColumn(name = "tecnico_id", nullable = false)
-	private Tecnicos tecnico;
+	@Column(name = "tecnico_id", nullable = false)
+	private Long tecnico;
 	
-	@ManyToOne @JoinColumn(name = "temporada_id", nullable = false)
-	private Temporadas temporada;
+	@Column(name = "temporada_id", nullable = false)
+	private Long temporada;
 	
-	@ManyToOne @JoinColumn(name = "competicao_id", nullable = false)
-	private Competicoes competicao;
+	@Column(name = "competicao_id", nullable = false)
+	private Long competicao;
+
+	public Partidas(Long id, LocalDateTime dataPartida, String localPartida, Short casa, Short fora, Byte placarCasa,
+			Byte placarVisitante, Long tecnico, Long temporada, Long competicao) {
+		super();
+		this.id = id;
+		this.dataPartida = dataPartida;
+		this.localPartida = localPartida;
+		this.casa = casa;
+		this.fora = fora;
+		this.placarCasa = placarCasa;
+		this.placarVisitante = placarVisitante;
+		this.tecnico = tecnico;
+		this.temporada = temporada;
+		this.competicao = competicao;
+	}
+
+	public Partidas() {super();}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public LocalDateTime getDataPartida() {
+		return dataPartida;
+	}
+
+	public void setDataPartida(LocalDateTime dataPartida) {
+		this.dataPartida = dataPartida;
+	}
+
+	public String getLocalPartida() {
+		return localPartida;
+	}
+
+	public void setLocalPartida(String localPartida) {
+		this.localPartida = localPartida;
+	}
+
+	public Short getCasa() {
+		return casa;
+	}
+
+	public void setCasa(Short casa) {
+		this.casa = casa;
+	}
+
+	public Short getFora() {
+		return fora;
+	}
+
+	public void setFora(Short fora) {
+		this.fora = fora;
+	}
+
+	public Byte getPlacarCasa() {
+		return placarCasa;
+	}
+
+	public void setPlacarCasa(Byte placarCasa) {
+		this.placarCasa = placarCasa;
+	}
+
+	public Byte getPlacarVisitante() {
+		return placarVisitante;
+	}
+
+	public void setPlacarVisitante(Byte placarVisitante) {
+		this.placarVisitante = placarVisitante;
+	}
+
+	public Long getTecnico() {
+		return tecnico;
+	}
+
+	public void setTecnico(Long tecnico) {
+		this.tecnico = tecnico;
+	}
+
+	public Long getTemporada() {
+		return temporada;
+	}
+
+	public void setTemporada(Long temporada) {
+		this.temporada = temporada;
+	}
+
+	public Long getCompeticao() {
+		return competicao;
+	}
+
+	public void setCompeticao(Long competicao) {
+		this.competicao = competicao;
+	}
 }
