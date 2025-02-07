@@ -26,6 +26,11 @@ public class TemporadaController {
 	@Autowired
 	private final TemporadaService service;
 	
+	public TemporadaController(TemporadaMapper mapper, TemporadaService service) {
+		this.mapper = mapper;
+		this.service = service;
+	}
+
 	@PostMapping
 	public ResponseEntity<TemporadaDTO> cadastrarTemporada(@RequestBody TemporadaCreateDTO createDTO) {
 		Temporadas temporada = mapper.map(createDTO);
