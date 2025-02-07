@@ -1,9 +1,12 @@
 package soccervs.statics.core.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import soccervs.statics.core.dtos.TituloCreateDTO;
 import soccervs.statics.core.mappers.TitulosMapper;
 import soccervs.statics.core.services.TitulosService;
 
@@ -22,5 +25,10 @@ public class TitulosController {
 		this.service = service;
 	}
 	
+	@PostMapping
+	public String cadastrarTitulo(@RequestBody TituloCreateDTO createDTO) {
+		
+		return entity;
+	}
 	
 }
