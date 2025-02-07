@@ -12,8 +12,8 @@ import soccervs.statics.core.dtos.TemporadaCreateDTO;
 public class TemporadaController {
 	
 	@PostMapping
-	public String postMethodName(@RequestBody TemporadaCreateDTO createDTO) {
-		//TODO: process POST request
+	public String cadastrarTemporada(@RequestBody TemporadaCreateDTO createDTO) {
+		
 		
 		return entity;
 	}
