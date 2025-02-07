@@ -57,7 +57,7 @@ public class TecnicosController {
 		List<Tecnicos> tecnicos = service.encontrarTodos();
 		
 		if (tecnicos.isEmpty()) {
-			throw new NotFoundedException("Posicoes não encontradas");
+			throw new NotFoundedException("Tecnicos não encontrados");
 		}
 		
 		List<TecnicoDTO> dto = mapper.map(tecnicos);
