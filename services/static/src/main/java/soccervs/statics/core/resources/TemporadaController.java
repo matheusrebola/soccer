@@ -51,15 +51,15 @@ public class TemporadaController {
 	}
 
 	@GetMapping
-	public String encontrarTodos() {
+	public ResponseEntity<List<TemporadaDTO>> encontrarTodos() {
 		List<Temporadas> temporadas = service.encontrarTodos();
 		
 		if (temporadas.isEmpty()) {
 			throw new NotFoundedException("Temporadas não encontradas");
 		}
 		
-		
-		return new String();
+		List<TemporadaDTO> dto = mapper.map(temporadas);
+		return ResponseEntity.ok(dto);
 	}
 
 }
