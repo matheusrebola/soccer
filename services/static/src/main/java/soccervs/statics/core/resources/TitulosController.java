@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import soccervs.statics.core.dtos.TituloCreateDTO;
+import soccervs.statics.core.entities.Titulos;
 import soccervs.statics.core.mappers.TitulosMapper;
 import soccervs.statics.core.services.TitulosService;
 
@@ -27,7 +28,7 @@ public class TitulosController {
 	
 	@PostMapping
 	public String cadastrarTitulo(@RequestBody TituloCreateDTO createDTO) {
-		
+		Titulos titulo = mapper.map(createDTO);
 		return entity;
 	}
 	
