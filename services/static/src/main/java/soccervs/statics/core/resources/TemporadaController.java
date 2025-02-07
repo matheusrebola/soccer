@@ -15,6 +15,7 @@ import soccervs.statics.core.dtos.TemporadaCreateDTO;
 import soccervs.statics.core.dtos.TemporadaDTO;
 import soccervs.statics.core.entities.Temporadas;
 import soccervs.statics.core.mappers.TemporadaMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.TemporadaService;
 
@@ -52,6 +53,12 @@ public class TemporadaController {
 	@GetMapping
 	public String encontrarTodos() {
 		List<Temporadas> temporadas = service.encontrarTodos();
+		
+		if (temporadas.isEmpty()) {
+			throw new NotFoundedException("Temporadas não encontradas");
+		}
+		
+		
 		return new String();
 	}
 
