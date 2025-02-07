@@ -3,6 +3,7 @@ package soccervs.statics.core.resources;
 import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,7 @@ public class TemporadaController {
 	private final TemporadaService service;
 	
 	@PostMapping
-	public String cadastrarTemporada(@RequestBody TemporadaCreateDTO createDTO) {
+	public ResponseEntity<TemporadaDTO> cadastrarTemporada(@RequestBody TemporadaCreateDTO createDTO) {
 		Temporadas temporada = mapper.map(createDTO);
 		Temporadas saved = service.salvar(temporada);
 		
@@ -38,7 +39,7 @@ public class TemporadaController {
 		URI location = URI.create("/temporadas/"+id);
 		TemporadaDTO dto = mapper.map(saved);
 		
-		return entity;
+		return ResponseEntity.created(location).body(dto);
 	}
 	
 
