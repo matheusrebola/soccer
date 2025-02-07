@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import soccervs.statics.core.dtos.TemporadaCreateDTO;
 import soccervs.statics.core.entities.Temporadas;
 import soccervs.statics.core.mappers.TemporadaMapper;
+import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.TemporadaService;
 
 @RestController
@@ -25,6 +26,12 @@ public class TemporadaController {
 	public String cadastrarTemporada(@RequestBody TemporadaCreateDTO createDTO) {
 		Temporadas temporada = mapper.map(createDTO);
 		Temporadas saved = service.salvar(temporada);
+		
+		if(saved == null) {
+			throw new NotPersistedException("Temporada não persistida");
+		}
+		
+		
 		
 		return entity;
 	}
