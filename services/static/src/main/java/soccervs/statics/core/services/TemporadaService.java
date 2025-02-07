@@ -15,8 +15,7 @@ public class TemporadaService {
 	public TemporadaService(TemporadaRepository repository) {this.repository = repository;}
 
 	public Temporadas salvar(Temporadas temporada) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.save(temporada);
 	}
 	
 	
