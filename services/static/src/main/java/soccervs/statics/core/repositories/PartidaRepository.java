@@ -7,5 +7,5 @@ import soccervs.statics.core.entities.Partidas;
 
 @Repository
 public interface PartidaRepository extends JpaRepository<Partidas, Long> {
-
+	
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.statics.core.entities.Posicoes;
 
 @Repository
-public interface PosicaoRepository extends JpaRepository<Posicoes, Byte> {
-
+public interface PosicaoRepository extends JpaRepository<Posicoes, Long> {
+	
 }

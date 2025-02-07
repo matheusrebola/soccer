@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.statics.core.entities.Tecnicos;
 
 @Repository
-public interface TecnicoRepository extends JpaRepository<Tecnicos, Integer> {
-
+public interface TecnicoRepository extends JpaRepository<Tecnicos, Long> {
+	
 }

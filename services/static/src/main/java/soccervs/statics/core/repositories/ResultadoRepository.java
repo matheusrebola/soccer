@@ -7,5 +7,5 @@ import soccervs.statics.core.entities.Resultados;
 
 @Repository
 public interface ResultadoRepository extends JpaRepository<Resultados, Long> {
-
+	
 }

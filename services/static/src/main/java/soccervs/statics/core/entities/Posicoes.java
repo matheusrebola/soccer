@@ -7,8 +7,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import soccervs.statics.core.entities.enums.EFuncaoPosicao;
 import soccervs.statics.core.entities.enums.EPosicoes;
@@ -17,7 +15,7 @@ import soccervs.statics.core.entities.enums.EPosicoes;
 @Table(name="tb_posicoes")
 public class Posicoes {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private Byte id;
+	private Long id;
 	
 	@Column(name = "posicao", length = 3) @Enumerated(EnumType.STRING)
 	private EPosicoes posicao;
@@ -28,6 +26,57 @@ public class Posicoes {
 	@Column(name = "descricao", length = 255)
 	private String descricao;
 	
-	@ManyToOne @JoinColumn(name = "jogador_id", nullable = false)
-	private Jogadores jogador;
+	@Column(name = "jogador_id", nullable = false)
+	private Long jogador;
+
+	public Posicoes(Long id, EPosicoes posicao, EFuncaoPosicao funcao, String descricao, Long jogador) {
+		super();
+		this.id = id;
+		this.posicao = posicao;
+		this.funcao = funcao;
+		this.descricao = descricao;
+		this.jogador = jogador;
+	}
+
+	public Posicoes() {super();}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public EPosicoes getPosicao() {
+		return posicao;
+	}
+
+	public void setPosicao(EPosicoes posicao) {
+		this.posicao = posicao;
+	}
+
+	public EFuncaoPosicao getFuncao() {
+		return funcao;
+	}
+
+	public void setFuncao(EFuncaoPosicao funcao) {
+		this.funcao = funcao;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Long getJogador() {
+		return jogador;
+	}
+
+	public void setJogador(Long jogador) {
+		this.jogador = jogador;
+	}
 }

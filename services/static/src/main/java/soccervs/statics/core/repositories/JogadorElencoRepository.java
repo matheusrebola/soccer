@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.statics.core.entities.JogadoresElenco;
 
 @Repository
-public interface JogadorElencoRepository extends JpaRepository<JogadoresElenco, Integer> {
-
+public interface JogadorElencoRepository extends JpaRepository<JogadoresElenco, Long> {
+	
 }

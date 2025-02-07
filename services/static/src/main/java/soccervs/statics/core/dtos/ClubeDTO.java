@@ -2,14 +2,25 @@ package soccervs.statics.core.dtos;
 
 import java.time.LocalDate;
 
-import lombok.Data;
+public class ClubeDTO extends ClubeCreateDTO {
+	private Long id;
 
-@Data
-public class ClubeDTO {
-	private Short id;
-	private String nome;
-	private String cidade;
-	private String pais;
-	private LocalDate dataFundacao;
-	private Integer tecnico;
+	public ClubeDTO(String nome, String cidade, String pais, LocalDate dataFundacao, Integer tecnico, Long id) {
+		super(nome, cidade, pais, dataFundacao, tecnico);
+		this.id = id;
+	}
+
+	public ClubeDTO() {super();}
+
+	public ClubeDTO(String nome, String cidade, String pais, LocalDate dataFundacao, Integer tecnico) {
+		super(nome, cidade, pais, dataFundacao, tecnico);
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}	
 }
