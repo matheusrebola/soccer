@@ -4,6 +4,7 @@ import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +20,13 @@ import soccervs.statics.core.services.TemporadaService;
 @RestController
 @RequestMapping("/temporadas")
 public class TemporadaController {
-	
+
 	@Autowired
 	private final TemporadaMapper mapper;
-	
+
 	@Autowired
 	private final TemporadaService service;
-	
+
 	public TemporadaController(TemporadaMapper mapper, TemporadaService service) {
 		this.mapper = mapper;
 		this.service = service;
@@ -35,17 +36,22 @@ public class TemporadaController {
 	public ResponseEntity<TemporadaDTO> cadastrarTemporada(@RequestBody TemporadaCreateDTO createDTO) {
 		Temporadas temporada = mapper.map(createDTO);
 		Temporadas saved = service.salvar(temporada);
-		
-		if(saved == null) {
+
+		if (saved == null) {
 			throw new NotPersistedException("Temporada não persistida");
 		}
-		
+
 		Long id = saved.getId();
-		URI location = URI.create("/temporadas/"+id);
+		URI location = URI.create("/temporadas/" + id);
 		TemporadaDTO dto = mapper.map(saved);
-		
+
 		return ResponseEntity.created(location).body(dto);
 	}
-	
+
+	@GetMapping
+	public String encontrarTodos() {
+		
+		return new String();
+	}
 
 }
