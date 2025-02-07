@@ -16,8 +16,7 @@ public class TemporadaMapper {
 	public TemporadaMapper(ModelMapper mapper) {this.mapper = mapper;}
 
 	public Temporadas map(TemporadaCreateDTO createDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.map(createDTO, Temporadas.class);
 	}
 	
 	
