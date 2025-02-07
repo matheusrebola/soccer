@@ -1,15 +1,15 @@
 package soccervs.persistence.core.entities;
 
-import soccervs.persistence.core.entities.enums.EEvento;
+import soccervs.persistence.core.entities.enums.EEventoEspecifico;
 
 public class EventosEspecificos {
 	private Long id;
-	private EEvento evento;
+	private EEventoEspecifico evento;
 	private Byte minuto;
 	private Long partidaId;
 	private Long jogadorId;
 
-	public EventosEspecificos(Long id, EEvento evento, Byte minuto, Long partidaId, Long jogadorId) {
+	public EventosEspecificos(Long id, EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
 		super();
 		this.id = id;
 		this.evento = evento;
@@ -29,11 +29,11 @@ public class EventosEspecificos {
 		this.id = id;
 	}
 
-	public EEvento getEvento() {
+	public EEventoEspecifico getEvento() {
 		return evento;
 	}
 
-	public void setEvento(EEvento evento) {
+	public void setEvento(EEventoEspecifico evento) {
 		this.evento = evento;
 	}
 

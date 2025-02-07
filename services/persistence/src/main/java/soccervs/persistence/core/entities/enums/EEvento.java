@@ -1,5 +1,5 @@
 package soccervs.persistence.core.entities.enums;
 
 public enum EEvento {
-	LESAO, ENTRADA, SAIDA, PAUSA
+	PASSE, DRIBLE, FALTA, CARTAO, A_DEF, A_OFE, COBERTURA, FINALIZACAO, TROCA_POSI
 }
