@@ -1,4 +1,6 @@
 package soccervs.statics.core.entities;
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,19 +14,19 @@ public class Temporadas {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(length = 5)
+	@Column(length = 10)
 	private String temporada;
 	
 	@Column(name = "data_inicio")
-	private Short dataInicio;
+	private LocalDate dataInicio;
 	
 	@Column(name = "data_fim")
-	private Short dataFim;
+	private LocalDate dataFim;
 	
 	@Column(name = "competicao_id", nullable = false)
 	private Long competicao;
 
-	public Temporadas(Long id, String temporada, Short dataInicio, Short dataFim, Long competicao) {
+	public Temporadas(Long id, String temporada, LocalDate dataInicio, LocalDate dataFim, Long competicao) {
 		super();
 		this.id = id;
 		this.temporada = temporada;
@@ -51,19 +53,19 @@ public class Temporadas {
 		this.temporada = temporada;
 	}
 
-	public Short getDataInicio() {
+	public LocalDate getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(Short dataInicio) {
+	public void setDataInicio(LocalDate dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
-	public Short getDataFim() {
+	public LocalDate getDataFim() {
 		return dataFim;
 	}
 
-	public void setDataFim(Short dataFim) {
+	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
 	}
 

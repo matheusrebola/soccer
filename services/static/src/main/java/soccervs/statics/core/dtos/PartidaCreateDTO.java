@@ -5,15 +5,15 @@ import java.time.LocalDateTime;
 public class PartidaCreateDTO {
 	private LocalDateTime dataPartida;
 	private String localPartida;
-	private Short casa;
-	private Short fora;
+	private Long casa;
+	private Long fora;
 	private Byte placarCasa;
 	private Byte placarVisitante;
 	private Long tecnico;
 	private Long temporada;
 	private Long competicao;
 	
-	public PartidaCreateDTO(LocalDateTime dataPartida, String localPartida, Short casa, Short fora, Byte placarCasa,
+	public PartidaCreateDTO(LocalDateTime dataPartida, String localPartida, Long casa, Long fora, Byte placarCasa,
 			Byte placarVisitante, Long tecnico, Long temporada, Long competicao) {
 		super();
 		this.dataPartida = dataPartida;
@@ -41,16 +41,16 @@ public class PartidaCreateDTO {
 	public void setLocalPartida(String localPartida) {
 		this.localPartida = localPartida;
 	}
-	public Short getCasa() {
+	public Long getCasa() {
 		return casa;
 	}
-	public void setCasa(Short casa) {
+	public void setCasa(Long casa) {
 		this.casa = casa;
 	}
-	public Short getFora() {
+	public Long getFora() {
 		return fora;
 	}
-	public void setFora(Short fora) {
+	public void setFora(Long fora) {
 		this.fora = fora;
 	}
 	public Byte getPlacarCasa() {

@@ -13,13 +13,13 @@ public class PartidaDTO extends PartidaCreateDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PartidaDTO(LocalDateTime dataPartida, String localPartida, Short casa, Short fora, Byte placarCasa,
+	public PartidaDTO(LocalDateTime dataPartida, String localPartida, Long casa, Long fora, Byte placarCasa,
 			Byte placarVisitante, Long tecnico, Long temporada, Long competicao) {
 		super(dataPartida, localPartida, casa, fora, placarCasa, placarVisitante, tecnico, temporada, competicao);
 		// TODO Auto-generated constructor stub
 	}
 
-	public PartidaDTO(LocalDateTime dataPartida, String localPartida, Short casa, Short fora, Byte placarCasa,
+	public PartidaDTO(LocalDateTime dataPartida, String localPartida, Long casa, Long fora, Byte placarCasa,
 			Byte placarVisitante, Long tecnico, Long temporada, Long competicao, Long id) {
 		super(dataPartida, localPartida, casa, fora, placarCasa, placarVisitante, tecnico, temporada, competicao);
 		this.id = id;

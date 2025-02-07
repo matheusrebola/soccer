@@ -22,10 +22,10 @@ public class Partidas {
 	private String localPartida;
 	
 	@Column(name = "id_casa")
-	private Short casa;
+	private Long casa;
 	
 	@Column(name = "id_visitante")
-	private Short fora;
+	private Long fora;
 	
 	@Column(name = "placar_casa")
 	private Byte placarCasa;
@@ -42,7 +42,7 @@ public class Partidas {
 	@Column(name = "competicao_id", nullable = false)
 	private Long competicao;
 
-	public Partidas(Long id, LocalDateTime dataPartida, String localPartida, Short casa, Short fora, Byte placarCasa,
+	public Partidas(Long id, LocalDateTime dataPartida, String localPartida, Long casa, Long fora, Byte placarCasa,
 			Byte placarVisitante, Long tecnico, Long temporada, Long competicao) {
 		super();
 		this.id = id;
@@ -83,19 +83,19 @@ public class Partidas {
 		this.localPartida = localPartida;
 	}
 
-	public Short getCasa() {
+	public Long getCasa() {
 		return casa;
 	}
 
-	public void setCasa(Short casa) {
+	public void setCasa(Long casa) {
 		this.casa = casa;
 	}
 
-	public Short getFora() {
+	public Long getFora() {
 		return fora;
 	}
 
-	public void setFora(Short fora) {
+	public void setFora(Long fora) {
 		this.fora = fora;
 	}
 

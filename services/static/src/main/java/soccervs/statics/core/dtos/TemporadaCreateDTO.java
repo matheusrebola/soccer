@@ -1,12 +1,14 @@
 package soccervs.statics.core.dtos;
 
+import java.time.LocalDate;
+
 public class TemporadaCreateDTO {
 	private String temporada;
-	private Short dataInicio;	
-	private Short dataFim;
+	private LocalDate dataInicio;	
+	private LocalDate dataFim;
 	private Long competicao;
 	
-	public TemporadaCreateDTO(String temporada, Short dataInicio, Short dataFim, Long competicao) {
+	public TemporadaCreateDTO(String temporada, LocalDate dataInicio, LocalDate dataFim, Long competicao) {
 		super();
 		this.temporada = temporada;
 		this.dataInicio = dataInicio;
@@ -25,19 +27,19 @@ public class TemporadaCreateDTO {
 		this.temporada = temporada;
 	}
 
-	public Short getDataInicio() {
+	public LocalDate getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(Short dataInicio) {
+	public void setDataInicio(LocalDate dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
-	public Short getDataFim() {
+	public LocalDate getDataFim() {
 		return dataFim;
 	}
 
-	public void setDataFim(Short dataFim) {
+	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
 	}
 
