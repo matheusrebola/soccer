@@ -1,5 +1,7 @@
 package soccervs.statics.core.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,10 @@ public class TemporadaService {
 
 	public Temporadas salvar(Temporadas temporada) {
 		return repository.save(temporada);
+	}
+
+	public List<Temporadas> encontrarTodos() {
+		return repository.findAll();
 	}
 	
 	
