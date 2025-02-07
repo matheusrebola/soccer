@@ -35,7 +35,7 @@ public class TemporadaController {
 		
 		Long id = saved.getId();
 		URI location = URI.create("/temporadas/"+id);
-		
+		TemporadaDTO dto = mapper.map(saved);
 		
 		return entity;
 	}
