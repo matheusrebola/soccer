@@ -1,17 +1,17 @@
 package soccervs.persistence.core.entities;
 
-import soccervs.persistence.core.entities.enums.EAcao;
+import soccervs.persistence.core.entities.enums.EAcaoOf;
 
 public class AcoesOfensivas {
 	private Long id;
-	private EAcao acao;
+	private EAcaoOf acao;
 	private Byte tentativasT;
 	private Byte tBemSucedidas;
 	private Float efetividade;
 	private Long jogadorId;
 	private Long partidaId;
 	
-	public AcoesOfensivas(Long id, EAcao acao, Byte tentativasT, Byte tBemSucedidas, Float efetividade, Long jogadorId,
+	public AcoesOfensivas(Long id, EAcaoOf acao, Byte tentativasT, Byte tBemSucedidas, Float efetividade, Long jogadorId,
 			Long partidaId) {
 		super();
 		this.id = id;
@@ -33,11 +33,11 @@ public class AcoesOfensivas {
 		this.id = id;
 	}
 
-	public EAcao getAcao() {
+	public EAcaoOf getAcao() {
 		return acao;
 	}
 
-	public void setAcao(EAcao acao) {
+	public void setAcao(EAcaoOf acao) {
 		this.acao = acao;
 	}
 
