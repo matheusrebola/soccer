@@ -1,7 +1,5 @@
 package soccervs.statics.core.dtos;
 
-import java.time.Year;
-
 import soccervs.statics.core.entities.enums.ECompeticao;
 import soccervs.statics.core.entities.enums.EParticipante;
 
@@ -10,14 +8,14 @@ public class TituloCreateDTO {
 	private EParticipante tipoParticipante;
 	private String temporada;
 	private String posicaoFinal;
-	private Year conquista;
+	private Short conquista;
 	private ECompeticao tipoTitulo;
 	private Long participante;
 	private Long clube;
 	private Long competicao;
 	
 	public TituloCreateDTO(String nome, EParticipante tipoParticipante, String temporada, String posicaoFinal,
-			Year conquista, ECompeticao tipoTitulo, Long participante, Long clube, Long competicao) {
+			Short conquista, ECompeticao tipoTitulo, Long participante, Long clube, Long competicao) {
 		super();
 		this.nome = nome;
 		this.tipoParticipante = tipoParticipante;
@@ -64,11 +62,11 @@ public class TituloCreateDTO {
 		this.posicaoFinal = posicaoFinal;
 	}
 
-	public Year getConquista() {
+	public Short getConquista() {
 		return conquista;
 	}
 
-	public void setConquista(Year conquista) {
+	public void setConquista(Short conquista) {
 		this.conquista = conquista;
 	}
 

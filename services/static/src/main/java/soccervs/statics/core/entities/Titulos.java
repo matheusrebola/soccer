@@ -1,7 +1,5 @@
 package soccervs.statics.core.entities;
 
-import java.time.Year;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -32,7 +30,7 @@ public class Titulos {
 	private String posicaoFinal;
 	
 	@Column
-	private Year conquista;
+	private Short conquista;
 	
 	@Column(name = "tipo_titulo") @Enumerated(EnumType.STRING)
 	private ECompeticao tipoTitulo;
@@ -47,7 +45,7 @@ public class Titulos {
 	private Long competicao;
 
 	public Titulos(Long id, String nome, EParticipante tipoParticipante, String temporada, String posicaoFinal,
-			Year conquista, ECompeticao tipoTitulo, Long participante, Long clube, Long competicao) {
+			Short conquista, ECompeticao tipoTitulo, Long participante, Long clube, Long competicao) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -103,11 +101,11 @@ public class Titulos {
 		this.posicaoFinal = posicaoFinal;
 	}
 
-	public Year getConquista() {
+	public Short getConquista() {
 		return conquista;
 	}
 
-	public void setConquista(Year conquista) {
+	public void setConquista(Short conquista) {
 		this.conquista = conquista;
 	}
 
