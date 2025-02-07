@@ -11,9 +11,11 @@ public class Finalizacoes {
 	private Short eixoX;
 	private Short eixoY;
 	private Float expectativaGol;
+	private Long jogadorId;
+	private Long partidaId;
 
 	public Finalizacoes(Long id, Float tempo, EFinalizacao finalizacao, EResultado resultado, Short eixoX, Short eixoY,
-			Float expectativaGol) {
+			Float expectativaGol, Long jogadorId, Long partidaId) {
 		super();
 		this.id = id;
 		this.tempo = tempo;
@@ -22,6 +24,8 @@ public class Finalizacoes {
 		this.eixoX = eixoX;
 		this.eixoY = eixoY;
 		this.expectativaGol = expectativaGol;
+		this.jogadorId = jogadorId;
+		this.partidaId = partidaId;
 	}
 
 	public Finalizacoes() {
@@ -83,6 +87,22 @@ public class Finalizacoes {
 
 	public void setExpectativaGol(Float expectativaGol) {
 		this.expectativaGol = expectativaGol;
+	}
+
+	public Long getJogadorId() {
+		return jogadorId;
+	}
+
+	public void setJogadorId(Long jogadorId) {
+		this.jogadorId = jogadorId;
+	}
+
+	public Long getPartidaId() {
+		return partidaId;
+	}
+
+	public void setPartidaId(Long partidaId) {
+		this.partidaId = partidaId;
 	}
 
 }
