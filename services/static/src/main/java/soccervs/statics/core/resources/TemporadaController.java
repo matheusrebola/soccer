@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import soccervs.statics.core.dtos.TemporadaCreateDTO;
 import soccervs.statics.core.entities.Temporadas;
 import soccervs.statics.core.mappers.TemporadaMapper;
+import soccervs.statics.core.services.TemporadaService;
 
 @RestController
 @RequestMapping("/temporadas")
@@ -17,9 +18,13 @@ public class TemporadaController {
 	@Autowired
 	private final TemporadaMapper mapper;
 	
+	@Autowired
+	private final TemporadaService service;
+	
 	@PostMapping
 	public String cadastrarTemporada(@RequestBody TemporadaCreateDTO createDTO) {
 		Temporadas temporada = mapper.map(createDTO);
+		Temporadas saved = service.salvar(temporada);
 		
 		return entity;
 	}
