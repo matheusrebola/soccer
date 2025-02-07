@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import soccervs.statics.core.dtos.TemporadaCreateDTO;
+import soccervs.statics.core.dtos.TemporadaDTO;
 import soccervs.statics.core.entities.Temporadas;
 import soccervs.statics.core.mappers.TemporadaMapper;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
