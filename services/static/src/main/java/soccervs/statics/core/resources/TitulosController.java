@@ -1,9 +1,11 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ import soccervs.statics.core.dtos.TituloCreateDTO;
 import soccervs.statics.core.dtos.TituloDTO;
 import soccervs.statics.core.entities.Titulos;
 import soccervs.statics.core.mappers.TitulosMapper;
+import soccervs.statics.core.resources.exceptions.NotFoundedException;
 import soccervs.statics.core.resources.exceptions.NotPersistedException;
 import soccervs.statics.core.services.TitulosService;
 
@@ -46,6 +49,15 @@ public class TitulosController {
 		return ResponseEntity.created(location).body(dto);
 	}
 	
-	
-	
+	@GetMapping
+	public ResponseEntity<List<TituloDTO>> encontrarTodos() {
+		List<Titulos> titulos = service.encontrarTodos();
+		
+		if (titulos.isEmpty()) {
+			throw new NotFoundedException("Titulos não encontradas");
+		}
+		List<TituloDTO> dto = mapper.map(titulos);
+		
+		return ResponseEntity.ok(dto);		
+ 	}	
 }
