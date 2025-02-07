@@ -47,7 +47,7 @@ public class CompeticaoController {
 		return ResponseEntity.created(location).body(dto);
 	}
 	
-	@GetMapping("/all")
+	@GetMapping
 	public ResponseEntity<List<CompeticaoDTO>> encontrarTodos() {
 		List<Competicoes> competicao = service.encontrarTodos();
 		if (competicao.isEmpty()) {

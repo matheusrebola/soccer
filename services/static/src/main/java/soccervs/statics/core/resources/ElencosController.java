@@ -49,7 +49,7 @@ public class ElencosController {
 		List<Elencos> elenco = service.encontrarTodos();
 		
 		if (elenco.isEmpty()) {
-			throw new NotFoundedException("Competicoes não encontradas");
+			throw new NotFoundedException("Elencos não encontradas");
 		}
 		List<ElencoDTO> dto = mapper.map(elenco);
 		return ResponseEntity.ok(dto);

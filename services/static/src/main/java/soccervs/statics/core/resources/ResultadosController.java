@@ -56,7 +56,7 @@ public class ResultadosController {
 		List<Resultados> resultados = service.encontrarTodos();
 		
 		if (resultados.isEmpty()) {
-			throw new NotFoundedException("Posicoes não encontradas");
+			throw new NotFoundedException("Resultados não encontrados");
 		}
 		
 		List<ResultadoDTO> dto = mapper.map(resultados);

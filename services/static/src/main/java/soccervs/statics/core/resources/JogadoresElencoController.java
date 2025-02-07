@@ -53,7 +53,7 @@ public class JogadoresElencoController {
 		List<JogadoresElenco> jogadores = service.encontrarTodos();
 		
 		if (jogadores.isEmpty()) {
-			throw new NotFoundedException("Competicoes não encontradas");
+			throw new NotFoundedException("Jogadores no elenco não encontradas");
 		}
 		
 		List<JElencoDTO> dto = mapper.map(jogadores);
