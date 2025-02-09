@@ -4,4 +4,5 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://soccervs-reciever:soccervs-reciever@soccervs-reciever:55100/soccervs-reciever
+      database: admin
+      uri: ${MONGO_DB_URI:mongodb://soccervs:soccervs@localhost:55100}

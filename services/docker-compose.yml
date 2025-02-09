@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   mariadb-persistence:
     image: mariadb:latest
@@ -5,26 +7,27 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: persistence
-      MARIADB_DATABASE: soccervs-persistence
+      MARIADB_DATABASE: soccervs_persistence
       MARIADB_USER: soccervs
       MARIADB_PASSWORD: soccervs
     ports:
-      - "55000:3306"
+      - "55000:3306"  # Só precisa expor se for acessado fora do Docker
     volumes:
-      - soccervs_persistence:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - soccervs
 
   mongodb-reciever:
     image: mongo:latest
     container_name: soccervs-reciever
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: soccervs-reciever
-      MONGO_INITDB_ROOT_PASSWORD: soccervs-reciver
-      MONGO_INITDB_DATABASE: soccervs-reciver
+      MONGO_INITDB_ROOT_USERNAME: soccervs
+      MONGO_INITDB_ROOT_PASSWORD: soccervs
     ports:
       - "55100:27017"
     volumes:
-      - soccervs_reciever:/data/db
+      - mongodb_reciever_data:/data/db
     networks:
       - soccervs
 
@@ -33,13 +36,12 @@ services:
     container_name: soccervs-pitches 
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: soccervs-pitches 
-      MONGO_INITDB_ROOT_PASSWORD: soccervs-pitches
-      MONGO_INITDB_DATABASE: soccervs-pitches
+      MONGO_INITDB_ROOT_USERNAME: soccervs
+      MONGO_INITDB_ROOT_PASSWORD: soccervs
     ports:
       - "55110:27017"
     volumes:
-      - soccervs_pitches:/data/db
+      - mongodb_pitches_data:/data/db
     networks:
       - soccervs
 
@@ -48,21 +50,21 @@ services:
     container_name: soccervs-analitics
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: soccervs-analitics
-      MONGO_INITDB_ROOT_PASSWORD: soccervs-analitics
-      MONGO_INITDB_DATABASE: soccervs-analitics
+      MONGO_INITDB_ROOT_USERNAME: soccervs
+      MONGO_INITDB_ROOT_PASSWORD: soccervs
     ports:
       - "55120:27017"
     volumes:
-      - soccervs_analitics:/data/db
+      - mongodb_analitics_data:/data/db
     networks:
       - soccervs
 
 volumes:
-  soccervs_persistence:
-  soccervs_reciever:
-  soccervs_pitches:
-  soccervs_analitics:
+  mariadb_data:
+  mongodb_reciever_data:
+  mongodb_pitches_data:
+  mongodb_analitics_data:
 
 networks:
   soccervs:
+    driver: bridge
