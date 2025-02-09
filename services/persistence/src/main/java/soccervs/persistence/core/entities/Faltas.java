@@ -1,10 +1,18 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import soccervs.persistence.core.entities.enums.EFalta;
 import soccervs.persistence.core.entities.enums.EGravidade;
 import soccervs.persistence.core.entities.enums.EResultadoF;
 
+@Entity
+@Table(name="tb_faltas")
 public class Faltas {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Byte min;
 	private Short eixoX;

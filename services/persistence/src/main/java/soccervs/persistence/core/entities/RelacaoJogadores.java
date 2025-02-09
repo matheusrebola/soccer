@@ -1,8 +1,16 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import soccervs.persistence.core.entities.enums.EInteracao;
 
+@Entity
+@Table(name="tb_relacao_jogadores")
 public class RelacaoJogadores {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Long j1Id;
 	private Long j2Id;

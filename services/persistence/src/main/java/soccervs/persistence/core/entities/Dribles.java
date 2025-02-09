@@ -1,6 +1,15 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="tb_dribles")
 public class Dribles {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Byte tTotatis;
 	private Byte tBemSucedidas;

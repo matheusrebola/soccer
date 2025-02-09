@@ -1,8 +1,16 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import soccervs.persistence.core.entities.enums.EAcaoOf;
 
+@Entity
+@Table(name="tb_acoes_ofensivas")
 public class AcoesOfensivas {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private EAcaoOf acao;
 	private Byte tentativasT;

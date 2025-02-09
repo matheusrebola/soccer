@@ -1,6 +1,15 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="tb_estatisticas_da_partida")
 public class EstatisticasPartida {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Byte minJogados;
 	private Byte gols;
