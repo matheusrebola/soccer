@@ -1,6 +1,11 @@
 package soccervs.reciever.core.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Dribles {
+	@Id
 	private Long id;
 	private Byte tTotatis;
 	private Byte tBemSucedidas;

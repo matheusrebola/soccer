@@ -1,8 +1,13 @@
 package soccervs.reciever.core.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import soccervs.reciever.core.documents.enums.EInteracao;
 
+@Document
 public class RelacaoJogadores {
+	@Id
 	private Long id;
 	private Long j1Id;
 	private Long j2Id;

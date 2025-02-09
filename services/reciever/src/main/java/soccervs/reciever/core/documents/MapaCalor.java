@@ -1,8 +1,13 @@
 package soccervs.reciever.core.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import soccervs.reciever.core.documents.enums.EZona;
 
+@Document
 public class MapaCalor {
+	@Id
 	private Long id;
 	private EZona zona;
 	private Float percentual;

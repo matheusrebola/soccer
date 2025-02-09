@@ -1,9 +1,14 @@
 package soccervs.reciever.core.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import soccervs.reciever.core.documents.enums.EFinalizacao;
 import soccervs.reciever.core.documents.enums.EResultado;
 
+@Document
 public class Finalizacoes {
+	@Id
 	private Long id;
 	private Float tempo;
 	private EFinalizacao finalizacao;

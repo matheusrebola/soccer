@@ -1,8 +1,13 @@
 package soccervs.reciever.core.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import soccervs.reciever.core.documents.enums.EPasse;
 
+@Document
 public class Passes {
+	@Id
 	private Long id;
 	private EPasse passe;
 	private Byte tTotatis;

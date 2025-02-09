@@ -1,8 +1,13 @@
 package soccervs.reciever.core.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import soccervs.reciever.core.documents.enums.EAcaoDef;
 
+@Document
 public class AcoesDefensivas {
+	@Id
 	private Long id;
 	private EAcaoDef acao;
 	private Byte tentativasT;

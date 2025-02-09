@@ -1,6 +1,11 @@
 package soccervs.reciever.core.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class EstatisticasPartida {
+	@Id
 	private Long id;
 	private Byte minJogados;
 	private Byte gols;
