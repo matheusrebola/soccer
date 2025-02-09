@@ -1,5 +1,6 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -21,7 +22,9 @@ public class PassesDetalhes {
 	@Enumerated(EnumType.STRING)
 	private EResultado resultado;
 	private Byte distancia;
+	@Column(name="jogador_origem_id")
 	private Long jOrigemId;
+	@Column(name="jogador_destino_id")
 	private Long jDestinoId;
 	private Long partidaId;
 

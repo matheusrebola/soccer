@@ -1,5 +1,6 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,7 +12,9 @@ import jakarta.persistence.Table;
 public class Coberturas {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column(name="tentativas_totais")
 	private Byte tentativasT;
+	@Column(name="tentativas_bem_sucedidas")
 	private Byte tBemSucedidas;
 	private Float efetividade;
 	private Long jogadorId;

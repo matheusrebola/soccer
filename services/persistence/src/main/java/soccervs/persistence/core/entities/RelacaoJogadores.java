@@ -1,5 +1,6 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -14,7 +15,9 @@ import soccervs.persistence.core.entities.enums.EInteracao;
 public class RelacaoJogadores {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column(name="jogador_numero1_id")
 	private Long j1Id;
+	@Column(name="jogador_numero2_id")
 	private Long j2Id;
 	@Enumerated(EnumType.STRING)
 	private EInteracao interacao;

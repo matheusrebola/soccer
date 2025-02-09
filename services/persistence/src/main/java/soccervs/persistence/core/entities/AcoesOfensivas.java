@@ -1,5 +1,6 @@
 package soccervs.persistence.core.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -16,7 +17,9 @@ public class AcoesOfensivas {
 	private Long id;
 	@Enumerated(EnumType.STRING)
 	private EAcaoOf acao;
+	@Column(name="tentativas_totais")
 	private Byte tentativasT;
+	@Column(name="tentativas_bem_sucedidas")
 	private Byte tBemSucedidas;
 	private Float efetividade;
 	private Long jogadorId;
