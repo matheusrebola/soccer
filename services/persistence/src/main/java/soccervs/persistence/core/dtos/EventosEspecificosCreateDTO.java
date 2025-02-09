@@ -2,13 +2,13 @@ package soccervs.persistence.core.dtos;
 
 import soccervs.persistence.core.entities.enums.EEventoEspecifico;
 
-public class EventosEspecificos {
+public class EventosEspecificosCreateDTO {
 	private EEventoEspecifico evento;
 	private Byte minuto;
 	private Long partidaId;
 	private Long jogadorId;
 
-	public EventosEspecificos(EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
+	public EventosEspecificosCreateDTO(EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
 		super();
 		this.evento = evento;
 		this.minuto = minuto;
@@ -16,7 +16,7 @@ public class EventosEspecificos {
 		this.jogadorId = jogadorId;
 	}
 
-	public EventosEspecificos() {
+	public EventosEspecificosCreateDTO() {
 	}
 
 	public EEventoEspecifico getEvento() {

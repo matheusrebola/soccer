@@ -1,6 +1,6 @@
 package soccervs.persistence.core.dtos;
 
-public class Movimentacao {
+public class MovimentacaoCreateDTO {
 	private Short eixoX;
 	private Short eixoY;
 	private Float aceleracao;
@@ -9,7 +9,7 @@ public class Movimentacao {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public Movimentacao(Short eixoX, Short eixoY, Float aceleracao, Float desaceleracao, Byte pressao,
+	public MovimentacaoCreateDTO(Short eixoX, Short eixoY, Float aceleracao, Float desaceleracao, Byte pressao,
 			Long jogadorId, Long partidaId) {
 		super();
 		this.eixoX = eixoX;
@@ -21,7 +21,7 @@ public class Movimentacao {
 		this.partidaId = partidaId;
 	}
 
-	public Movimentacao() {}
+	public MovimentacaoCreateDTO() {}
 
 	public Short getEixoX() {
 		return eixoX;
