@@ -1,6 +1,8 @@
 package soccervs.persistence.core.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,6 +14,7 @@ import soccervs.persistence.core.entities.enums.EZona;
 public class MapaCalor {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Enumerated(EnumType.STRING)
 	private EZona zona;
 	private Float percentual;
 	private Long jogadorId;

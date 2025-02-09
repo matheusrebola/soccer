@@ -1,6 +1,8 @@
 package soccervs.persistence.core.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,8 +19,11 @@ public class Faltas {
 	private Byte min;
 	private Short eixoX;
 	private Short eixoY;
+	@Enumerated(EnumType.STRING)
 	private EFalta falta;
+	@Enumerated(EnumType.STRING)
 	private EResultadoF resultado;
+	@Enumerated(EnumType.STRING)
 	private EGravidade gravidade;
 	private Long jogadorId;
 	private Long partidaId;

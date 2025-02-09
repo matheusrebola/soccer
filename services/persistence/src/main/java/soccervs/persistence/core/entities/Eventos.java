@@ -1,6 +1,8 @@
 package soccervs.persistence.core.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,7 +16,9 @@ public class Eventos {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Float tempo;
+	@Enumerated(EnumType.STRING)
 	private EEvento evento;
+	@Enumerated(EnumType.STRING)
 	private EResultado resultado;
 	private Short eixoX;
 	private Short eixoY;

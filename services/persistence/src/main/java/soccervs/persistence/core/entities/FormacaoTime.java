@@ -1,6 +1,8 @@
 package soccervs.persistence.core.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,6 +15,7 @@ public class FormacaoTime {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Float minuto;
+	@Enumerated(EnumType.STRING)
 	private EFormacao formacao;
 	private Long jogadorId;
 	private Long partidaId;

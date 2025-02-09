@@ -1,6 +1,8 @@
 package soccervs.persistence.core.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,6 +16,7 @@ public class RelacaoJogadores {
 	private Long id;
 	private Long j1Id;
 	private Long j2Id;
+	@Enumerated(EnumType.STRING)
 	private EInteracao interacao;
 	private Long partidaId;
 

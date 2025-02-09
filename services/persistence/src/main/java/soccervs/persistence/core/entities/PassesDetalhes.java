@@ -1,6 +1,8 @@
 package soccervs.persistence.core.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,7 +16,9 @@ public class PassesDetalhes {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Float tempo;
+	@Enumerated(EnumType.STRING)
 	private EPasse passe;
+	@Enumerated(EnumType.STRING)
 	private EResultado resultado;
 	private Byte distancia;
 	private Long jOrigemId;
