@@ -10,8 +10,6 @@ spring:
     bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
     topic:
       persistence-start: persistence-start
-      persistence-fail: persistence-fail
-      persistence-success: persistence-success
       notify-ending: notify-ending
     consumer:
       group-id: persistence-group
