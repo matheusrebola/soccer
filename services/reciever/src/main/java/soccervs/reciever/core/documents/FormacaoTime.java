@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import soccervs.reciever.core.documents.enums.EFormacao;
 
-@Document
+@Document(collection = "formacao")
 public class FormacaoTime {
 	@Id
 	private Long id;

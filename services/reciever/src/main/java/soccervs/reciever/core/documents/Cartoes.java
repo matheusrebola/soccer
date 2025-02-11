@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import soccervs.reciever.core.builders.CartaoBuilder;
 import soccervs.reciever.core.documents.enums.ECartao;
 
-@Document
+@Document(collection = "cartoes")
 public class Cartoes {
 	@Id
 	private Long id;
@@ -15,7 +15,16 @@ public class Cartoes {
 	private String motivo;
 	private Long jogadorId;
 	private Long partidaId;
-	
+
+	public Cartoes(CartaoBuilder builder) {
+		this.id = builder.getId();
+		this.minuto = builder.getMinuto();
+		this.cartao = builder.getCartao();
+		this.motivo = builder.getMotivo();
+		this.jogadorId = builder.getJogadorId();
+		this.partidaId = builder.getPartidaId();
+	}
+
 	public Cartoes(Long id, Byte minuto, ECartao cartao, String motivo, Long jogadorId, Long partidaId) {
 		super();
 		this.id = id;
@@ -24,17 +33,6 @@ public class Cartoes {
 		this.motivo = motivo;
 		this.jogadorId = jogadorId;
 		this.partidaId = partidaId;
-	}
-
-	public Cartoes() {}
-	
-	public Cartoes(CartaoBuilder builder) {
-		this.id = builder.getId();
-		this.minuto = builder.getMinuto();
-		this.cartao = builder.getCartao();
-		this.motivo = builder.getMotivo();
-		this.jogadorId = builder.getJogadorId();
-		this.partidaId = builder.getPartidaId();
 	}
 
 	public Long getId() {

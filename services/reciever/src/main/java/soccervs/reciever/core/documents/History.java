@@ -2,8 +2,11 @@ package soccervs.reciever.core.documents;
 
 import java.time.LocalDateTime;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import soccervs.reciever.core.enums.ESagaStatus;
 
+@Document(collection = "history")
 public class History {
 	private String source;
 	private ESagaStatus status;

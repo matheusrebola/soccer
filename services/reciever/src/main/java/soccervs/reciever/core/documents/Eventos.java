@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import soccervs.reciever.core.documents.enums.EEvento;
 import soccervs.reciever.core.documents.enums.EResultado;
 
-@Document
+@Document(collection = "eventos")
 public class Eventos {
 	@Id
 	private Long id;
