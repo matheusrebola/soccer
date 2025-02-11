@@ -3,6 +3,7 @@ package soccervs.reciever.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import soccervs.reciever.core.builders.CartaoBuilder;
 import soccervs.reciever.core.documents.enums.ECartao;
 
 @Document
@@ -26,6 +27,15 @@ public class Cartoes {
 	}
 
 	public Cartoes() {}
+	
+	public Cartoes(CartaoBuilder builder) {
+		this.id = builder.getId();
+		this.minuto = builder.getMinuto();
+		this.cartao = builder.getCartao();
+		this.motivo = builder.getMotivo();
+		this.jogadorId = builder.getJogadorId();
+		this.partidaId = builder.getPartidaId();
+	}
 
 	public Long getId() {
 		return id;
