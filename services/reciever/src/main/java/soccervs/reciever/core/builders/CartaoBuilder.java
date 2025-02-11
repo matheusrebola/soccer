@@ -4,18 +4,18 @@ import soccervs.reciever.core.documents.Cartoes;
 import soccervs.reciever.core.documents.enums.ECartao;
 
 public class CartaoBuilder {
-	private Long id;
+	private String id;
 	private Byte minuto;
 	private ECartao cartao;
 	private String motivo;
 	private Long jogadorId;
 	private Long partidaId;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public CartaoBuilder setId(Long id) {
+	public CartaoBuilder setId(String id) {
 		this.id = id;
 		return this;
 	}
