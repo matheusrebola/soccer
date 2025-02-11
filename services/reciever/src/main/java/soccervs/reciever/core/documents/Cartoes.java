@@ -9,7 +9,7 @@ import soccervs.reciever.core.documents.enums.ECartao;
 @Document(collection = "cartoes")
 public class Cartoes {
 	@Id
-	private Long id;
+	private String id;
 	private Byte minuto;
 	private ECartao cartao;
 	private String motivo;
@@ -25,7 +25,7 @@ public class Cartoes {
 		this.partidaId = builder.getPartidaId();
 	}
 
-	public Cartoes(Long id, Byte minuto, ECartao cartao, String motivo, Long jogadorId, Long partidaId) {
+	public Cartoes(String id, Byte minuto, ECartao cartao, String motivo, Long jogadorId, Long partidaId) {
 		super();
 		this.id = id;
 		this.minuto = minuto;
@@ -35,11 +35,16 @@ public class Cartoes {
 		this.partidaId = partidaId;
 	}
 
-	public Long getId() {
+	public Cartoes() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
