@@ -1,14 +1,11 @@
 package soccervs.reciever.core.services;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import soccervs.reciever.config.exception.ValidationException;
 import soccervs.reciever.core.documents.Event;
 import soccervs.reciever.core.dtos.EventCreateDTO;
-import soccervs.reciever.core.dtos.EventFilters;
 import soccervs.reciever.core.enums.ESagaStatus;
 import soccervs.reciever.core.mappers.EventMapper;
 import soccervs.reciever.core.mappers.HistoryMapper;
@@ -47,35 +44,6 @@ public class EventService {
 			// log.info("SAGA FINISHED WITH ERRORS FOR EVENT {}", event.getId());
 			addHistory(event, "Saga finished with errors!");
 		}
-	}
-
-	public List<Event> findAll() {
-		return repository.findAllByOrderByCreatedAtDesc();
-	}
-
-	public Event findByFilters(EventFilters filters) {
-		validateEmptyFilters(filters);
-		if (!filters.getOrderId().isEmpty()) {
-			return findByOrderId(filters.getOrderId());
-		} else {
-			return findByTransactionId(filters.getTransactionId());
-		}
-	}
-
-	private void validateEmptyFilters(EventFilters filters) {
-		if (filters.getOrderId().isEmpty() && filters.getTransactionId().isEmpty()) {
-			throw new ValidationException("OrderID or TransactionID must be informed.");
-		}
-	}
-
-	private Event findByTransactionId(String transactionId) {
-		return repository.findTop1ByTransactionIdOrderByCreatedAtDesc(transactionId)
-				.orElseThrow(() -> new ValidationException("Event not found by transactionId."));
-	}
-
-	private Event findByOrderId(String orderId) {
-		return repository.findTop1ByOrderIdOrderByCreatedAtDesc(orderId)
-				.orElseThrow(() -> new ValidationException("Event not found by orderID."));
 	}
 
 	public Event save(Event event) {
