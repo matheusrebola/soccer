@@ -1,10 +1,29 @@
 package soccervs.reciever.core.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import soccervs.reciever.core.documents.Movimentacao;
+import soccervs.reciever.core.services.MovimentacaoService;
 
 @RestController
 @RequestMapping("/movimentacao")
 public class MovimentacaoController {
 
+	private final MovimentacaoService service;
+
+	public MovimentacaoController(MovimentacaoService service) {
+		super();
+		this.service = service;
+	}
+
+	@PostMapping
+	public ResponseEntity<Movimentacao> criar(@RequestBody Movimentacao movimentacao) {
+		Movimentacao saved = service.salvar(movimentacao);
+		return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+	}
 }
