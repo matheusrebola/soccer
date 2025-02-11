@@ -21,8 +21,8 @@ public class CartoesController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Cartoes> criar(@RequestBody Cartoes createDTO){
-		Cartoes saved = service.salvar(createDTO);
+	public ResponseEntity<Cartoes> criar(@RequestBody Cartoes cartao){
+		Cartoes saved = service.salvar(cartao);
 		return ResponseEntity.status(HttpStatus.CREATED).body(saved);
 	}
 }
