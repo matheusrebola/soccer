@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import soccervs.reciever.core.documents.enums.EFinalizacao;
 import soccervs.reciever.core.documents.enums.EResultado;
 
-@Document
+@Document(collection = "finalizacoes")
 public class Finalizacoes {
 	@Id
 	private Long id;

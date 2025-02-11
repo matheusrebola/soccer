@@ -7,7 +7,7 @@ import soccervs.reciever.core.documents.enums.EFalta;
 import soccervs.reciever.core.documents.enums.EGravidade;
 import soccervs.reciever.core.documents.enums.EResultadoF;
 
-@Document
+@Document(collection = "faltas")
 public class Faltas {
 	@Id
 	private Long id;
