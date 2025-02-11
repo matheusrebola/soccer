@@ -11,7 +11,6 @@ public class FormacaoTime {
 	private String id;
 	private Float minuto;
 	private EFormacao formacao;
-	private Long jogadorId;
 	private Long partidaId;
 
 	public FormacaoTime(String id, Float minuto, EFormacao formacao, Long jogadorId, Long partidaId) {
@@ -19,7 +18,6 @@ public class FormacaoTime {
 		this.id = id;
 		this.minuto = minuto;
 		this.formacao = formacao;
-		this.jogadorId = jogadorId;
 		this.partidaId = partidaId;
 	}
 
@@ -50,14 +48,6 @@ public class FormacaoTime {
 
 	public void setFormacao(EFormacao formacao) {
 		this.formacao = formacao;
-	}
-
-	public Long getJogadorId() {
-		return jogadorId;
-	}
-
-	public void setJogadorId(Long jogadorId) {
-		this.jogadorId = jogadorId;
 	}
 
 	public Long getPartidaId() {
