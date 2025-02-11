@@ -60,7 +60,7 @@ services:
       - soccervs
   
   kafka:
-    container_name: kafka
+    container_name: soccervs-kafka
     image: obsidiandynamics/kafka
     restart: "no"
     ports:
@@ -81,7 +81,7 @@ services:
       - ./data/kafka/data:/var/lib/kafka/data
 
   redpanda-console:
-    container_name: redpanda
+    container_name: soccervs-redpanda
     image: docker.redpanda.com/vectorized/console:latest
     restart: on-failure
     entrypoint: /bin/sh
