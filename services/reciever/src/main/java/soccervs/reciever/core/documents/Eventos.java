@@ -9,7 +9,7 @@ import soccervs.reciever.core.documents.enums.EResultado;
 @Document(collection = "eventos")
 public class Eventos {
 	@Id
-	private Long id;
+	private String id;
 	private Float tempo;
 	private EEvento evento;
 	private EResultado resultado;
@@ -18,7 +18,7 @@ public class Eventos {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public Eventos(Long id, Float tempo, EEvento evento, EResultado resultado, Short eixoX, Short eixoY, Long jogadorId,
+	public Eventos(String id, Float tempo, EEvento evento, EResultado resultado, Short eixoX, Short eixoY, Long jogadorId,
 			Long partidaId) {
 		super();
 		this.id = id;
@@ -36,11 +36,11 @@ public class Eventos {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
