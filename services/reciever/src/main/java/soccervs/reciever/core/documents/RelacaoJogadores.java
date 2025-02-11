@@ -8,13 +8,13 @@ import soccervs.reciever.core.documents.enums.EInteracao;
 @Document(collection = "relacoes")
 public class RelacaoJogadores {
 	@Id
-	private Long id;
+	private String id;
 	private Long j1Id;
 	private Long j2Id;
 	private EInteracao interacao;
 	private Long partidaId;
 
-	public RelacaoJogadores(Long id, Long j1Id, Long j2Id, EInteracao interacao, Long partidaId) {
+	public RelacaoJogadores(String id, Long j1Id, Long j2Id, EInteracao interacao, Long partidaId) {
 		super();
 		this.id = id;
 		this.j1Id = j1Id;
@@ -28,11 +28,11 @@ public class RelacaoJogadores {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

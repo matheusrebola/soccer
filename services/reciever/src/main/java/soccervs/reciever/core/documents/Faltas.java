@@ -10,7 +10,7 @@ import soccervs.reciever.core.documents.enums.EResultadoF;
 @Document(collection = "faltas")
 public class Faltas {
 	@Id
-	private Long id;
+	private String id;
 	private Byte min;
 	private Short eixoX;
 	private Short eixoY;
@@ -20,7 +20,7 @@ public class Faltas {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public Faltas(Long id, Byte min, Short eixoX, Short eixoY, EFalta falta, EResultadoF resultado,
+	public Faltas(String id, Byte min, Short eixoX, Short eixoY, EFalta falta, EResultadoF resultado,
 			EGravidade gravidade, Long jogadorId, Long partidaId) {
 		super();
 		this.id = id;
@@ -39,11 +39,11 @@ public class Faltas {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

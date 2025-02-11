@@ -8,13 +8,13 @@ import soccervs.reciever.core.documents.enums.EFormacao;
 @Document(collection = "formacao")
 public class FormacaoTime {
 	@Id
-	private Long id;
+	private String id;
 	private Float minuto;
 	private EFormacao formacao;
 	private Long jogadorId;
 	private Long partidaId;
 
-	public FormacaoTime(Long id, Float minuto, EFormacao formacao, Long jogadorId, Long partidaId) {
+	public FormacaoTime(String id, Float minuto, EFormacao formacao, Long jogadorId, Long partidaId) {
 		super();
 		this.id = id;
 		this.minuto = minuto;
@@ -28,11 +28,11 @@ public class FormacaoTime {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

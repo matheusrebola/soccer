@@ -6,13 +6,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "ldefensiva")
 public class LinhaDefensiva {
 	@Id
-	private Long id;
+	private String id;
 	private Float alturaMedia;
 	private Float tempo;
 	private Long partidaId;
 	private Long timeId;
 
-	public LinhaDefensiva(Long id, Float alturaMedia, Float tempo, Long partidaId, Long timeId) {
+	public LinhaDefensiva(String id, Float alturaMedia, Float tempo, Long partidaId, Long timeId) {
 		super();
 		this.id = id;
 		this.alturaMedia = alturaMedia;
@@ -26,11 +26,11 @@ public class LinhaDefensiva {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

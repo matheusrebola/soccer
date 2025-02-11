@@ -9,7 +9,7 @@ import soccervs.reciever.core.documents.enums.EResultado;
 @Document(collection = "passes")
 public class PassesDetalhes {
 	@Id
-	private Long id;
+	private String id;
 	private Float tempo;
 	private EPasse passe;
 	private EResultado resultado;
@@ -18,7 +18,7 @@ public class PassesDetalhes {
 	private Long jDestinoId;
 	private Long partidaId;
 
-	public PassesDetalhes(Long id, Float tempo, EPasse passe, EResultado resultado, Byte distancia, Long jOrigemId,
+	public PassesDetalhes(String id, Float tempo, EPasse passe, EResultado resultado, Byte distancia, Long jOrigemId,
 			Long jDestinoId, Long partidaId) {
 		super();
 		this.id = id;
@@ -36,11 +36,11 @@ public class PassesDetalhes {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "movimentacao")
 public class Movimentacao {
 	@Id
-	private Long id;
+	private String id;
 	private Short eixoX;
 	private Short eixoY;
 	private Float aceleracao;
@@ -15,7 +15,7 @@ public class Movimentacao {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public Movimentacao(Long id, Short eixoX, Short eixoY, Float aceleracao, Float desaceleracao, Byte pressao,
+	public Movimentacao(String id, Short eixoX, Short eixoY, Float aceleracao, Float desaceleracao, Byte pressao,
 			Long jogadorId, Long partidaId) {
 		super();
 		this.id = id;
@@ -30,11 +30,11 @@ public class Movimentacao {
 
 	public Movimentacao() {}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

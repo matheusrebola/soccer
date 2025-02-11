@@ -8,13 +8,13 @@ import soccervs.reciever.core.documents.enums.EEventoEspecifico;
 @Document(collection = "eventos_especificos")
 public class EventosEspecificos {
 	@Id
-	private Long id;
+	private String id;
 	private EEventoEspecifico evento;
 	private Byte minuto;
 	private Long partidaId;
 	private Long jogadorId;
 
-	public EventosEspecificos(Long id, EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
+	public EventosEspecificos(String id, EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
 		super();
 		this.id = id;
 		this.evento = evento;
@@ -26,11 +26,11 @@ public class EventosEspecificos {
 	public EventosEspecificos() {
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
