@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.Eventos;
 
 @Repository
-public interface EventosRepository extends MongoRepository<Eventos, Long> {
+public interface EventosRepository extends MongoRepository<Eventos, String> {
 
 }

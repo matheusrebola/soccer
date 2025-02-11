@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.RelacaoJogadores;
 
 @Repository
-public interface RelacaoJogadoresRepository extends MongoRepository<RelacaoJogadores, Long> {
+public interface RelacaoJogadoresRepository extends MongoRepository<RelacaoJogadores, String> {
 
 }

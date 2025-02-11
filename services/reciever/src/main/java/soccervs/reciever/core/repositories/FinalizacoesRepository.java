@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.Finalizacoes;
 
 @Repository
-public interface FinalizacoesRepository extends MongoRepository<Finalizacoes, Long> {
+public interface FinalizacoesRepository extends MongoRepository<Finalizacoes, String> {
 
 }

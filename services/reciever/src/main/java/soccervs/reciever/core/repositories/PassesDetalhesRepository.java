@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.PassesDetalhes;
 
 @Repository
-public interface PassesDetalhesRepository extends MongoRepository<PassesDetalhes, Long> {
+public interface PassesDetalhesRepository extends MongoRepository<PassesDetalhes, String> {
 
 }

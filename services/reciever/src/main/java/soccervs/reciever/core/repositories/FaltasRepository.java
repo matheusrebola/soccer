@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.Faltas;
 
 @Repository
-public interface FaltasRepository extends MongoRepository<Faltas, Long> {
+public interface FaltasRepository extends MongoRepository<Faltas, String> {
 
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.Movimentacao;
 
 @Repository
-public interface MovimentacaoRepository extends MongoRepository<Movimentacao, Long> {
+public interface MovimentacaoRepository extends MongoRepository<Movimentacao, String> {
 
 }

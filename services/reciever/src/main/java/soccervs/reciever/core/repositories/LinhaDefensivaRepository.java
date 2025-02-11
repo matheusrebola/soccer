@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.LinhaDefensiva;
 
 @Repository
-public interface LinhaDefensivaRepository extends MongoRepository<LinhaDefensiva, Long> {
+public interface LinhaDefensivaRepository extends MongoRepository<LinhaDefensiva, String> {
 
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.Cartoes;
 
 @Repository
-public interface CartoesRepository extends MongoRepository<Cartoes, Long> {
+public interface CartoesRepository extends MongoRepository<Cartoes, String> {
 
 }

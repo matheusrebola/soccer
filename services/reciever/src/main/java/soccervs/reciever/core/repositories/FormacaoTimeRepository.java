@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import soccervs.reciever.core.documents.FormacaoTime;
 
 @Repository
-public interface FormacaoTimeRepository extends MongoRepository<FormacaoTime, Long> {
+public interface FormacaoTimeRepository extends MongoRepository<FormacaoTime, String> {
 
 }
