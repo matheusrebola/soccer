@@ -1,5 +1,7 @@
 package soccervs.reciever.core.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import soccervs.reciever.core.documents.LinhaDefensiva;
@@ -14,6 +16,10 @@ public class LinhaDefensivaService {
 
 	public LinhaDefensiva salvar(LinhaDefensiva linhaDefensiva) {
 		return repository.save(linhaDefensiva);
+	}
+
+	public List<LinhaDefensiva> encontrarTodos() {
+		return repository.findAll();
 	}
 	
 	

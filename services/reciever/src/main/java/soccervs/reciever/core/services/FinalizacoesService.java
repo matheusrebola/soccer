@@ -1,5 +1,7 @@
 package soccervs.reciever.core.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import soccervs.reciever.core.documents.Finalizacoes;
@@ -14,6 +16,10 @@ public class FinalizacoesService {
 
 	public Finalizacoes salvar(Finalizacoes finalizacoes) {
 		return repository.save(finalizacoes);
+	}
+
+	public List<Finalizacoes> encontrarTodos() {
+		return repository.findAll();
 	}
 	
 	

@@ -1,5 +1,7 @@
 package soccervs.reciever.core.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import soccervs.reciever.core.documents.Movimentacao;
@@ -17,5 +19,9 @@ public class MovimentacaoService {
 
 	public Movimentacao salvar(Movimentacao movimentacao) {
 		return repository.save(movimentacao);
+	}
+
+	public List<Movimentacao> encontrarTodos() {
+		return repository.findAll();
 	}
 }

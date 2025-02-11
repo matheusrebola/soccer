@@ -1,5 +1,7 @@
 package soccervs.reciever.core.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import soccervs.reciever.core.documents.Faltas;
@@ -14,6 +16,10 @@ public class FaltasService {
 
 	public Faltas salvar(Faltas falta) {
 		return repository.save(falta);
+	}
+
+	public List<Faltas> encontrarTodos() {
+		return repository.findAll();
 	}
 	
 	

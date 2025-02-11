@@ -1,5 +1,7 @@
 package soccervs.reciever.core.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import soccervs.reciever.core.documents.FormacaoTime;
@@ -14,6 +16,10 @@ public class FormacaoTimeService {
 
 	public FormacaoTime salvar(FormacaoTime formacaoTime) {
 		return repository.save(formacaoTime);
+	}
+
+	public List<FormacaoTime> encontrarTodos() {
+		return repository.findAll();
 	}
 
 }

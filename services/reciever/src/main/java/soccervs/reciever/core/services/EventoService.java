@@ -1,5 +1,7 @@
 package soccervs.reciever.core.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import soccervs.reciever.core.documents.Eventos;
@@ -13,6 +15,10 @@ public class EventoService {
 
 	public Eventos salvar(Eventos evento) {
 		return repository.save(evento);
+	}
+
+	public List<Eventos> encontrarTodos() {
+		return repository.findAll();
 	}
 	
 	

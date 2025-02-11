@@ -1,5 +1,7 @@
 package soccervs.reciever.core.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import soccervs.reciever.core.documents.PassesDetalhes;
@@ -17,6 +19,10 @@ public class PassesDetalhesService {
 
 	public PassesDetalhes salvar(PassesDetalhes passesDetalhes) {
 		return repository.save(passesDetalhes);
+	}
+
+	public List<PassesDetalhes> encontrarTodos() {
+		return repository.findAll();
 	}
 	
 	
