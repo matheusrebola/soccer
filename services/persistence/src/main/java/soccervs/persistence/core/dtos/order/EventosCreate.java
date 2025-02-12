@@ -1,9 +1,12 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
 import soccervs.persistence.core.entities.enums.EEvento;
 import soccervs.persistence.core.entities.enums.EResultado;
 
-public class EventosCreateDTO {
+public class EventosCreate extends Order {
 	private Float tempo;
 	private EEvento evento;
 	private EResultado resultado;
@@ -12,9 +15,9 @@ public class EventosCreateDTO {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public EventosCreateDTO(Float tempo, EEvento evento, EResultado resultado, Short eixoX, Short eixoY, Long jogadorId,
-			Long partidaId) {
-		super();
+	public EventosCreate(String id, LocalDateTime createdAt, String transactionId, Float tempo, EEvento evento,
+			EResultado resultado, Short eixoX, Short eixoY, Long jogadorId, Long partidaId) {
+		super(id, createdAt, transactionId);
 		this.tempo = tempo;
 		this.evento = evento;
 		this.resultado = resultado;
@@ -24,9 +27,23 @@ public class EventosCreateDTO {
 		this.partidaId = partidaId;
 	}
 
-	public EventosCreateDTO() {
+	public EventosCreate(Float tempo, EEvento evento, EResultado resultado, Short eixoX, Short eixoY, Long jogadorId,
+			Long partidaId) {
+		this.tempo = tempo;
+		this.evento = evento;
+		this.resultado = resultado;
+		this.eixoX = eixoX;
+		this.eixoY = eixoY;
+		this.jogadorId = jogadorId;
+		this.partidaId = partidaId;
+	}
+
+	public EventosCreate(String id, LocalDateTime createdAt, String transactionId) {
+		super(id, createdAt, transactionId);
+	}
+
+	public EventosCreate() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Float getTempo() {

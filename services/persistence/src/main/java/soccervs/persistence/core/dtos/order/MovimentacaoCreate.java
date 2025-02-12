@@ -1,6 +1,10 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
-public class MovimentacaoCreateDTO {
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
+
+public class MovimentacaoCreate extends Order {
 	private Short eixoX;
 	private Short eixoY;
 	private Float aceleracao;
@@ -9,7 +13,7 @@ public class MovimentacaoCreateDTO {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public MovimentacaoCreateDTO(Short eixoX, Short eixoY, Float aceleracao, Float desaceleracao, Byte pressao,
+	public MovimentacaoCreate(Short eixoX, Short eixoY, Float aceleracao, Float desaceleracao, Byte pressao,
 			Long jogadorId, Long partidaId) {
 		super();
 		this.eixoX = eixoX;
@@ -21,7 +25,20 @@ public class MovimentacaoCreateDTO {
 		this.partidaId = partidaId;
 	}
 
-	public MovimentacaoCreateDTO() {}
+	public MovimentacaoCreate(String id, LocalDateTime createdAt, String transactionId, Short eixoX, Short eixoY,
+			Float aceleracao, Float desaceleracao, Byte pressao, Long jogadorId, Long partidaId) {
+		super(id, createdAt, transactionId);
+		this.eixoX = eixoX;
+		this.eixoY = eixoY;
+		this.aceleracao = aceleracao;
+		this.desaceleracao = desaceleracao;
+		this.pressao = pressao;
+		this.jogadorId = jogadorId;
+		this.partidaId = partidaId;
+	}
+
+	public MovimentacaoCreate() {
+	}
 
 	public Short getEixoX() {
 		return eixoX;

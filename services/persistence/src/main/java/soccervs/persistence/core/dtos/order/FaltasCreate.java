@@ -1,10 +1,13 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
 import soccervs.persistence.core.entities.enums.EFalta;
 import soccervs.persistence.core.entities.enums.EGravidade;
 import soccervs.persistence.core.entities.enums.EResultadoF;
 
-public class FaltasCreateDTO {
+public class FaltasCreate extends Order {
 	private Byte min;
 	private Short eixoX;
 	private Short eixoY;
@@ -14,7 +17,7 @@ public class FaltasCreateDTO {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public FaltasCreateDTO(Byte min, Short eixoX, Short eixoY, EFalta falta, EResultadoF resultado,
+	public FaltasCreate(Byte min, Short eixoX, Short eixoY, EFalta falta, EResultadoF resultado,
 			EGravidade gravidade, Long jogadorId, Long partidaId) {
 		super();
 		this.min = min;
@@ -27,9 +30,25 @@ public class FaltasCreateDTO {
 		this.partidaId = partidaId;
 	}
 
-	public FaltasCreateDTO() {
+	public FaltasCreate(String id, LocalDateTime createdAt, String transactionId, Byte min, Short eixoX, Short eixoY,
+			EFalta falta, EResultadoF resultado, EGravidade gravidade, Long jogadorId, Long partidaId) {
+		super(id, createdAt, transactionId);
+		this.min = min;
+		this.eixoX = eixoX;
+		this.eixoY = eixoY;
+		this.falta = falta;
+		this.resultado = resultado;
+		this.gravidade = gravidade;
+		this.jogadorId = jogadorId;
+		this.partidaId = partidaId;
+	}
+
+	public FaltasCreate() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+	public FaltasCreate(String id, LocalDateTime createdAt, String transactionId) {
+		super(id, createdAt, transactionId);
 	}
 
 	public Byte getMin() {

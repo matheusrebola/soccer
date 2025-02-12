@@ -1,16 +1,20 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
 import soccervs.persistence.core.entities.enums.ECartao;
 
-public class CartoesCreateDTO {
+public class CartoesCreate extends Order {
 	private Byte minuto;
 	private ECartao cartao;
 	private String motivo;
 	private Long jogadorId;
 	private Long partidaId;
-	
-	public CartoesCreateDTO(Byte minuto, ECartao cartao, String motivo, Long jogadorId, Long partidaId) {
-		super();
+
+	public CartoesCreate(String id, LocalDateTime createdAt, String transactionId, Byte minuto, ECartao cartao,
+			String motivo, Long jogadorId, Long partidaId) {
+		super(id, createdAt, transactionId);
 		this.minuto = minuto;
 		this.cartao = cartao;
 		this.motivo = motivo;
@@ -18,7 +22,21 @@ public class CartoesCreateDTO {
 		this.partidaId = partidaId;
 	}
 
-	public CartoesCreateDTO() {}
+	public CartoesCreate(Byte minuto, ECartao cartao, String motivo, Long jogadorId, Long partidaId) {
+		this.minuto = minuto;
+		this.cartao = cartao;
+		this.motivo = motivo;
+		this.jogadorId = jogadorId;
+		this.partidaId = partidaId;
+	}
+
+	public CartoesCreate() {
+		super();
+	}
+
+	public CartoesCreate(String id, LocalDateTime createdAt, String transactionId) {
+		super(id, createdAt, transactionId);
+	}
 
 	public Byte getMinuto() {
 		return minuto;
@@ -59,4 +77,5 @@ public class CartoesCreateDTO {
 	public void setPartidaId(Long partidaId) {
 		this.partidaId = partidaId;
 	}
+
 }

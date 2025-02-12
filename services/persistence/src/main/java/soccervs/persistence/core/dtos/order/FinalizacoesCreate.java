@@ -1,9 +1,12 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
 import soccervs.persistence.core.entities.enums.EFinalizacao;
 import soccervs.persistence.core.entities.enums.EResultado;
 
-public class FinalizacoesCreateDTO {
+public class FinalizacoesCreate extends Order {
 	private Float tempo;
 	private EFinalizacao finalizacao;
 	private EResultado resultado;
@@ -13,7 +16,7 @@ public class FinalizacoesCreateDTO {
 	private Long jogadorId;
 	private Long partidaId;
 
-	public FinalizacoesCreateDTO(Float tempo, EFinalizacao finalizacao, EResultado resultado, Short eixoX, Short eixoY,
+	public FinalizacoesCreate(Float tempo, EFinalizacao finalizacao, EResultado resultado, Short eixoX, Short eixoY,
 			Float expectativaGol, Long jogadorId, Long partidaId) {
 		super();
 		this.tempo = tempo;
@@ -26,9 +29,26 @@ public class FinalizacoesCreateDTO {
 		this.partidaId = partidaId;
 	}
 
-	public FinalizacoesCreateDTO() {
+	public FinalizacoesCreate(String id, LocalDateTime createdAt, String transactionId, Float tempo,
+			EFinalizacao finalizacao, EResultado resultado, Short eixoX, Short eixoY, Float expectativaGol,
+			Long jogadorId, Long partidaId) {
+		super(id, createdAt, transactionId);
+		this.tempo = tempo;
+		this.finalizacao = finalizacao;
+		this.resultado = resultado;
+		this.eixoX = eixoX;
+		this.eixoY = eixoY;
+		this.expectativaGol = expectativaGol;
+		this.jogadorId = jogadorId;
+		this.partidaId = partidaId;
+	}
+
+	public FinalizacoesCreate() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+	public FinalizacoesCreate(String id, LocalDateTime createdAt, String transactionId) {
+		super(id, createdAt, transactionId);
 	}
 
 	public Float getTempo() {

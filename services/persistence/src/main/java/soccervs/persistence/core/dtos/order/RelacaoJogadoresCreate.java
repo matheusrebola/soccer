@@ -1,14 +1,17 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
 import soccervs.persistence.core.entities.enums.EInteracao;
 
-public class RJogadoresCreateDTO {
+public class RelacaoJogadoresCreate extends Order {
 	private Long j1Id;
 	private Long j2Id;
 	private EInteracao interacao;
 	private Long partidaId;
 
-	public RJogadoresCreateDTO(Long id, Long j1Id, Long j2Id, EInteracao interacao, Long partidaId) {
+	public RelacaoJogadoresCreate(Long id, Long j1Id, Long j2Id, EInteracao interacao, Long partidaId) {
 		super();
 		this.j1Id = j1Id;
 		this.j2Id = j2Id;
@@ -16,7 +19,16 @@ public class RJogadoresCreateDTO {
 		this.partidaId = partidaId;
 	}
 
-	public RJogadoresCreateDTO() {
+	public RelacaoJogadoresCreate(String id, LocalDateTime createdAt, String transactionId, Long j1Id, Long j2Id,
+			EInteracao interacao, Long partidaId) {
+		super(id, createdAt, transactionId);
+		this.j1Id = j1Id;
+		this.j2Id = j2Id;
+		this.interacao = interacao;
+		this.partidaId = partidaId;
+	}
+
+	public RelacaoJogadoresCreate() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

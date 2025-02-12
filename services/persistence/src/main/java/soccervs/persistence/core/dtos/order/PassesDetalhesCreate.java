@@ -1,9 +1,12 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
 import soccervs.persistence.core.entities.enums.EPasse;
 import soccervs.persistence.core.entities.enums.EResultado;
 
-public class PDetalhesCreateDTO {
+public class PassesDetalhesCreate extends Order {
 	private Float tempo;
 	private EPasse passe;
 	private EResultado resultado;
@@ -12,7 +15,7 @@ public class PDetalhesCreateDTO {
 	private Long jDestinoId;
 	private Long partidaId;
 
-	public PDetalhesCreateDTO(Float tempo, EPasse passe, EResultado resultado, Byte distancia, Long jOrigemId,
+	public PassesDetalhesCreate(Float tempo, EPasse passe, EResultado resultado, Byte distancia, Long jOrigemId,
 			Long jDestinoId, Long partidaId) {
 		super();
 		this.tempo = tempo;
@@ -24,7 +27,19 @@ public class PDetalhesCreateDTO {
 		this.partidaId = partidaId;
 	}
 
-	public PDetalhesCreateDTO() {
+	public PassesDetalhesCreate(String id, LocalDateTime createdAt, String transactionId, Float tempo, EPasse passe,
+			EResultado resultado, Byte distancia, Long jOrigemId, Long jDestinoId, Long partidaId) {
+		super(id, createdAt, transactionId);
+		this.tempo = tempo;
+		this.passe = passe;
+		this.resultado = resultado;
+		this.distancia = distancia;
+		this.jOrigemId = jOrigemId;
+		this.jDestinoId = jDestinoId;
+		this.partidaId = partidaId;
+	}
+
+	public PassesDetalhesCreate() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

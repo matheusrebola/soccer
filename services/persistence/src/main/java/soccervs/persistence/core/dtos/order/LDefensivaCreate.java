@@ -1,12 +1,25 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
-public class LDefensivaCreateDTO {
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
+
+public class LDefensivaCreate extends Order {
 	private Float alturaMedia;
 	private Float tempo;
 	private Long partidaId;
 	private Long timeId;
 
-	public LDefensivaCreateDTO(Long id, Float alturaMedia, Float tempo, Long partidaId, Long timeId) {
+	public LDefensivaCreate(String id, LocalDateTime createdAt, String transactionId, Float alturaMedia, Float tempo,
+			Long partidaId, Long timeId) {
+		super(id, createdAt, transactionId);
+		this.alturaMedia = alturaMedia;
+		this.tempo = tempo;
+		this.partidaId = partidaId;
+		this.timeId = timeId;
+	}
+
+	public LDefensivaCreate(Float alturaMedia, Float tempo, Long partidaId, Long timeId) {
 		super();
 		this.alturaMedia = alturaMedia;
 		this.tempo = tempo;
@@ -14,9 +27,12 @@ public class LDefensivaCreateDTO {
 		this.timeId = timeId;
 	}
 
-	public LDefensivaCreateDTO() {
+	public LDefensivaCreate() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+	public LDefensivaCreate(String id, LocalDateTime createdAt, String transactionId) {
+		super(id, createdAt, transactionId);
 	}
 
 	public Float getAlturaMedia() {

@@ -1,14 +1,17 @@
-package soccervs.persistence.core.dtos;
+package soccervs.persistence.core.dtos.order;
 
+import java.time.LocalDateTime;
+
+import soccervs.persistence.core.dtos.Order;
 import soccervs.persistence.core.entities.enums.EEventoEspecifico;
 
-public class EventosEspecificosCreateDTO {
+public class EventosEspecificosCreate extends Order {
 	private EEventoEspecifico evento;
 	private Byte minuto;
 	private Long partidaId;
 	private Long jogadorId;
 
-	public EventosEspecificosCreateDTO(EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
+	public EventosEspecificosCreate(EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
 		super();
 		this.evento = evento;
 		this.minuto = minuto;
@@ -16,7 +19,21 @@ public class EventosEspecificosCreateDTO {
 		this.jogadorId = jogadorId;
 	}
 
-	public EventosEspecificosCreateDTO() {
+	public EventosEspecificosCreate(String id, LocalDateTime createdAt, String transactionId,
+			EEventoEspecifico evento, Byte minuto, Long partidaId, Long jogadorId) {
+		super(id, createdAt, transactionId);
+		this.evento = evento;
+		this.minuto = minuto;
+		this.partidaId = partidaId;
+		this.jogadorId = jogadorId;
+	}
+
+	public EventosEspecificosCreate() {
+		super();
+	}
+
+	public EventosEspecificosCreate(String id, LocalDateTime createdAt, String transactionId) {
+		super(id, createdAt, transactionId);
 	}
 
 	public EEventoEspecifico getEvento() {
