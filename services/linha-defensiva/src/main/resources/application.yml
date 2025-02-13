@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT:60000}
+  port: ${SERVER_PORT:60007}
 
 spring:
   data:
