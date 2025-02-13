@@ -15,13 +15,13 @@ public class Event {
 	private String id;
 	private String transactionId;
 	private String orderId;
-	private Object payload;
+	private Cartoes payload;
 	private String source;
 	private ESagaStatus status;
 	private List<History> eventHistory;
 	private LocalDateTime createdAt;
 
-	public Event(String id, String transactionId, String orderId, Object payload, String source, ESagaStatus status,
+	public Event(String id, String transactionId, String orderId, Cartoes payload, String source, ESagaStatus status,
 			List<History> eventHistory, LocalDateTime createdAt) {
 		super();
 		this.id = id;
@@ -60,11 +60,11 @@ public class Event {
 		this.orderId = orderId;
 	}
 
-	public Object getPayload() {
+	public Cartoes getPayload() {
 		return payload;
 	}
 
-	public void setPayload(Object payload) {
+	public void setPayload(Cartoes payload) {
 		this.payload = payload;
 	}
 
