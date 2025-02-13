@@ -13,6 +13,8 @@ spring:
       cartoes-ending: cartoes-ending
       eventos-especificos-start: eventos-especificos-start
       eventos-especificos-ending: eventos-especificos-ending
+      eventos-start: eventos-start
+      eventos-ending: eventos-ending
       faltas-start: faltas-start
       faltas-ending: faltas-ending
       finalizacoes-start: finalizacoes-start
