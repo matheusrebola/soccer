@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.RelacaoJogadores;
-import soccervs.reciever.core.services.RelacaoJogadoresService;
+import soccervs.reciever.relacaojogadores.core.documents.RelacaoJogadores;
+import soccervs.reciever.relacaojogadores.core.services.RelacaoJogadoresService;
 
 @RestController
 @RequestMapping("/relacao-jogadores")

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.LinhaDefensiva;
-import soccervs.reciever.core.services.LinhaDefensivaService;
+import soccervs.reciever.linhadefensiva.core.documents.LinhaDefensiva;
+import soccervs.reciever.linhadefensiva.core.services.LinhaDefensivaService;
 
 @RestController
 @RequestMapping("/linha-defensiva")

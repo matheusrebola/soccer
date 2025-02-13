@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.Movimentacao;
-import soccervs.reciever.core.services.MovimentacaoService;
+import soccervs.reciever.movimentacao.core.documents.Movimentacao;
+import soccervs.reciever.movimentacao.core.services.MovimentacaoService;
 
 @RestController
 @RequestMapping("/movimentacao")

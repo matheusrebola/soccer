@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.Faltas;
-import soccervs.reciever.core.services.FaltasService;
+import soccervs.reciever.faltas.core.documents.Faltas;
+import soccervs.reciever.faltas.core.services.FaltasService;
 
 @RestController
 @RequestMapping("/faltas")

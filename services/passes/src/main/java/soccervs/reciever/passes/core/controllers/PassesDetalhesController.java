@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.PassesDetalhes;
-import soccervs.reciever.core.services.PassesDetalhesService;
+import soccervs.reciever.passes.core.documents.PassesDetalhes;
+import soccervs.reciever.passes.core.services.PassesDetalhesService;
 
 @RestController
 @RequestMapping("/passes-detalhes")

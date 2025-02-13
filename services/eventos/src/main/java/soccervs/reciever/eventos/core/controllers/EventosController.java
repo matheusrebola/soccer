@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.Eventos;
-import soccervs.reciever.core.services.EventoService;
+import soccervs.reciever.eventos.core.documents.Eventos;
+import soccervs.reciever.eventos.core.services.EventoService;
 
 @RestController
 @RequestMapping("/eventos")

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.Cartoes;
-import soccervs.reciever.core.services.CartaoService;
+import soccervs.reciever.cartoes.core.documents.Cartoes;
+import soccervs.reciever.cartoes.core.services.CartaoService;
 
 @RestController
 @RequestMapping("/cartoes")

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.EventosEspecificos;
-import soccervs.reciever.core.services.EventosEspecificosService;
+import soccervs.reciever.eventosespecificos.core.documents.EventosEspecificos;
+import soccervs.reciever.eventosespecificos.core.services.EventosEspecificosService;
 
 @RestController
 @RequestMapping("/eventos-especificos")

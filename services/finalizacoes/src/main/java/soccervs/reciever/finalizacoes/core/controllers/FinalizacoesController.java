@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.Finalizacoes;
-import soccervs.reciever.core.services.FinalizacoesService;
+import soccervs.reciever.finalizacoes.core.documents.Finalizacoes;
+import soccervs.reciever.finalizacoes.core.services.FinalizacoesService;
 
 @RestController
 @RequestMapping("/finalizacoes")

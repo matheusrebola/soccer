@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.core.documents.FormacaoTime;
-import soccervs.reciever.core.services.FormacaoTimeService;
+import soccervs.reciever.formacao.core.documents.FormacaoTime;
+import soccervs.reciever.formacao.core.services.FormacaoTimeService;
 
 @RestController
 @RequestMapping("/formacao-time")
