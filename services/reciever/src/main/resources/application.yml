@@ -10,24 +10,23 @@ spring:
     bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
     topic:
       cartoes-start: cartoes-start
-      cartoes-fail: cartoes-fail
+      cartoes-ending: cartoes-ending
       eventos-especificos-start: eventos-especificos-start
-      eventos-especificos-fail: eventos-especificos-fail
+      eventos-especificos-ending: eventos-especificos-ending
       faltas-start: faltas-start
-      faltas-fail: faltas-fail
+      faltas-ending: faltas-ending
       finalizacoes-start: finalizacoes-start
-      finalizacoes-fail: finalizacoes-fail
+      finalizacoes-ending: finalizacoes-ending
       formacao-time-start: formacao-time-start
-      formacao-time-fail: formacao-time-fail
+      formacao-time-ending: formacao-time-ending
       linha-defensiva-start: linha-defensiva-start
-      linha-defensiva-fail: linha-defensiva-fail
+      linha-defensiva-ending: linha-defensiva-ending
       movimentacao-start: movimentacao-start
-      movimentacao-fail: movimentacao-fail
+      movimentacao-ending: movimentacao-ending
       passes-detalhes-start: passes-detalhes-start
-      passes-detalhes-fail: passes-detalhes-fail
+      passes-detalhes-ending: passes-detalhes-ending
       relacao-jogadores-start: relacao-jogadores-start
-      relacao-jogadores-fail: relacao-jogadores-fail
-      notify-ending: notify-ending
+      relacao-jogadores-ending: relacao-jogadores-ending
     consumer:
       group-id: persistence-group
       auto-offset-reset: latest
