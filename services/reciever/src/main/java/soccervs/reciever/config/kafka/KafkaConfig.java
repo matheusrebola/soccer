@@ -45,9 +45,15 @@ public class KafkaConfig {
    
     @Value("${spring.kafka.topic.eventos-especificos-start}")
     private String eventosEspecificosStartTopic;
-    
+
     @Value("${spring.kafka.topic.eventos-especificos-ending}")
     private String eventosEspecificosEndingTopic;
+    
+    @Value("${spring.kafka.topic.eventos-start}")
+    private String eventosStartTopic;
+    
+    @Value("${spring.kafka.topic.eventos-ending}")
+    private String eventosEndingTopic;
     
     @Value("${spring.kafka.topic.faltas-start}")
     private String faltasStartTopic;
@@ -150,6 +156,16 @@ public class KafkaConfig {
     @Bean
     NewTopic eventosEspecificosEndingTopic(){
     	return buildTopic(eventosEspecificosEndingTopic);
+    }
+    
+    @Bean
+    NewTopic eventosStartTopic(){
+    	return buildTopic(eventosStartTopic);
+    }
+    
+    @Bean
+    NewTopic eventosEndingTopic(){
+    	return buildTopic(eventosEndingTopic);
     }
     
     @Bean
