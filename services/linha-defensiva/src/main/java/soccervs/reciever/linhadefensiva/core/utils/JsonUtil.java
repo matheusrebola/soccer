@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import soccervs.reciever.core.documents.Event;
+import soccervs.reciever.linhadefensiva.core.documents.Event;
 
 @Component
 public class JsonUtil {
