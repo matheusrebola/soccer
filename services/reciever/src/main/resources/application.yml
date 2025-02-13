@@ -9,8 +9,24 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
     topic:
-      persistence-start: persistence-start
-      outbox-start: outbox-start
+      cartoes-start: cartoes-start
+      cartoes-fail: cartoes-fail
+      eventos-especificos-start: eventos-especificos-start
+      eventos-especificos-fail: eventos-especificos-fail
+      faltas-start: faltas-start
+      faltas-fail: faltas-fail
+      finalizacoes-start: finalizacoes-start
+      finalizacoes-fail: finalizacoes-fail
+      formacao-time-start: formacao-time-start
+      formacao-time-fail: formacao-time-fail
+      linha-defensiva-start: linha-defensiva-start
+      linha-defensiva-fail: linha-defensiva-fail
+      movimentacao-start: movimentacao-start
+      movimentacao-fail: movimentacao-fail
+      passes-detalhes-start: passes-detalhes-start
+      passes-detalhes-fail: passes-detalhes-fail
+      relacao-jogadores-start: relacao-jogadores-start
+      relacao-jogadores-fail: relacao-jogadores-fail
       notify-ending: notify-ending
     consumer:
       group-id: persistence-group
