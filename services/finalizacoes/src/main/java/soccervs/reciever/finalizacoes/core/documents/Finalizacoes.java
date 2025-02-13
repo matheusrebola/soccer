@@ -3,8 +3,8 @@ package soccervs.reciever.finalizacoes.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.documents.enums.EFinalizacao;
-import soccervs.reciever.core.documents.enums.EResultado;
+import soccervs.reciever.finalizacoes.core.documents.enums.EFinalizacao;
+import soccervs.reciever.finalizacoes.core.documents.enums.EResultado;
 
 @Document(collection = "finalizacoes")
 public class Finalizacoes {

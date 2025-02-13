@@ -3,8 +3,7 @@ package soccervs.reciever.cartoes.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.builders.CartaoBuilder;
-import soccervs.reciever.core.documents.enums.ECartao;
+import soccervs.reciever.cartoes.core.documents.enums.ECartao;
 
 @Document(collection = "cartoes")
 public class Cartoes {
@@ -15,15 +14,6 @@ public class Cartoes {
 	private String motivo;
 	private Long jogadorId;
 	private Long partidaId;
-
-	public Cartoes(CartaoBuilder builder) {
-		this.id = builder.getId();
-		this.minuto = builder.getMinuto();
-		this.cartao = builder.getCartao();
-		this.motivo = builder.getMotivo();
-		this.jogadorId = builder.getJogadorId();
-		this.partidaId = builder.getPartidaId();
-	}
 
 	public Cartoes(String id, Byte minuto, ECartao cartao, String motivo, Long jogadorId, Long partidaId) {
 		super();

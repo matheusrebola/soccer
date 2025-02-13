@@ -3,8 +3,8 @@ package soccervs.reciever.eventos.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.documents.enums.EEvento;
-import soccervs.reciever.core.documents.enums.EResultado;
+import soccervs.reciever.eventos.core.documents.enums.EEvento;
+import soccervs.reciever.eventos.core.documents.enums.EResultado;
 
 @Document(collection = "eventos")
 public class Eventos {

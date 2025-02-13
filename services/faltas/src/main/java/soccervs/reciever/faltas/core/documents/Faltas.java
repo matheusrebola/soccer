@@ -3,9 +3,9 @@ package soccervs.reciever.faltas.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.documents.enums.EFalta;
-import soccervs.reciever.core.documents.enums.EGravidade;
-import soccervs.reciever.core.documents.enums.EResultadoF;
+import soccervs.reciever.faltas.core.documents.enums.EFalta;
+import soccervs.reciever.faltas.core.documents.enums.EGravidade;
+import soccervs.reciever.faltas.core.documents.enums.EResultadoF;
 
 @Document(collection = "faltas")
 public class Faltas {

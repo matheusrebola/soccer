@@ -3,8 +3,8 @@ package soccervs.reciever.passes.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.documents.enums.EPasse;
-import soccervs.reciever.core.documents.enums.EResultado;
+import soccervs.reciever.passes.core.documents.enums.EPasse;
+import soccervs.reciever.passes.core.documents.enums.EResultado;
 
 @Document(collection = "passes")
 public class PassesDetalhes {

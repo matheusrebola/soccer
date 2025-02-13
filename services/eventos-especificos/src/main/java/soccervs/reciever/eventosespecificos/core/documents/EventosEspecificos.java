@@ -3,7 +3,7 @@ package soccervs.reciever.eventosespecificos.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.documents.enums.EEventoEspecifico;
+import soccervs.reciever.eventosespecificos.core.documents.enums.EEventoEspecifico;
 
 @Document(collection = "eventos_especificos")
 public class EventosEspecificos {

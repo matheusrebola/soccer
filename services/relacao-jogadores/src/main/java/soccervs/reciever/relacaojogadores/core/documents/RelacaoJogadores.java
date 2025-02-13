@@ -3,7 +3,7 @@ package soccervs.reciever.relacaojogadores.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.documents.enums.EInteracao;
+import soccervs.reciever.relacaojogadores.core.documents.enums.EInteracao;
 
 @Document(collection = "relacoes")
 public class RelacaoJogadores {

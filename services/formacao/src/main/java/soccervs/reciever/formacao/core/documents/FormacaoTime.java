@@ -3,7 +3,7 @@ package soccervs.reciever.formacao.core.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import soccervs.reciever.core.documents.enums.EFormacao;
+import soccervs.reciever.formacao.core.documents.enums.EFormacao;
 
 @Document(collection = "formacao")
 public class FormacaoTime {
