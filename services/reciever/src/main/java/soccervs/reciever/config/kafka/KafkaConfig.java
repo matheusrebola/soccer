@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.TopicBuilder;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
@@ -35,11 +37,64 @@ public class KafkaConfig {
     @Value("${spring.kafka.consumer.auto-offset-reset}")
     private String autoOffsetReset;
 
-    @Value("${spring.kafka.topic.persistence-start}")
-    private String persistenceStartTopic;
-
-    @Value("${spring.kafka.topic.notify-ending}")
-    private String notifyEndingTopic;
+    @Value("${spring.kafka.topic.cartoes-start}")
+    private String cartoesStartTopic;
+    
+    @Value("${spring.kafka.topic.cartoes-ending}")
+    private String cartoesEndingTopic;
+   
+    @Value("${spring.kafka.topic.eventos-especificos-start}")
+    private String eventosEspecificosStartTopic;
+    
+    @Value("${spring.kafka.topic.eventos-especificos-ending}")
+    private String eventosEspecificosEndingTopic;
+    
+    @Value("${spring.kafka.topic.faltas-start}")
+    private String faltasStartTopic;
+    
+    @Value("${spring.kafka.topic.faltas-ending}")
+    private String faltasEndingTopic;
+    
+    @Value("${spring.kafka.topic.finalizacoes-start}")
+    private String finalizacoesStartTopic;
+    
+    @Value("${spring.kafka.topic.finalizacoes-ending}")
+    private String finalizacoesEndingTopic;
+    
+    @Value("${spring.kafka.topic.formacao-time-start}")
+    private String formacaoTimeStartTopic;
+    
+    @Value("${spring.kafka.topic.formacao-time-ending}")
+    private String formacaoTimeEndingTopic;
+    
+    @Value("${spring.kafka.topic.linha-defensiva-start}")
+    private String linhaDefensivaStartTopic;
+    
+    @Value("${spring.kafka.topic.linha-defensiva-ending}")
+    private String linhaDefensivaEndingTopic;
+    
+    @Value("${spring.kafka.topic.movimentacao-start}")
+    private String movimentacaoStartTopic;
+    
+    @Value("${spring.kafka.topic.movimentacao-ending}")
+    private String movimentacaoEndingTopic;
+    
+    @Value("${spring.kafka.topic.passes-detalhes-start}")
+    private String passesDetalhesStartTopic;
+    
+    @Value("${spring.kafka.topic.passes-detalhes-ending}")
+    private String passesDetalhesEndingTopic;
+    
+    @Value("${spring.kafka.topic.relacao-jogadores-start}")
+    private String relacaoJogadoresStartTopic;
+    
+    @Value("${spring.kafka.topic.relacao-jogadores-ending}")
+    private String relacaoJogadoresEndingTopic;
+    
+    @Bean
+    ConsumerFactory<String, String> consumerFactory() {
+        return new DefaultKafkaConsumerFactory<>(consumerProps());
+    }
     
     private Map<String, Object> consumerProps() {
         var props = new HashMap<String, Object>();
@@ -78,12 +133,93 @@ public class KafkaConfig {
     }
     
     @Bean
-    NewTopic persistenceStartTopic() {
-        return buildTopic(persistenceStartTopic);
+    NewTopic cartoesStartTopic(){
+    	return buildTopic(cartoesStartTopic);
     }
     
     @Bean
-    NewTopic notifyEndingTopic() {
-        return buildTopic(notifyEndingTopic);
+    NewTopic cartoesEndingTopic(){
+    	return buildTopic(cartoesEndingTopic);
     }
+    
+    @Bean
+    NewTopic eventosEspecificosStartTopic(){
+    	return buildTopic(eventosEspecificosStartTopic);
+    }
+    
+    @Bean
+    NewTopic eventosEspecificosEndingTopic(){
+    	return buildTopic(eventosEspecificosEndingTopic);
+    }
+    
+    @Bean
+    NewTopic faltasStartTopic(){
+    	return buildTopic(faltasStartTopic);
+    }
+    
+    @Bean
+    NewTopic faltasEndingTopic(){
+    	return buildTopic(faltasEndingTopic);
+    }
+    
+    @Bean
+    NewTopic finalizacoesStartTopic(){
+    	return buildTopic(finalizacoesStartTopic);
+    }
+    
+    @Bean
+    NewTopic finalizacoesEndingTopic(){
+    	return buildTopic(finalizacoesEndingTopic);
+    }
+    
+    @Bean
+    NewTopic formacaoTimeStartTopic(){
+    	return buildTopic(formacaoTimeStartTopic);
+    }
+    
+    @Bean
+    NewTopic formacaoTimeEndingTopic(){
+    	return buildTopic(formacaoTimeEndingTopic);
+    }
+    
+    @Bean
+    NewTopic linhaDefensivaStartTopic(){
+    	return buildTopic(linhaDefensivaStartTopic);
+    }
+    
+    @Bean
+    NewTopic linhaDefensivaEndingTopic(){
+    	return buildTopic(linhaDefensivaEndingTopic);
+    }
+    
+    @Bean
+    NewTopic movimentacaoStartTopic(){
+    	return buildTopic(movimentacaoStartTopic);
+    }
+    
+    @Bean
+    NewTopic movimentacaoEndingTopic(){
+    	return buildTopic(movimentacaoEndingTopic);
+    }
+    
+    @Bean
+    NewTopic passesDetalhesStartTopic(){
+    	return buildTopic(passesDetalhesStartTopic);
+    }
+    
+    @Bean
+    NewTopic passesDetalhesEndingTopic(){
+    	return buildTopic(passesDetalhesEndingTopic);
+    }
+    
+    @Bean
+    NewTopic relacaoJogadoresStartTopic(){
+    	return buildTopic(relacaoJogadoresStartTopic);
+    }
+    
+    @Bean
+    NewTopic relacaoJogadoresEndingTopic(){
+    	return buildTopic(relacaoJogadoresEndingTopic);
+    }
+    
 }
