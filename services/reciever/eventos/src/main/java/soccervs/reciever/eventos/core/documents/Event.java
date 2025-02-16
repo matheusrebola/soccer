@@ -14,27 +14,26 @@ public class Event {
 	@Id
 	private String id;
 	private String transactionId;
-	private String orderId;
-	private Object payload;
+	private String eventoId;
 	private String source;
 	private ESagaStatus status;
 	private List<History> eventHistory;
 	private LocalDateTime createdAt;
 
-	public Event(String id, String transactionId, String orderId, Object payload, String source, ESagaStatus status,
+	public Event(String id, String transactionId, String orderId, String source, ESagaStatus status,
 			List<History> eventHistory, LocalDateTime createdAt) {
 		super();
 		this.id = id;
 		this.transactionId = transactionId;
-		this.orderId = orderId;
-		this.payload = payload;
+		this.eventoId = orderId;
 		this.source = source;
 		this.status = status;
 		this.eventHistory = eventHistory;
 		this.createdAt = createdAt;
 	}
-	
-	public Event() {}
+
+	public Event() {
+	}
 
 	public String getId() {
 		return id;
@@ -52,20 +51,12 @@ public class Event {
 		this.transactionId = transactionId;
 	}
 
-	public String getOrderId() {
-		return orderId;
+	public String getEventoId() {
+		return eventoId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
-	public Object getPayload() {
-		return payload;
-	}
-
-	public void setPayload(Object payload) {
-		this.payload = payload;
+	public void setEventoId(String eventoId) {
+		this.eventoId = eventoId;
 	}
 
 	public String getSource() {

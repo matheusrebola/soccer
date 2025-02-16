@@ -1,10 +1,10 @@
 package soccervs.reciever.cartoes.core.documents;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import soccervs.reciever.cartoes.core.documents.enums.ESagaStatus;
@@ -14,27 +14,29 @@ public class Event {
 	@Id
 	private String id;
 	private String transactionId;
-	private String orderId;
-	private Cartoes payload;
+	private String cartaoId;
 	private String source;
 	private ESagaStatus status;
+	@DBRef
 	private List<History> eventHistory;
 	private LocalDateTime createdAt;
 
-	public Event(String id, String transactionId, String orderId, Cartoes payload, String source, ESagaStatus status,
+	public Event(String id, String transactionId, String cartaoId, String source, ESagaStatus status,
 			List<History> eventHistory, LocalDateTime createdAt) {
 		super();
 		this.id = id;
 		this.transactionId = transactionId;
-		this.orderId = orderId;
-		this.payload = payload;
+		this.cartaoId = cartaoId;
 		this.source = source;
 		this.status = status;
 		this.eventHistory = eventHistory;
 		this.createdAt = createdAt;
 	}
-	
-	public Event() {}
+
+	public Event() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getId() {
 		return id;
@@ -52,20 +54,12 @@ public class Event {
 		this.transactionId = transactionId;
 	}
 
-	public String getOrderId() {
-		return orderId;
+	public String getCartaoId() {
+		return cartaoId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
-	public Cartoes getPayload() {
-		return payload;
-	}
-
-	public void setPayload(Cartoes payload) {
-		this.payload = payload;
+	public void setCartaoId(String cartaoId) {
+		this.cartaoId = cartaoId;
 	}
 
 	public String getSource() {
@@ -101,9 +95,7 @@ public class Event {
 	}
 
 	public void addToHistory(History history) {
-		if (eventHistory.isEmpty()) {
-			eventHistory = new ArrayList<>();
-		}
+		
 		eventHistory.add(history);
 	}
 

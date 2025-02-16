@@ -77,4 +77,5 @@ public class Cartoes {
 	public void setPartidaId(Long partidaId) {
 		this.partidaId = partidaId;
 	}
+
 }
