@@ -1,11 +1,14 @@
 package soccervs.statics.core.resources;
 
 import java.net.URI;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,6 +57,18 @@ public class ClubeController {
 			throw new NotFoundedException("Clube não encontrado");
 		}
 		List<ClubeDTO> dto = mapper.map(clubes);
+		return ResponseEntity.ok(dto);
+	}
+	
+	@GetMapping("/{nome}")
+	public ResponseEntity<ClubeDTO> encontrarPelaCidade(@PathVariable String nome) {
+		System.out.println("Recebido: " + nome);
+		String decodedNome = URLDecoder.decode(nome, StandardCharsets.UTF_8);
+		Clubes c = service.encontrarPorNome(decodedNome);
+		if (c == null) {
+			throw new NotFoundedException("Clube não encontrado");
+		}
+		ClubeDTO dto = mapper.map(c);
 		return ResponseEntity.ok(dto);
 	}
 
