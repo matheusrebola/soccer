@@ -25,36 +25,6 @@ A IA analisa os eventos em tempo real de uma partida de futebol, coletando dados
 - **Infraestrutura em nuvem** para processamento e análise em tempo real.
 - **Database** para armazenamento de dados históricos de jogos.
 
-## ⚡ Como Começar
-
-### Pré-requisitos:
-- **Python 3.x**
-- **Bibliotecas**: NumPy, TensorFlow, OpenCV, Pandas, Matplotlib, entre outras.
-- **Ambiente de execução**: Um servidor dedicado ou máquinas com GPU para treinamento de modelos.
-
-### Passos:
-1. Clone este repositório:
-    ```bash
-    git clone https://github.com/matheusrebola/football-ai-analysis.git
-    ```
-
-2. Instale as dependências:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Configure a base de dados com informações dos jogos e jogadores.
-
-4. Execute o script de análise para processar os dados:
-    ```bash
-    python analyze_game.py
-    ```
-
-5. Visualize os resultados por meio do dashboard de insights:
-    ```bash
-    python dashboard.py
-    ```
-
 ## 📈 Resultados Esperados
 Com o uso dessa IA, esperamos alcançar os seguintes objetivos:
 - Melhor compreensão dos aspectos técnicos e táticos das partidas de futebol.
@@ -62,31 +32,10 @@ Com o uso dessa IA, esperamos alcançar os seguintes objetivos:
 - Apoio na tomada de decisões estratégicas para técnicos e comissões técnicas.
 - Criação de um banco de dados histórico robusto de análises de futebol, para aprimorar o estudo contínuo e as comparações.
 
-## 📅 Roadmap
-- **Fase 1**: Desenvolvimento do protótipo da IA com análise de eventos básicos.
-- **Fase 2**: Integração com sistemas de dados reais de partidas.
-- **Fase 3**: Implementação de sugestões táticas e personalização para diferentes estilos de jogo.
-- **Fase 4**: Lançamento para clubes profissionais e plataformas esportivas.
-
-## 💬 Contribuindo
-Se você deseja contribuir para o projeto, siga os passos abaixo:
-
-1. Fork este repositório.
-2. Crie uma nova branch para sua funcionalidade:  
-    ```bash
-    git checkout -b minha-nova-funcionalidade
-    ```
-3. Faça as alterações e commit com mensagens claras.
-4. Envie um pull request para a branch principal deste repositório.
-
 ## 📞 Contato
 - **Nome**: Matheus Cavalcanti Rebola
 - **E-mail**: matheus.rebola@outlook.com
 - **GitHub**: [matheusrebola](https://github.com/matheusrebola)
-
-## 🔗 Links úteis
-- [Documentação da API de Análise de Jogo](#)
-- [Licença MIT](#)
 
 ---
 
