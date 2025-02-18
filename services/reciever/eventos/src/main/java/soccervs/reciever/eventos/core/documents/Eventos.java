@@ -4,36 +4,30 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import soccervs.reciever.eventos.core.documents.enums.EEvento;
+import soccervs.reciever.eventos.core.documents.enums.EGravidade;
+import soccervs.reciever.eventos.core.documents.enums.EMotivo;
 import soccervs.reciever.eventos.core.documents.enums.EResultado;
 
 @Document(collection = "eventos")
-public class Eventos {
+public class Eventos extends EventosCreate {
 	@Id
 	private String id;
-	private Float tempo;
-	private EEvento evento;
-	private EResultado resultado;
-	private Short eixoX;
-	private Short eixoY;
-	private Long jogadorId;
-	private Long partidaId;
 
-	public Eventos(String id, Float tempo, EEvento evento, EResultado resultado, Short eixoX, Short eixoY, Long jogadorId,
-			Long partidaId) {
-		super();
+	public Eventos(EEvento evento, Float distancia, Long jogadorOrigemId, Long jogadordestinoId, EResultado resultado,
+			EGravidade gravidade, EMotivo motivo, Float tempo, Float posX, Float posY, Long partidaId, String id) {
+		super(evento, distancia, jogadorOrigemId, jogadordestinoId, resultado, gravidade, motivo, tempo, posX, posY,
+				partidaId);
 		this.id = id;
-		this.tempo = tempo;
-		this.evento = evento;
-		this.resultado = resultado;
-		this.eixoX = eixoX;
-		this.eixoY = eixoY;
-		this.jogadorId = jogadorId;
-		this.partidaId = partidaId;
 	}
 
 	public Eventos() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+	public Eventos(EEvento evento, Float distancia, Long jogadorOrigemId, Long jogadordestinoId, EResultado resultado,
+			EGravidade gravidade, EMotivo motivo, Float tempo, Float posX, Float posY, Long partidaId) {
+		super(evento, distancia, jogadorOrigemId, jogadordestinoId, resultado, gravidade, motivo, tempo, posX, posY,
+				partidaId);
 	}
 
 	public String getId() {
@@ -42,62 +36,6 @@ public class Eventos {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public Float getTempo() {
-		return tempo;
-	}
-
-	public void setTempo(Float tempo) {
-		this.tempo = tempo;
-	}
-
-	public EEvento getEvento() {
-		return evento;
-	}
-
-	public void setEvento(EEvento evento) {
-		this.evento = evento;
-	}
-
-	public EResultado getResultado() {
-		return resultado;
-	}
-
-	public void setResultado(EResultado resultado) {
-		this.resultado = resultado;
-	}
-
-	public Short getEixoX() {
-		return eixoX;
-	}
-
-	public void setEixoX(Short eixoX) {
-		this.eixoX = eixoX;
-	}
-
-	public Short getEixoY() {
-		return eixoY;
-	}
-
-	public void setEixoY(Short eixoY) {
-		this.eixoY = eixoY;
-	}
-
-	public Long getJogadorId() {
-		return jogadorId;
-	}
-
-	public void setJogadorId(Long jogadorId) {
-		this.jogadorId = jogadorId;
-	}
-
-	public Long getPartidaId() {
-		return partidaId;
-	}
-
-	public void setPartidaId(Long partidaId) {
-		this.partidaId = partidaId;
 	}
 
 }
