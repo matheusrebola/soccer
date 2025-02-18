@@ -1,18 +1,18 @@
 package soccervs.reciever.formacao.core.documents.enums;
 
 public enum EFormacao {
-	QQD, 	//442 
-	QCU, 	//451
-	QTT, 	//433
-	QTDU, 	//4321
-	QUTD, 	//4132
-	CQU, 	//541
-	QUDUD,	//41212
-	TCD,	//352
-	CTD,	//532
-	QDTU,	//4231
-	TDQU,	//324
-	DTC,	//235
-	DTDT,	//2323
-	QDQ		//424
+	F442, 
+	F451,
+	F433,
+	F4321,
+	F4132,
+	F541,
+	F41212,
+	F352,
+	F532,
+	F4231,
+	F324,
+	F235,
+	F2323,
+	F424
 }

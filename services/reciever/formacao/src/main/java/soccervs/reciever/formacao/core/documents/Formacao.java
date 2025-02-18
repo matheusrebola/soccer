@@ -4,26 +4,26 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import soccervs.reciever.formacao.core.documents.enums.EFormacao;
+import soccervs.reciever.formacao.core.documents.enums.EModoJogo;
 
 @Document(collection = "formacao")
-public class FormacaoTime {
+public class Formacao extends FormacaoCreate {
 	@Id
 	private String id;
-	private Float minuto;
-	private EFormacao formacao;
-	private Long partidaId;
 
-	public FormacaoTime(String id, Float minuto, EFormacao formacao, Long jogadorId, Long partidaId) {
-		super();
+	public Formacao(Float tempoJogo, EFormacao formacao, EModoJogo modoJogo, Float compactacao, Long timeId,
+			Long partidaId, String id) {
+		super(tempoJogo, formacao, modoJogo, compactacao, timeId, partidaId);
 		this.id = id;
-		this.minuto = minuto;
-		this.formacao = formacao;
-		this.partidaId = partidaId;
 	}
 
-	public FormacaoTime() {
+	public Formacao() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+	public Formacao(Float tempoJogo, EFormacao formacao, EModoJogo modoJogo, Float compactacao, Long timeId,
+			Long partidaId) {
+		super(tempoJogo, formacao, modoJogo, compactacao, timeId, partidaId);
 	}
 
 	public String getId() {
@@ -32,30 +32,6 @@ public class FormacaoTime {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public Float getMinuto() {
-		return minuto;
-	}
-
-	public void setMinuto(Float minuto) {
-		this.minuto = minuto;
-	}
-
-	public EFormacao getFormacao() {
-		return formacao;
-	}
-
-	public void setFormacao(EFormacao formacao) {
-		this.formacao = formacao;
-	}
-
-	public Long getPartidaId() {
-		return partidaId;
-	}
-
-	public void setPartidaId(Long partidaId) {
-		this.partidaId = partidaId;
 	}
 
 }

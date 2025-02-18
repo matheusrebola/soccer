@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import soccervs.reciever.formacao.core.documents.FormacaoTime;
+import soccervs.reciever.formacao.core.documents.Formacao;
 import soccervs.reciever.formacao.core.repositories.FormacaoTimeRepository;
 
 @Service
@@ -14,11 +14,11 @@ public class FormacaoTimeService {
 
 	public FormacaoTimeService(FormacaoTimeRepository repository) {this.repository = repository;}
 
-	public FormacaoTime salvar(FormacaoTime formacaoTime) {
+	public Formacao salvar(Formacao formacaoTime) {
 		return repository.save(formacaoTime);
 	}
 
-	public List<FormacaoTime> encontrarTodos() {
+	public List<Formacao> encontrarTodos() {
 		return repository.findAll();
 	}
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import soccervs.reciever.formacao.core.documents.FormacaoTime;
+import soccervs.reciever.formacao.core.documents.Formacao;
 import soccervs.reciever.formacao.core.services.FormacaoTimeService;
 
 @RestController
@@ -24,14 +24,14 @@ public class FormacaoTimeController {
 	}
 
 	@PostMapping
-	public ResponseEntity<FormacaoTime> criar(@RequestBody FormacaoTime formacaoTime) {
-		FormacaoTime saved = service.salvar(formacaoTime);
+	public ResponseEntity<Formacao> criar(@RequestBody Formacao formacaoTime) {
+		Formacao saved = service.salvar(formacaoTime);
 		return ResponseEntity.status(HttpStatus.CREATED).body(saved);
 	}
 
 	@GetMapping
-	public ResponseEntity<List<FormacaoTime>> encontrartodos() {
-		List<FormacaoTime> formacao = service.encontrarTodos();
+	public ResponseEntity<List<Formacao>> encontrartodos() {
+		List<Formacao> formacao = service.encontrarTodos();
 		return ResponseEntity.ok(formacao);
 	}
 }
