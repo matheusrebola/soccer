@@ -1,10 +1,10 @@
-package soccervs.persistence.formacao.core.utils;
+package soccervs.persistence.movimentacao.core.utils;
 
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import soccervs.persistence.formacao.core.dtos.Event;
+import soccervs.persistence.core.dtos.Event;
 
 @Component
 public class JsonUtil {
