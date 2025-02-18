@@ -1,37 +1,77 @@
 package soccervs.reciever.formacao.core.documents;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import soccervs.reciever.formacao.core.documents.enums.EFormacao;
 import soccervs.reciever.formacao.core.documents.enums.EModoJogo;
 
-@Document(collection = "formacao")
-public class Formacao extends FormacaoCreate {
-	@Id
-	private String id;
+public class Formacao {
+	private Float tempoJogo;
+	private EFormacao formacao;
+	private EModoJogo modoJogo;
+	private Float compactacao;
+	private Long timeId;
+	private Long partidaId;
 
 	public Formacao(Float tempoJogo, EFormacao formacao, EModoJogo modoJogo, Float compactacao, Long timeId,
-			Long partidaId, String id) {
-		super(tempoJogo, formacao, modoJogo, compactacao, timeId, partidaId);
-		this.id = id;
+			Long partidaId) {
+		super();
+		this.tempoJogo = tempoJogo;
+		this.formacao = formacao;
+		this.modoJogo = modoJogo;
+		this.compactacao = compactacao;
+		this.timeId = timeId;
+		this.partidaId = partidaId;
 	}
 
 	public Formacao() {
 		super();
 	}
 
-	public Formacao(Float tempoJogo, EFormacao formacao, EModoJogo modoJogo, Float compactacao, Long timeId,
-			Long partidaId) {
-		super(tempoJogo, formacao, modoJogo, compactacao, timeId, partidaId);
+	public Float getTempoJogo() {
+		return tempoJogo;
 	}
 
-	public String getId() {
-		return id;
+	public void setTempoJogo(Float tempoJogo) {
+		this.tempoJogo = tempoJogo;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public EFormacao getFormacao() {
+		return formacao;
+	}
+
+	public void setFormacao(EFormacao formacao) {
+		this.formacao = formacao;
+	}
+
+	public EModoJogo getModoJogo() {
+		return modoJogo;
+	}
+
+	public void setModoJogo(EModoJogo modoJogo) {
+		this.modoJogo = modoJogo;
+	}
+
+	public Float getCompactacao() {
+		return compactacao;
+	}
+
+	public void setCompactacao(Float compactacao) {
+		this.compactacao = compactacao;
+	}
+
+	public Long getTimeId() {
+		return timeId;
+	}
+
+	public void setTimeId(Long timeId) {
+		this.timeId = timeId;
+	}
+
+	public Long getPartidaId() {
+		return partidaId;
+	}
+
+	public void setPartidaId(Long partidaId) {
+		this.partidaId = partidaId;
 	}
 
 }

@@ -1,32 +1,63 @@
 package soccervs.reciever.linhadefensiva.core.documents;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+public class LinhaDefensiva {
+	private Float altura;
+	private Float largura;
+	private Float tempo;
+	private Long partidaId;
+	private Long timeId;
 
-@Document(collection = "ldefensiva")
-public class LinhaDefensiva extends LinhaDefensivaCreate {
-	@Id
-	private String id;
-
-	public LinhaDefensiva(Float altura, Float largura, Float tempo, Long partidaId, Long timeId, String id) {
-		super(altura, largura, tempo, partidaId, timeId);
-		this.id = id;
+	public LinhaDefensiva(Float altura, Float largura, Float tempo, Long partidaId, Long timeId) {
+		super();
+		this.altura = altura;
+		this.largura = largura;
+		this.tempo = tempo;
+		this.partidaId = partidaId;
+		this.timeId = timeId;
 	}
 
 	public LinhaDefensiva() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public LinhaDefensiva(Float altura, Float largura, Float tempo, Long partidaId, Long timeId) {
-		super(altura, largura, tempo, partidaId, timeId);
+	public Float getAltura() {
+		return altura;
 	}
 
-	public String getId() {
-		return id;
+	public void setAltura(Float altura) {
+		this.altura = altura;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public Float getLargura() {
+		return largura;
 	}
 
+	public void setLargura(Float largura) {
+		this.largura = largura;
+	}
+
+	public Float getTempo() {
+		return tempo;
+	}
+
+	public void setTempo(Float tempo) {
+		this.tempo = tempo;
+	}
+
+	public Long getPartidaId() {
+		return partidaId;
+	}
+
+	public void setPartidaId(Long partidaId) {
+		this.partidaId = partidaId;
+	}
+
+	public Long getTimeId() {
+		return timeId;
+	}
+
+	public void setTimeId(Long timeId) {
+		this.timeId = timeId;
+	}
 }
